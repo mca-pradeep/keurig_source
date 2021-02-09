@@ -16,16 +16,16 @@ class Beverage extends Component {
 
   render() {
     return (
-      <li className="beverage">
-        <a onClick={() => this.getDetails(this.props.beverage.code)}>
-          <div className="beverage-box">
-            <img
-              src={`${window.location.origin}${this.props.beverage.image}`}
-              alt=""
-            />
-          </div>
-          <h3>{this.props.beverage_messages[this.props.beverage.code]}</h3>
-        </a>
+      <li
+        className="beverage"
+        onClick={() => this.getDetails(this.props.beverage.code)}>
+        <div className="beverage-box">
+          <img
+            src={`${window.location.origin}${this.props.beverage.image}`}
+            alt=""
+          />
+        </div>
+        <h3>{this.props.beverage_messages[this.props.beverage.code]}</h3>
       </li>
     );
   }

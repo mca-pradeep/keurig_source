@@ -73,6 +73,7 @@ class BeverageDetails extends Component {
 
   render() {
     let tempOptions = null;
+    let contentFlag = false;
     if (this.state.general_messages != null) {
       tempOptions = (
         <DefaultOptions
@@ -82,6 +83,7 @@ class BeverageDetails extends Component {
           user_selected_temprature={this.state.user_selected_temprature}
         />
       );
+      contentFlag = true;
     }
 
     if (
@@ -95,6 +97,7 @@ class BeverageDetails extends Component {
           onTempratureHandler={this.customizeStrengthTempratureHandler}
         />
       );
+      contentFlag = false;
     }
 
     if (
@@ -108,31 +111,37 @@ class BeverageDetails extends Component {
           onStrengthHandler={this.customizeStrengthTempratureHandler}
         />
       );
+      contentFlag = false;
     }
     return (
-      <div className="beverage-details with-padding">
+      <React.Fragment>
         <form onSubmit={this.submitHandler}>
-          {this.size_list !== null ? (
-            <SizeListElement
-              size_lists={size_list}
-              general_messages={this.state.general_messages}
-              userSelectedSize={this.state.user_selected_size}
-              customizeSizeHandler={this.customizeSizeHandler}
-              showSvgContent={this.showSize}
-            />
+          <div className="beverage-details with-padding">
+            {this.size_list !== null ? (
+              <SizeListElement
+                size_lists={size_list}
+                general_messages={this.state.general_messages}
+                userSelectedSize={this.state.user_selected_size}
+                customizeSizeHandler={this.customizeSizeHandler}
+                showSvgContent={this.showSize}
+              />
+            ) : null}
+            <section className="brew-customize">
+              <div className="customize-title">
+                <strong>
+                  {this.state.general_messages
+                    ? this.state.general_messages[general_codes.BREWING_OPTIONS]
+                    : null}
+                </strong>
+              </div>
+            </section>
+            {contentFlag ? (
+              <section className="brew-customize">{tempOptions}</section>
+            ) : null}
+          </div>
+          {!contentFlag ? (
+            <section className="brew-customize">{tempOptions}</section>
           ) : null}
-
-          <section className="brew-customize">
-            <div className="customize-title">
-              <strong>
-                {this.state.general_messages
-                  ? this.state.general_messages[general_codes.BREWING_OPTIONS]
-                  : null}
-              </strong>
-            </div>
-            {tempOptions}
-          </section>
-
           <section className="submit-button-container">
             <div className="submit-button-inner">
               <button>
@@ -145,7 +154,7 @@ class BeverageDetails extends Component {
             </div>
           </section>
         </form>
-      </div>
+      </React.Fragment>
     );
   }
 }
