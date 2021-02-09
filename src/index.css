@@ -1,13 +1,169 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@charset "utf-8";
+@font-face {
+  font-family: "MarkOT";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT.eot") format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT.woff2") format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT.woff") format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT.ttf") format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT.svg#MarkOT") format("svg");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.transition {
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+a,
+a.tooltip,
+a.tooltip:hover > span,
+button:focus,
+del.video-inner-tiltle,
+input:focus,
+textarea:focus {
+  text-decoration: none;
+}
+*,
+.grid-list-row,
+.grid-list-row li,
+.hd-top.sticky,
+.media-kit-wrapper .media-kit,
+.search-row-box {
+  box-sizing: border-box;
+}
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+button,
+img,
+input,
+textarea {
+  border: none;
+  outline: 0;
+}
+.clear {
+  clear: both;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+}
+img {
+  max-width: 100%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+a {
+  display: inline-block;
+}
+ol,
+ul {
+  list-style: none;
+}
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: border-box;
+}
+button,
+input,
+select,
+textarea {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  border: none;
+  outline: 0;
+}
+
+body,
+* {
+  font-family: "MarkOT";
 }

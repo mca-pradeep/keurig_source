@@ -1,0 +1,220 @@
+.beverage-details.with-padding {
+  padding-bottom: 0;
+}
+.with-padding {
+  padding: 40px 35px;
+}
+
+.beverage-sizes {
+  margin-bottom: 30px;
+}
+
+.beverage-sizes ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 14px;
+  text-align: center;
+}
+
+.beverage-sizes ul li {
+  box-sizing: border-box;
+  border-radius: 29.5px;
+  width: 52px;
+  height: 102px;
+  border: 1px solid #5b3427;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.beverage-sizes ul li.active {
+  background: #5b3427;
+}
+
+.beverage-sizes ul li.active path {
+  fill: #fff;
+}
+
+.du_beverage-sizescup_list ul li.active .size-wrapper .size-name {
+  color: #fff;
+}
+
+.beverage-sizes ul li.active .size-wrapper .size-unit {
+  color: #fff;
+}
+
+.beverage-sizes ul li .beverage-size {
+  margin-bottom: 5px;
+}
+
+.beverage-sizes ul li .size-wrapper {
+  line-height: normal;
+}
+
+.beverage-sizes ul li .size-wrapper .size-name {
+  font-size: 22px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.366667px;
+  color: #5b3427;
+}
+
+.beverage-sizes ul li .size-wrapper .size-unit {
+  font-size: 12px;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #5b3427;
+}
+
+.beverage-sizes ul li.active .size-name,
+.beverage-sizes ul li.active .size-unit {
+  color: #fff;
+}
+
+.brew-customize .customize-title {
+  margin-bottom: 45px;
+  text-align: center;
+  position: relative;
+}
+
+.brew-customize .customize-title::before,
+.brew-customize .customize-title::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  height: 1px;
+  background: #5b3427;
+  width: 100%;
+}
+
+.brew-customize .customize-title::before {
+  left: 0;
+}
+
+.brew-customize .customize-title::after {
+  right: 0;
+}
+
+.brew-customize .customize-title strong {
+  font-size: 13px;
+  line-height: 30px;
+  color: #5b3427;
+  text-align: center;
+  background: #faf5f0;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.brew-customize .temprature-streangth {
+  text-align: center;
+  position: relative;
+}
+
+.brew-customize .temprature-streangth .temprature-streangth-inner {
+  border: 1.25px solid #5b3427;
+  box-sizing: border-box;
+  border-radius: 38px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.brew-customize .temprature-streangth .temprature-streangth-inner::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 1px;
+  background: #5b3427;
+  height: 70%;
+}
+
+.temprature-streangth-inner .streangth-container span.put-in-next,
+.temprature-streangth-inner .temprature-container span.put-in-next {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.temprature-streangth-inner .streangth-container span,
+.temprature-streangth-inner .temprature-container span {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #5b3427;
+}
+
+.temprature-streangth-inner .streangth-container strong,
+.temprature-streangth-inner .temprature-container strong {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 23px;
+  color: #5b3427;
+}
+
+.submit-button-container {
+  padding: 0 0 20px 0;
+  margin-top: 45px;
+}
+
+.submit-button-container .submit-button-inner {
+  text-align: center;
+  border-top: 1px solid #5b3427;
+  padding-top: 20px;
+}
+.submit-button-container .submit-button-inner img.submit-btn {
+  width: 78px;
+  cursor: pointer;
+}
+
+.choose-options {
+  background: #5b3427;
+  padding: 13px 35px;
+}
+
+.choose-options strong {
+  font-size: 15px;
+  line-height: normal;
+  color: #faf5f0;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.choose-options ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.choose-options ul li span {
+  font-size: 15px;
+  line-height: 23px;
+  color: #faf5f0;
+  border: 1.25px solid #faf5f0;
+  box-sizing: border-box;
+  border-radius: 35px;
+  display: block;
+  text-align: center;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.choose-options ul li.active span {
+  font-size: 15px;
+  line-height: 23px;
+  color: #5b3427;
+  background: #faf5f0;
+}
+div.aligned-vertical {
+  display: inline-block;
+}

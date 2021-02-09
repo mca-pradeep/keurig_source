@@ -1,0 +1,10 @@
+li.beverage a {
+  font-family: Mark OT;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #5b3427;
+  cursor: pointer;
+}

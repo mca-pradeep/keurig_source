@@ -1,0 +1,31 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1" fill="white">
+<rect x="96" y="59" width="108.42" height="152.403" rx="3.28545"/>
+</mask>
+<rect x="96" y="59" width="108.42" height="152.403" rx="3.28545" stroke="#5B3427" stroke-width="9.85636" mask="url(#path-1-inside-1)"/>
+<mask id="path-2-inside-2" fill="white">
+<rect x="168.28" y="68.8325" width="26.2836" height="26.2199" rx="3.28545"/>
+</mask>
+<rect x="168.28" y="68.8325" width="26.2836" height="26.2199" rx="3.28545" stroke="#5B3427" stroke-width="9.85636" mask="url(#path-2-inside-2)"/>
+<mask id="path-3-inside-3" fill="white">
+<rect x="107.499" y="68.8325" width="26.2836" height="26.2199" rx="3.28545"/>
+</mask>
+<rect x="107.499" y="68.8325" width="26.2836" height="26.2199" rx="3.28545" stroke="#5B3427" stroke-width="9.85636" mask="url(#path-3-inside-3)"/>
+<mask id="path-4-inside-4" fill="white">
+<rect x="138.711" y="68.8325" width="26.2836" height="26.2199" rx="3.28545"/>
+</mask>
+<rect x="138.711" y="68.8325" width="26.2836" height="26.2199" rx="3.28545" stroke="#5B3427" stroke-width="9.85636" mask="url(#path-4-inside-4)"/>
+<mask id="path-5-inside-5" fill="white">
+<rect x="168.28" y="99.9687" width="26.2836" height="26.2199" rx="3.28545"/>
+</mask>
+<rect x="168.28" y="99.9687" width="26.2836" height="26.2199" rx="3.28545" stroke="#5B3427" stroke-width="9.85636" mask="url(#path-5-inside-5)"/>
+<mask id="path-6-inside-6" fill="white">
+<rect x="107.499" y="99.9687" width="26.2836" height="26.2199" rx="3.28545"/>
+</mask>
+<rect x="107.499" y="99.9687" width="26.2836" height="26.2199" rx="3.28545" stroke="#5B3427" stroke-width="9.85636" mask="url(#path-6-inside-6)"/>
+<mask id="path-7-inside-7" fill="white">
+<rect x="138.711" y="99.9687" width="26.2836" height="26.2199" rx="3.28545"/>
+</mask>
+<rect x="138.711" y="99.9687" width="26.2836" height="26.2199" rx="3.28545" stroke="#5B3427" stroke-width="9.85636" mask="url(#path-7-inside-7)"/>
+<rect x="99.2854" y="129.466" width="101.849" height="78.6598" fill="#5B3427"/>
+</svg>

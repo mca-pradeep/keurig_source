@@ -1,0 +1,32 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="300" fill="#F8E71C"/>
+<mask id="path-1-inside-1" fill="white">
+<rect x="92" y="59" width="109.415" height="154.396" rx="3.3156"/>
+</mask>
+<rect x="92" y="59" width="109.415" height="154.396" rx="3.3156" stroke="white" stroke-width="9.94679" mask="url(#path-1-inside-1)"/>
+<mask id="path-2-inside-2" fill="white">
+<rect x="164.943" y="68.961" width="26.5248" height="26.5627" rx="3.3156"/>
+</mask>
+<rect x="164.943" y="68.961" width="26.5248" height="26.5627" rx="3.3156" stroke="white" stroke-width="9.94679" mask="url(#path-2-inside-2)"/>
+<mask id="path-3-inside-3" fill="white">
+<rect x="103.604" y="68.961" width="26.5248" height="26.5627" rx="3.3156"/>
+</mask>
+<rect x="103.604" y="68.961" width="26.5248" height="26.5627" rx="3.3156" stroke="white" stroke-width="9.94679" mask="url(#path-3-inside-3)"/>
+<mask id="path-4-inside-4" fill="white">
+<rect x="135.103" y="68.961" width="26.5248" height="26.5627" rx="3.3156"/>
+</mask>
+<rect x="135.103" y="68.961" width="26.5248" height="26.5627" rx="3.3156" stroke="white" stroke-width="9.94679" mask="url(#path-4-inside-4)"/>
+<mask id="path-5-inside-5" fill="white">
+<rect x="164.943" y="100.504" width="26.5248" height="26.5627" rx="3.3156"/>
+</mask>
+<rect x="164.943" y="100.504" width="26.5248" height="26.5627" rx="3.3156" stroke="white" stroke-width="9.94679" mask="url(#path-5-inside-5)"/>
+<mask id="path-6-inside-6" fill="white">
+<rect x="103.604" y="100.504" width="26.5248" height="26.5627" rx="3.3156"/>
+</mask>
+<rect x="103.604" y="100.504" width="26.5248" height="26.5627" rx="3.3156" stroke="white" stroke-width="9.94679" mask="url(#path-6-inside-6)"/>
+<mask id="path-7-inside-7" fill="white">
+<rect x="135.103" y="100.504" width="26.5248" height="26.5627" rx="3.3156"/>
+</mask>
+<rect x="135.103" y="100.504" width="26.5248" height="26.5627" rx="3.3156" stroke="white" stroke-width="9.94679" mask="url(#path-7-inside-7)"/>
+<rect x="95.3154" y="130.387" width="102.783" height="79.688" fill="white"/>
+</svg>
