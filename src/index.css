@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 @font-face {
   font-family: "MarkOT";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOT.eot");
@@ -14,15 +15,17 @@
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
 }
+
 a,
 a.tooltip,
-a.tooltip:hover > span,
+a.tooltip:hover>span,
 button:focus,
 del.video-inner-tiltle,
 input:focus,
 textarea:focus {
   text-decoration: none;
 }
+
 *,
 .grid-list-row,
 .grid-list-row li,
@@ -31,6 +34,7 @@ textarea:focus {
 .search-row-box {
   box-sizing: border-box;
 }
+
 a,
 abbr,
 acronym,
@@ -116,6 +120,7 @@ video {
   padding: 0;
   border: 0;
 }
+
 button,
 img,
 input,
@@ -123,30 +128,37 @@ textarea {
   border: none;
   outline: 0;
 }
+
 .clear {
   clear: both;
   font-size: 0;
   height: 0;
   line-height: 0;
 }
+
 img {
   max-width: 100%;
   -moz-user-select: none;
   -webkit-user-select: none;
 }
+
 a {
   display: inline-block;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 html {
   box-sizing: border-box;
 }
+
 * {
   box-sizing: border-box;
 }
+
 button,
 input,
 select,
@@ -155,12 +167,17 @@ textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
 }
+
 button:focus,
 input:focus,
 select:focus,
 textarea:focus {
   border: none;
   outline: 0;
+}
+
+button {
+  background: transparent;
 }
 
 body,
