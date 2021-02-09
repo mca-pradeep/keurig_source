@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import * as QueryString from "query-string";
+//import * as QueryString from "query-string";
 import Beverage from "./UI/beverage";
 import beverages_list from "../config/temp_beverages";
 import "../assets/css/beverages.css";
