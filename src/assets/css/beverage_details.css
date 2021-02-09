@@ -1,6 +1,7 @@
 .beverage-details.with-padding {
   padding-bottom: 0;
 }
+
 .with-padding {
   padding: 40px 35px;
 }
@@ -54,6 +55,7 @@
 
 .beverage-sizes ul li .size-wrapper .size-name {
   font-size: 22px;
+  font-weight: 700;
   line-height: 15px;
   text-align: center;
   letter-spacing: 0.366667px;
@@ -62,6 +64,7 @@
 
 .beverage-sizes ul li .size-wrapper .size-unit {
   font-size: 12px;
+  font-weight: 700;
   line-height: normal;
   text-align: center;
   letter-spacing: 0.2px;
@@ -147,7 +150,7 @@
 .temprature-streangth-inner .streangth-container span,
 .temprature-streangth-inner .temprature-container span {
   font-style: italic;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: #5b3427;
@@ -156,9 +159,9 @@
 .temprature-streangth-inner .streangth-container strong,
 .temprature-streangth-inner .temprature-container strong {
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 15px;
-  line-height: 23px;
+  line-height: normal;
   color: #5b3427;
 }
 
@@ -172,6 +175,7 @@
   border-top: 1px solid #5b3427;
   padding-top: 20px;
 }
+
 .submit-button-container .submit-button-inner img.submit-btn {
   width: 78px;
   cursor: pointer;
@@ -184,6 +188,7 @@
 
 .choose-options strong {
   font-size: 15px;
+  font-weight: 700;
   line-height: normal;
   color: #faf5f0;
   margin-bottom: 10px;
@@ -197,7 +202,8 @@
 }
 
 .choose-options ul li span {
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 23px;
   color: #faf5f0;
   border: 1.25px solid #faf5f0;
@@ -205,16 +211,15 @@
   border-radius: 35px;
   display: block;
   text-align: center;
-  padding: 6px 0;
+  padding: 6px 12px;
   cursor: pointer;
 }
 
 .choose-options ul li.active span {
-  font-size: 15px;
-  line-height: 23px;
   color: #5b3427;
   background: #faf5f0;
 }
+
 div.aligned-vertical {
   display: inline-block;
 }

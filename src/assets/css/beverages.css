@@ -1,11 +1,28 @@
 .beverages-wrapper {
-  padding: 40px 0;
+  padding: 40px 35px;
 }
 
 .beverages-wrapper ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
-  padding: 0 35px;
   text-align: center;
+}
+
+.beverages-wrapper ul li {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #5B3427;
+}
+
+.beverages-wrapper ul li h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  max-width: 120px;
+  margin: 0 auto;
 }

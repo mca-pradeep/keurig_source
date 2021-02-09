@@ -14,6 +14,7 @@
   margin: 0 auto;
   width: 92px;
 }
+
 .logo-wrapper {
   position: absolute;
   top: 0;
@@ -23,12 +24,14 @@
   margin: auto;
   text-align: center;
 }
+
 .logo-inner {
   display: flex;
   align-items: center;
   vertical-align: middle;
   height: 100%;
 }
+
 .logo-inner a {
   display: block;
   margin: 0 auto;
@@ -73,7 +76,8 @@
 .h-detail .logo-left h1 {
   font-size: 24px;
   line-height: 28px;
+  font-weight: 400;
   color: #5b3427;
-  max-width: 160px;
+  max-width: 165px;
   text-align: left;
 }
