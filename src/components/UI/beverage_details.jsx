@@ -6,7 +6,7 @@ import TempratureOptions from "./temprature_options";
 import StrengthOptions from "./strength_options";
 import * as general_codes from "../../language/codes/general/general";
 import "../../assets/css/beverage_details.css";
-import * as constatnt from "../../config/constants";
+import * as constant from "../../config/constants";
 // import beverages_list from "../../config/temp_beverages";
 import size_list from "../../config/sizes";
 
@@ -14,6 +14,7 @@ class BeverageDetails extends Component {
   state = {
     general_messages: null,
     beverages_messages: null,
+    is_submit: false,
     user_selected_size: "8",
     user_selected_strength: "Regular",
     user_selected_temprature: "Normal",
@@ -144,10 +145,17 @@ class BeverageDetails extends Component {
           ) : null}
           <section className="submit-button-container">
             <div className="submit-button-inner">
-              <button>
+              <button
+                onClick={(e) => {
+                  this.setState({ is_submit: true });
+                }}>
                 <img
                   className="submit-btn"
-                  src={`${window.location.origin}${constatnt.assets_images.SUBMIT_BUTTON_DEFAULT}`}
+                  src={`${window.location.origin}${
+                    !this.state.is_submit
+                      ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
+                      : constant.assets_images.SUBMIT_BUTTON_SELECTED
+                  }`}
                   alt=""
                 />
               </button>

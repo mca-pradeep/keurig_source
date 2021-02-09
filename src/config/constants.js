@@ -1,7 +1,7 @@
 export const assets_images = {
-  POD_BIN_FULL_IMAGE_001: "/imgs/errors/pod_bin_full_img_001.jpg",
-  POD_BIN_REMOVED_IMAGE_001: "/imgs/errors/pod_bin_removed_img_001.jpg",
-  HEADER_BACKGROUND: "/imgs/head_bg.svg",
+  // POD_BIN_FULL_IMAGE_001: "/imgs/errors/pod_bin_full_img_001.jpg",
+  // POD_BIN_REMOVED_IMAGE_001: "/imgs/errors/pod_bin_removed_img_001.jpg",
+  // HEADER_BACKGROUND: "/imgs/head_bg.svg",
 
   BEVERAGE_TYPE_001: "/imgs/beverages/Coffee.svg",
   BEVERAGE_TYPE_002: "/imgs/beverages/Capp.svg",
@@ -13,47 +13,47 @@ export const assets_images = {
   BEVERAGE_INFO: "/imgs/beverage-info/Info_button.svg",
   BEVERAGE_INFO_CLOSE: "/imgs/beverage-info/close_btn.svg",
 
-  CUP_DEFAULT_01_04: "/imgs/cups/4oz/icon.svg",
-  CUP_DEFAULT_02_06: "/imgs/cups/6oz/icon.svg",
-  CUP_DEFAULT_03_08: "/imgs/cups/8oz/icon.svg",
-  CUP_DEFAULT_04_10: "/imgs/cups/10oz/icon.svg",
-  CUP_DEFAULT_05_12: "/imgs/cups/12oz/icon.svg",
+  // CUP_DEFAULT_01_04: "/imgs/cups/4oz/icon.svg",
+  // CUP_DEFAULT_02_06: "/imgs/cups/6oz/icon.svg",
+  // CUP_DEFAULT_03_08: "/imgs/cups/8oz/icon.svg",
+  // CUP_DEFAULT_04_10: "/imgs/cups/10oz/icon.svg",
+  // CUP_DEFAULT_05_12: "/imgs/cups/12oz/icon.svg",
 
-  CUP_SELECTED_01_04: "/imgs/cups/4oz/selected.svg",
-  CUP_SELECTED_02_06: "/imgs/cups/6oz/selected.svg",
-  CUP_SELECTED_03_08: "/imgs/cups/8oz/selected.svg",
-  CUP_SELECTED_04_10: "/imgs/cups/10oz/selected.svg",
-  CUP_SELECTED_05_12: "/imgs/cups/12oz/selected.svg",
+  // CUP_SELECTED_01_04: "/imgs/cups/4oz/selected.svg",
+  // CUP_SELECTED_02_06: "/imgs/cups/6oz/selected.svg",
+  // CUP_SELECTED_03_08: "/imgs/cups/8oz/selected.svg",
+  // CUP_SELECTED_04_10: "/imgs/cups/10oz/selected.svg",
+  // CUP_SELECTED_05_12: "/imgs/cups/12oz/selected.svg",
 
   SUBMIT_BUTTON_DEFAULT: "/imgs/buttons/default.svg",
   SUBMIT_BUTTON_SELECTED: "/imgs/buttons/selected.svg",
 
   BACK_BUTTON_00: "/imgs/back/mobile.svg",
-  BACK_BUTTON_01: "/imgs/back/mobile-1.svg",
-  BACK_BUTTON_02: "/imgs/back/mobile-2.svg",
-  BACK_BUTTON_03: "/imgs/back/mobile-3.svg",
-  BACK_BUTTON_04: "/imgs/back/mobile-4.svg",
+  // BACK_BUTTON_01: "/imgs/back/mobile-1.svg",
+  // BACK_BUTTON_02: "/imgs/back/mobile-2.svg",
+  // BACK_BUTTON_03: "/imgs/back/mobile-3.svg",
+  // BACK_BUTTON_04: "/imgs/back/mobile-4.svg",
 
-  BREWING_ANIMATION_CHOCOLATE_DEFAULT:
-    "/imgs/brewing-animation/chocolate/brown.svg",
-  BREWING_ANIMATION_CHOCOLATE_SELECTED:
-    "/imgs/brewing-animation/chocolate/white.svg",
+  // BREWING_ANIMATION_CHOCOLATE_DEFAULT:
+  //   "/imgs/brewing-animation/chocolate/brown.svg",
+  // BREWING_ANIMATION_CHOCOLATE_SELECTED:
+  //   "/imgs/brewing-animation/chocolate/white.svg",
 
-  BREWING_ANIMATION_HOT_WATER_DEFAULT:
-    "/imgs/brewing-animation/hot-water/brown.svg",
-  BREWING_ANIMATION_HOT_WATER_SELECTED:
-    "/imgs/brewing-animation/hot-water/white.svg",
+  // BREWING_ANIMATION_HOT_WATER_DEFAULT:
+  //   "/imgs/brewing-animation/hot-water/brown.svg",
+  // BREWING_ANIMATION_HOT_WATER_SELECTED:
+  //   "/imgs/brewing-animation/hot-water/white.svg",
 
-  BREWING_ANIMATION_MILK_DEFAULT: "/imgs/brewing-animation/milk/brown.svg",
-  BREWING_ANIMATION_MILK_SELECTED: "/imgs/brewing-animation/milk/white.svg",
+  // BREWING_ANIMATION_MILK_DEFAULT: "/imgs/brewing-animation/milk/brown.svg",
+  // BREWING_ANIMATION_MILK_SELECTED: "/imgs/brewing-animation/milk/white.svg",
 
-  BREWING_ANIMATION_VANILLA_DEFAULT:
-    "/imgs/brewing-animation/vanilla/brown.svg",
-  BREWING_ANIMATION_VANILLA_SELECTED:
-    "/imgs/brewing-animation/vanilla/white.svg",
+  // BREWING_ANIMATION_VANILLA_DEFAULT:
+  //   "/imgs/brewing-animation/vanilla/brown.svg",
+  // BREWING_ANIMATION_VANILLA_SELECTED:
+  //   "/imgs/brewing-animation/vanilla/white.svg",
 
-  BREWING_ANIMATION_POD_DEFAULT: "/imgs/brewing-animation/pod/brown.svg",
-  BREWING_ANIMATION_POD_SELECTED: "/imgs/brewing-animation/pod/white.svg",
+  // BREWING_ANIMATION_POD_DEFAULT: "/imgs/brewing-animation/pod/brown.svg",
+  // BREWING_ANIMATION_POD_SELECTED: "/imgs/brewing-animation/pod/white.svg",
 
   POD_000: "/imgs/pods/POD.png",
   POD_001: "/imgs/pods/cafe-bustelo.png",
