@@ -21,14 +21,16 @@ class Header extends Component {
   showInfo(e) {
     e.preventDefault();
     this.setState(
-      (prevState) => ({ show_info: !prevState.show_info }),
+      (prevState) => ({
+        show_info: !prevState.show_info,
+      }) /*,
       () => {
         if (this.state.show_info) {
           document.body.classList.add("hidden-body");
         } else {
           document.body.classList.remove("hidden-body");
         }
-      }
+      }*/
     );
   }
 
@@ -83,7 +85,7 @@ class Header extends Component {
                   src={`${window.location.origin}${assets_images.POD_000}`}
                   alt=""
                 />
-              </div>              
+              </div>
             </div>
           ) : (
             <div className="logo-wrapper">
@@ -113,15 +115,23 @@ class Header extends Component {
                   />
                 </div>
                 <div className="beverage-info">
-                  <a
-                    href="#"
-                    onClick={(e) => this.showInfo(e)}
-                    className="lightbox">
-                    <img
-                      src={`${window.location.origin}${assets_images.BEVERAGE_INFO}`}
-                      alt=""
-                    />
-                  </a>
+                  {!this.state.show_info ? (
+                    <div onClick={(e) => this.showInfo(e)} className="lightbox">
+                      <img
+                        src={`${window.location.origin}${assets_images.BEVERAGE_INFO}`}
+                        alt=""
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="model_close"
+                      onClick={(e) => this.showInfo(e)}>
+                      <img
+                        src={`${window.location.origin}${assets_images.BEVERAGE_INFO_CLOSE}`}
+                        alt="Close"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -133,12 +143,6 @@ class Header extends Component {
             this.state.show_info ? { display: "block" } : { display: "none" }
           }>
           <div className="custom_model_inr">
-            <div className="model_close" onClick={(e) => this.showInfo(e)}>
-              <img
-                src={`${window.location.origin}${assets_images.BEVERAGE_INFO_CLOSE}`}
-                alt="Close"
-              />
-            </div>
             <div className="custom_model_color">
               <p>Freshly brewed coffee from your favorite pod</p>
             </div>

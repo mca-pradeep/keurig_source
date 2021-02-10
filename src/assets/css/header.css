@@ -93,3 +93,6 @@
   max-width: 165px;
   text-align: left;
 }
+.lightbox {
+  cursor: pointer;
+}
