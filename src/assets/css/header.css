@@ -1,6 +1,7 @@
 .h-wrapper {
   height: 160px;
   position: relative;
+  overflow: hidden;
 }
 
 .h-wrapper img.bg-img {
@@ -32,6 +33,17 @@
   height: 100%;
 }
 
+.beverages-img-container {
+  position: absolute;
+  right: 0;
+  bottom: -38px;
+}
+
+.beverage-info {
+  position: relative;
+  z-index: 11;
+}
+
 .logo-inner a {
   display: block;
   margin: 0 auto;
@@ -52,9 +64,9 @@
 
 .h-detail .logo-left .back-btn {
   position: absolute;
-  left: -10px;
+  left: -20px;
   width: 25px;
-  top: 0;
+  top: -20px;
 }
 
 .h-detail .logo-left .back-btn img {

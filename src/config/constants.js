@@ -68,7 +68,7 @@ export const assets_images = {
   POD_010: "/imgs/pods/water.svg",
 
   POD_BG_000: "/imgs/pods/bg/BevSelection.jpg",
-  POD_BG_001: "/imgs/pods/bg/Bev.jpg",
+  POD_BG_001: "/imgs/pods/bg/BevSelection.jpg",
   POD_BG_002: "/imgs/pods/bg/Bev_GMCR.jpg",
   POD_BG_003: "/imgs/pods/bg/Bev_GMCR-1.jpg",
   POD_BG_004: "/imgs/pods/bg/Bev_McCafe.jpg",
