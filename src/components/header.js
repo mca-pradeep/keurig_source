@@ -84,7 +84,7 @@ class Header extends Component {
                   src={`${window.location.origin}${assets_images.POD_000}`}
                   alt=""
                 />
-              </div>
+              </div>              
             </div>
           ) : (
             <div className="logo-wrapper">
@@ -107,7 +107,12 @@ class Header extends Component {
                   </a>
                   <h1>{pod_details}</h1>
                 </div>
-
+                <div className="beverages-img-container">
+                  <img
+                    src={`${window.location.origin}${assets_images.BEVERAGE_TYPE_002}`}
+                    alt=""
+                  />
+                </div>
                 <div className="beverage-info">
                   <a
                     href="#"
