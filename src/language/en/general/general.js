@@ -37,6 +37,9 @@ export const BREWING_OPTIONS = "BREWING OPTIONS";
 export const STRENGTH = "Strength";
 export const TEMPRATURE = "Temprature";
 
+export const CHOOSE_STRENGTH = "Choose Strength";
+export const CHOOSE_TEMPRATURE = "Choose Temprature";
+
 //size options
 export const SIZE_04 = "4";
 export const SIZE_06 = "6";

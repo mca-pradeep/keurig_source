@@ -78,5 +78,93 @@ export const assets_images = {
   POD_BG_008: "/imgs/pods/bg/Bev_McCafe Copy 2-1.jpg",
   POD_BG_009: "/imgs/pods/bg/Bev_McCafe Copy-1.jpg",
   POD_BG_010: "/imgs/pods/bg/BevSelection_enhcd.jpg",
+
+  beverageTypesDefaultImage: "/imgs/pods/POD.png",
+};
+export const beverageTypes = {
+  Coffee: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  IcedCoffee: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  CafeAuLait: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  Latte: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  Cappuccino: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  CafeMocha: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  MochaLatte: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  MochaCappuccino: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  CafeVanilla: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  VanillaLatte: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  VanillaCappuccino: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  Tea: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  IcedTea: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  TeaAuLait: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  TeaLatte: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  VanillaTeaAuLait: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  VanillaTeaLatte: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  HotChocolate: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  CafeStyleBeverage: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  Cider: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
+  CafeEscapes: {
+    listing: "/imgs/pods/POD.png",
+    header: "/imgs/pods/POD.png",
+  },
 };
 export const effective_languages = ["en", "fr", "sp"];

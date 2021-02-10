@@ -4,10 +4,6 @@ import { withRouter } from "react-router-dom";
 import "../../assets/css/beverage.css";
 
 class Beverage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getDetails = (code) => {
     this.props.history.replace(
       `/beverage/${Base64.encode(code)}${this.props.query_string}`

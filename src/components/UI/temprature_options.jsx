@@ -1,23 +1,25 @@
+import * as general_codes from "../../language/codes/general/general";
+import OptionCarousel from "./OptionCarousel";
 const tempratureOptions = (props) => {
   return (
     <div className="choose-options">
-      <strong>Choose Temprature</strong>
-      <ul>
+      <strong>{props.general_messages[general_codes.CHOOSE_TEMPRATURE]}</strong>
+      <OptionCarousel>
         {props.temprature_options.map((temprature) => {
           return (
-            <li
+            <div
               key={temprature}
               onClick={(e) => {
                 props.onTempratureHandler("temprature", temprature);
               }}
               className={
-                temprature == props.user_selected_temprature ? "active" : ""
+                temprature === props.user_selected_temprature ? "active" : ""
               }>
               <span>{temprature}</span>
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </OptionCarousel>
     </div>
   );
 };

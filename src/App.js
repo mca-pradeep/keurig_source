@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Container from "./Container";
 import Spinner from "./components/UI/LoadingIndicator";
 import { assets_images } from "./config/constants";
@@ -6,9 +6,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   let images = [];
 
-  for (const [key, assetImg] of Object.entries(assets_images)) {
-    images.push(`${window.location.origin}${assetImg}`);
-  }
+  images = useMemo(() => {
+    for (const [key, assetImg] of Object.entries(assets_images)) {
+      images.push(`${window.location.origin}${assetImg}`);
+    }
+    return images;
+  });
 
   useEffect(() => {
     cacheImages(images);
@@ -24,7 +27,9 @@ function App() {
       });
     });
     await Promise.all(promises);
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
   };
 
   return (

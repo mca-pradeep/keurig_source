@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+
 import DefaultOptions from "./defaultOptions";
 import SizeListElement from "./size_list_element";
 import TempratureOptions from "./temprature_options";
@@ -96,6 +97,7 @@ class BeverageDetails extends Component {
           temprature_options={this.state.temprature_options}
           user_selected_temprature={this.state.user_selected_temprature}
           onTempratureHandler={this.customizeStrengthTempratureHandler}
+          general_messages={this.state.general_messages}
         />
       );
       contentFlag = false;
@@ -110,6 +112,7 @@ class BeverageDetails extends Component {
           strength_options={this.state.strength_options}
           user_selected_strength={this.state.user_selected_strength}
           onStrengthHandler={this.customizeStrengthTempratureHandler}
+          general_messages={this.state.general_messages}
         />
       );
       contentFlag = false;

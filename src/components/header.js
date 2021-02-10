@@ -24,7 +24,6 @@ class Header extends Component {
       (prevState) => ({ show_info: !prevState.show_info }),
       () => {
         if (this.state.show_info) {
-          console.log("HERE", this.state.show_info);
           document.body.classList.add("hidden-body");
         } else {
           document.body.classList.remove("hidden-body");
@@ -90,21 +89,21 @@ class Header extends Component {
             <div className="logo-wrapper">
               <div className="logo-inner">
                 <div className="logo-left">
-                  <a href="" className="back-btn">
+                  <div className="back-btn">
                     <img
                       className="logo-img"
                       src={`${window.location.origin}${assets_images.BACK_BUTTON_00}`}
                       alt=""
                       onClick={() => this.gotoListing()}
                     />
-                  </a>
-                  <a href="" className="logo-beverage">
+                  </div>
+                  <div className="logo-beverage">
                     <img
                       className="logo-img"
                       src={`${window.location.origin}${assets_images.POD_000}`}
                       alt=""
                     />
-                  </a>
+                  </div>
                   <h1>{pod_details}</h1>
                 </div>
 

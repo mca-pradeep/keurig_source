@@ -196,7 +196,7 @@
 }
 
 .choose-options ul {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
@@ -215,9 +215,15 @@
   cursor: pointer;
 }
 
-.choose-options ul li.active span {
+.choose-options ul li div.active span {
   color: #5b3427;
   background: #faf5f0;
+}
+
+.carousel-item {
+  padding: 2px 6px;
+  width: auto;
+  margin: 0;
 }
 
 div.aligned-vertical {

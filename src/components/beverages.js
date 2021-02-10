@@ -5,10 +5,6 @@ import Beverage from "./UI/beverage";
 import beverages_list from "../config/temp_beverages";
 import "../assets/css/beverages.css";
 class Beverages extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const query_string_obj = this.props.location.search; // QueryString.parse(this.props.location.search);
     return (
