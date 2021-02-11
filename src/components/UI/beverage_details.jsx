@@ -31,7 +31,7 @@ class BeverageDetails extends Component {
   };
   componentDidMount() {
     //do call api for getting available beverages
-    //
+    //console.log("HERE in details", this.state);
     //do language specific things
     let defaultLanguage = localStorage.getItem("default_language");
     if (this.state.sizes == null) {

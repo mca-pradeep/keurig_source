@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Base64 } from "js-base64";
 import { withRouter } from "react-router-dom";
-import { assets_images } from "../config/constants";
+import { beverageTypes, assets_images } from "../config/constants";
 import "../assets/css/header.css";
 
 class Header extends Component {
@@ -15,6 +15,9 @@ class Header extends Component {
   }
 
   gotoListing() {
+    this.setState({
+      show_info: false,
+    });
     this.props.history.push(`/${this.props.location.search}`);
   }
 
@@ -36,6 +39,7 @@ class Header extends Component {
 
   componentDidMount() {
     //do language specific things
+
     let defaultLanguage = localStorage.getItem("default_language");
     if (defaultLanguage == null) {
       defaultLanguage = "en";
@@ -50,14 +54,32 @@ class Header extends Component {
   }
 
   render() {
+    let beverage = null;
+    if (window.location.href.includes("beverage")) {
+      let savedBeverageTypes = localStorage.getItem("bever_list");
+      if (savedBeverageTypes !== null) {
+        savedBeverageTypes = JSON.parse(savedBeverageTypes);
+        let beverages = savedBeverageTypes.capabilities.beverageTypes;
+
+        const beverageArr = beverages.filter(
+          (item) => item.type === Base64.decode(this.props.match.params.code)
+        );
+        if (beverageArr !== null && beverageArr.length)
+          beverage = beverageArr[0];
+      } else {
+        this.gotoListing();
+      }
+    }
+    console.log(beverage);
     const headerClasses = ["h-wrapper"];
     let pod_details = null;
     if (this.props.is_back) {
       headerClasses.push("h-detail");
-      if (this.state.beverages_messages) {
-        pod_details = this.state.beverages_messages[
-          Base64.decode(this.props.match.params.code)
-        ];
+      if (beverage) {
+        // pod_details = this.state.beverages_messages[
+        //   Base64.decode(this.props.match.params.code)
+        // ];
+        pod_details = beverageTypes[beverage.type].name;
       }
     }
 
@@ -109,10 +131,14 @@ class Header extends Component {
                   <h1>{pod_details}</h1>
                 </div>
                 <div className="beverages-img-container">
-                  <img
-                    src={`${window.location.origin}${assets_images.BEVERAGE_TYPE_002}`}
-                    alt=""
-                  />
+                  {beverage ? (
+                    <img
+                      src={`${window.location.origin}${
+                        beverageTypes[beverage.type].header
+                      }`}
+                      alt=""
+                    />
+                  ) : null}
                 </div>
                 <div className="beverage-info">
                   {!this.state.show_info ? (
@@ -144,7 +170,7 @@ class Header extends Component {
           }>
           <div className="custom_model_inr">
             <div className="custom_model_color">
-              <p>Freshly brewed coffee from your favorite pod</p>
+              <p>{beverage ? beverageTypes[beverage.type].desc : null}</p>
             </div>
           </div>
         </div>

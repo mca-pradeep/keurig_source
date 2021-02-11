@@ -17,6 +17,10 @@ function App() {
     cacheImages(images);
   }, [images]);
 
+  const showLoading = (loadingFlag) => {
+    setIsLoading(loadingFlag);
+  };
+
   const cacheImages = async (srcArray) => {
     const promises = await srcArray.map((src) => {
       return new Promise(function (resolve, reject) {
@@ -27,13 +31,15 @@ function App() {
       });
     });
     await Promise.all(promises);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
+    // setTimeout(() => {
+    setIsLoading(false);
+    // }, 2500);
   };
 
   return (
-    <React.Fragment>{isLoading ? <Spinner /> : <Container />}</React.Fragment>
+    <React.Fragment>
+      {isLoading ? <Spinner /> : <Container loader={showLoading} />}
+    </React.Fragment>
   );
 }
 
