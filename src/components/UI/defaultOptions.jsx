@@ -1,4 +1,5 @@
 import * as general_codes from "../../language/codes/general/general";
+import { system_strength, system_temprature } from "../../config/constants";
 const defaultOptions = (props) => {
   return (
     <div className="temprature-streangth">
@@ -8,7 +9,7 @@ const defaultOptions = (props) => {
           onClick={(e) => props.chooseOptionHandler("strength")}>
           <span className="put-in-next">
             <span>{props.general_messages[general_codes.STRENGTH]}</span>
-            <strong>{props.user_selected_strength}</strong>
+            <strong>{system_strength[props.user_selected_strength]}</strong>
           </span>
         </div>
         <div
@@ -16,7 +17,7 @@ const defaultOptions = (props) => {
           onClick={(e) => props.chooseOptionHandler("temprature")}>
           <span className="put-in-next">
             <span>{props.general_messages[general_codes.TEMPRATURE]}</span>
-            <strong>{props.user_selected_temprature}</strong>
+            <strong>{system_temprature[props.user_selected_temprature]}</strong>
           </span>
         </div>
       </div>
