@@ -3,17 +3,17 @@ export const assets_images = {
   // POD_BIN_REMOVED_IMAGE_001: "/imgs/errors/pod_bin_removed_img_001.jpg",
   // HEADER_BACKGROUND: "/imgs/head_bg.svg",
 
-  BEVERAGE_TYPE_001: "/imgs/bev-images/bev-selection/bev_selec_0000_cider.png",
-  BEVERAGE_TYPE_002:
-    "/imgs/bev-images/bev-selection/bev_selec_0001_cafe_escapes.png",
-  BEVERAGE_TYPE_003:
-    "/imgs/bev-images/bev-selection/bev_selec_0002_cafe_style.png",
-  BEVERAGE_TYPE_004:
-    "/imgs/bev-images/bev-selection/bev_selec_0003_hot_choc.png",
-  BEVERAGE_TYPE_005:
-    "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
-  BEVERAGE_TYPE_006:
-    "/imgs/bev-images/bev-selection/bev_selec_0005_tea_milk.png",
+  // BEVERAGE_TYPE_001: "/imgs/bev-images/bev-selection/bev_selec_0000_cider.png",
+  // BEVERAGE_TYPE_002:
+  //   "/imgs/bev-images/bev-selection/bev_selec_0001_cafe_escapes.png",
+  // BEVERAGE_TYPE_003:
+  //   "/imgs/bev-images/bev-selection/bev_selec_0002_cafe_style.png",
+  // BEVERAGE_TYPE_004:
+  //   "/imgs/bev-images/bev-selection/bev_selec_0003_hot_choc.png",
+  // BEVERAGE_TYPE_005:
+  //   "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
+  // BEVERAGE_TYPE_006:
+  //   "/imgs/bev-images/bev-selection/bev_selec_0005_tea_milk.png",
 
   BEVERAGE_INFO: "/imgs/beverage-info/Info_button.svg",
   BEVERAGE_INFO_CLOSE: "/imgs/beverage-info/close_btn.svg",
@@ -62,29 +62,29 @@ export const assets_images = {
 
   POD_000: "/imgs/pods/POD.png",
   POD_001: "/imgs/pods/cafe-bustelo.png",
-  POD_002: "/imgs/pods/coffee-donut-shop.png",
-  POD_003: "/imgs/pods/coffee-dunkin-donut-original-blend.png",
-  POD_004: "/imgs/pods/coffee-green-mountain-breakfast-blend.png",
-  POD_005: "/imgs/pods/coffee-green-mountain-dark-magic-noire.png",
-  POD_006: "/imgs/pods/coffee-green-mountain-dark-roast.png",
-  POD_007: "/imgs/pods/donut-shop-sweet-n-creamy.png",
-  POD_008: "/imgs/pods/tea.svg",
-  POD_009: "/imgs/pods/tea-snapple.png",
-  POD_010: "/imgs/pods/water.svg",
+  // POD_002: "/imgs/pods/coffee-donut-shop.png",
+  // POD_003: "/imgs/pods/coffee-dunkin-donut-original-blend.png",
+  // POD_004: "/imgs/pods/coffee-green-mountain-breakfast-blend.png",
+  // POD_005: "/imgs/pods/coffee-green-mountain-dark-magic-noire.png",
+  // POD_006: "/imgs/pods/coffee-green-mountain-dark-roast.png",
+  // POD_007: "/imgs/pods/donut-shop-sweet-n-creamy.png",
+  // POD_008: "/imgs/pods/tea.svg",
+  // POD_009: "/imgs/pods/tea-snapple.png",
+  // POD_010: "/imgs/pods/water.svg",
 
   POD_BG_000: "/imgs/pods/bg/BevSelection.jpg",
   POD_BG_001: "/imgs/pods/bg/BevSelection.jpg",
-  POD_BG_002: "/imgs/pods/bg/Bev_GMCR.jpg",
-  POD_BG_003: "/imgs/pods/bg/Bev_GMCR-1.jpg",
-  POD_BG_004: "/imgs/pods/bg/Bev_McCafe.jpg",
-  POD_BG_005: "/imgs/pods/bg/Bev_McCafe-1.jpg",
-  POD_BG_006: "/imgs/pods/bg/Bev_McCafe Copy.jpg",
-  POD_BG_007: "/imgs/pods/bg/Bev_McCafe Copy 2.jpg",
-  POD_BG_008: "/imgs/pods/bg/Bev_McCafe Copy 2-1.jpg",
-  POD_BG_009: "/imgs/pods/bg/Bev_McCafe Copy-1.jpg",
-  POD_BG_010: "/imgs/pods/bg/BevSelection_enhcd.jpg",
+  // POD_BG_002: "/imgs/pods/bg/Bev_GMCR.jpg",
+  // POD_BG_003: "/imgs/pods/bg/Bev_GMCR-1.jpg",
+  // POD_BG_004: "/imgs/pods/bg/Bev_McCafe.jpg",
+  // POD_BG_005: "/imgs/pods/bg/Bev_McCafe-1.jpg",
+  // POD_BG_006: "/imgs/pods/bg/Bev_McCafe Copy.jpg",
+  // POD_BG_007: "/imgs/pods/bg/Bev_McCafe Copy 2.jpg",
+  // POD_BG_008: "/imgs/pods/bg/Bev_McCafe Copy 2-1.jpg",
+  // POD_BG_009: "/imgs/pods/bg/Bev_McCafe Copy-1.jpg",
+  // POD_BG_010: "/imgs/pods/bg/BevSelection_enhcd.jpg",
 
-  beverageTypesDefaultImage: "/imgs/pods/POD.png",
+  // beverageTypesDefaultImage: "/imgs/pods/POD.png",
 };
 export const beverageTypes = {
   Coffee: {
