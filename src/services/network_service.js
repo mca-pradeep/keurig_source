@@ -1,10 +1,11 @@
 class NetworkService {
-  constructor(url, type, option, parameter) {
+  constructor(url, type, parameter) {
     this.url = url;
     this.method = type;
-    if (parameter == undefined) parameter = null;
+    if (parameter === undefined) parameter = null;
     this.reqObject = parameter;
   }
+
   fetchOptions(reqMethod, multipart) {
     let optionObj = {
       method: null,
@@ -12,16 +13,18 @@ class NetworkService {
       cache: "no-cache",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+        //Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
       },
       body: null,
     };
     optionObj.method = reqMethod;
-    if (multipart !== undefined) {
-      optionObj.headers["Content-Type"] = "multipart/form-data";
-      optionObj.body = this.reqObject;
-    } else {
-      optionObj.body = JSON.stringify(this.reqObject);
+    if (optionObj.method !== "GET") {
+      if (multipart !== undefined) {
+        optionObj.headers["Content-Type"] = "multipart/form-data";
+        optionObj.body = this.reqObject;
+      } else {
+        optionObj.body = JSON.stringify(this.reqObject);
+      }
     }
     return optionObj;
   }

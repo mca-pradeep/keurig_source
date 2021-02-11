@@ -20,8 +20,8 @@ class BeverageDetails extends Component {
     user_selected_strength: "Regular",
     user_selected_temprature: "Normal",
     customize_option: null,
-    strength_options: ["Regular", "Strong", "ExtraStrong"],
-    temprature_options: ["Iced", "Normal", "Hotter", "ExtraHot"],
+    strength_options: ["Regular", "Strong", "Extra Strong"],
+    temprature_options: ["Iced", "Normal", "Hotter", "Extra Hot"],
   };
 
   showSize = (content) => {
@@ -31,7 +31,7 @@ class BeverageDetails extends Component {
   };
   componentDidMount() {
     //do call api for getting available beverages
-    //
+    //console.log("HERE in details", this.state);
     //do language specific things
     let defaultLanguage = localStorage.getItem("default_language");
     if (this.state.sizes == null) {

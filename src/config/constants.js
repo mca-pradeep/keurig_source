@@ -3,12 +3,17 @@ export const assets_images = {
   // POD_BIN_REMOVED_IMAGE_001: "/imgs/errors/pod_bin_removed_img_001.jpg",
   // HEADER_BACKGROUND: "/imgs/head_bg.svg",
 
-  BEVERAGE_TYPE_001: "/imgs/beverages/Coffee.svg",
-  BEVERAGE_TYPE_002: "/imgs/beverages/Capp.svg",
-  BEVERAGE_TYPE_003: "/imgs/beverages/Capp_Mocha.svg",
-  BEVERAGE_TYPE_004: "/imgs/beverages/Capp_Vanilla.svg",
-  BEVERAGE_TYPE_005: "/imgs/beverages/Coffee_ChocMilk.svg",
-  BEVERAGE_TYPE_006: "/imgs/beverages/Coffee_OverIce.svg",
+  BEVERAGE_TYPE_001: "/imgs/bev-images/bev-selection/bev_selec_0000_cider.png",
+  BEVERAGE_TYPE_002:
+    "/imgs/bev-images/bev-selection/bev_selec_0001_cafe_escapes.png",
+  BEVERAGE_TYPE_003:
+    "/imgs/bev-images/bev-selection/bev_selec_0002_cafe_style.png",
+  BEVERAGE_TYPE_004:
+    "/imgs/bev-images/bev-selection/bev_selec_0003_hot_choc.png",
+  BEVERAGE_TYPE_005:
+    "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
+  BEVERAGE_TYPE_006:
+    "/imgs/bev-images/bev-selection/bev_selec_0005_tea_milk.png",
 
   BEVERAGE_INFO: "/imgs/beverage-info/Info_button.svg",
   BEVERAGE_INFO_CLOSE: "/imgs/beverage-info/close_btn.svg",
@@ -83,88 +88,162 @@ export const assets_images = {
 };
 export const beverageTypes = {
   Coffee: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Coffee",
+    desc: "Freshly brewed coffee with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0020_coffee.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0022_coffee.png",
   },
   IcedCoffee: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Iced Coffee",
+    desc:
+      "Fill a cup (do not use glass) with ice and brew a refreshing iced coffee with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0019_coffee_BOI.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0021_coffee_BOI.png",
   },
   CafeAuLait: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Café Au Lait",
+    desc: "Fresh coffee brewed with your favorite pod and a splash of milk",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0018_coffee_milk.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0020_coffee_milk.png",
   },
   Latte: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Latte",
+    desc:
+      "Rich, creamy coffee brewed with your favorite pod and blended with warmed milk.",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0015_latte.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0017_latte.png",
   },
   Cappuccino: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Cappuccino",
+    desc:
+      "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed milk.",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0012_capp.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0014_capp.png",
   },
   CafeMocha: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Café Mocha",
+    desc:
+      "Freshly brewed coffee from your favorite pod, made with the rich taste of chocolate milk",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0017_coffee_mocha.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0019_coffee_mocha.png",
   },
   MochaLatte: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Mocha Latte",
+    desc:
+      "Rich, creamy coffee brewed with your favorite pod and blended with warmed chocolate milk.",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0014_latte_mocha.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0016_latte_mocha.png",
   },
   MochaCappuccino: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Mocha Cappuccino",
+    desc:
+      "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed chocolate milk.",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0011_capp_mocha.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0013_capp_mocha.png",
   },
   CafeVanilla: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Café Vanilla",
+    desc:
+      "Freshly brewed coffee from your favorite pod, made with the vibrant taste of vanilla milk",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0016_coffee_vanilla.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0018_coffee_vanilla.png",
   },
   VanillaLatte: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: '"Vanilla Latte"',
+    desc:
+      "Rich, creamy coffee brewed with your favorite pod and blended with warmed vanilla milk.",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0013_latte_vanilla.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0015_latte_vanilla.png",
   },
   VanillaCappuccino: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Vanilla Cappuccino",
+    desc:
+      "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed vanilla milk.",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0010_capp_vanilla.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0012_capp_vanilla.png",
   },
   Tea: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Tea",
+    desc: "Freshly brewed tea with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0009_tea.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0011_tea.png",
   },
   IcedTea: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Iced Tea",
+    desc:
+      "Fill a cup (do not use glass) with ice and brew a refreshing iced tea with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0008_tea_BOI.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0010_tea_BOI.png",
   },
   TeaAuLait: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Tea Au Lait",
+    desc:
+      "Freshly brewed tea from your favorite pod and a splash of warmed milk",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0007_tea_latte.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0007_tea_milk.png",
   },
   TeaLatte: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Tea Latte",
+    desc:
+      "Rich, creamy tea brewed with your favorite pod and blended with warmed milk.",
+    listing:
+      "/imgs/bev-images/bev-selection/bev_selec_0006_tea_latte_vanilla.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0009_tea_latte.png",
   },
   VanillaTeaAuLait: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Vanilla Tea Au Lait",
+    desc:
+      "Freshly brewed tea from your favorite pod and a splash of warmed vanilla milk",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0005_tea_milk.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0015_latte_vanilla.png",
   },
   VanillaTeaLatte: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Vanilla Tea Latte",
+    desc:
+      "Rich, creamy tea brewed with your favorite pod and blended with warmed vanilla milk",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
+    header:
+      "/imgs/bev-images/brew-screen/header_bev_0008_tea_latte_vanilla.png",
   },
   HotChocolate: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Hot Chocolate",
+    desc: "Ready-to-go hot chocolate brewed with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0003_hot_choc.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0005_hot_choc.png",
   },
   CafeStyleBeverage: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Café Style Beverage",
+    desc: "Freshly brewed, creamy café-style beverage with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0002_cafe_style.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0004_cafe_style.png",
   },
   Cider: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Cider",
+    desc: "Ready-to-go hot cider brewed with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0000_cider.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0002_cider.png",
   },
   CafeEscapes: {
-    listing: "/imgs/pods/POD.png",
-    header: "/imgs/pods/POD.png",
+    name: "Café Escapes",
+    desc: "Freshly brewed, creamy café-style beverage with your favorite pod",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0001_cafe_escapes.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0003_cafe_escapes.png",
   },
 };
+export const strength = {
+  Regular: "Regular",
+  Strong: "Strong",
+  ExtraStrong: "Extra Strong",
+};
+export const temprature = {
+  Iced: "Iced",
+  Hot: "Hot",
+  Hotter: "Hotter",
+  ExtraHot: "Extra Hot",
+};
 export const effective_languages = ["en", "fr", "sp"];
+
+export const PATHS = {
+  BASE_PATH: "https://bf-keurig-touchless-api.azurewebsites.net/v1/",
+  RESERVE: "reserve",
+};

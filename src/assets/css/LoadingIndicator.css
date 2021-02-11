@@ -3,10 +3,9 @@ body {
   vertical-align: middle;
 }
 .lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 54px;
-  height: 54px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
 }
 .lds-ring div {
   box-sizing: border-box;

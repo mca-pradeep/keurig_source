@@ -1,236 +1,195 @@
 {
-    "reservationEndsAt": "2021-02-09T17:55:35Z",
-    "capabilities": {
-        "brewerSecurityCode": "ABCDEFABCDEF",
-        "pod": {
-            "podId": "BBBB-VVVV-LLL",
-            "podImage": "",
-            "customBackground": false,
-            "customBackgroundImage": ""
-        },
-        "brewerId": "mNN-XXXXXXXXXXXXXXXXXXXXXXXX",
-        "beverageTypes": [
-            {
-                "type": "Tea",
-                "recommendedSize": 10,
-                "availableTemperatures": [
-                    "Iced",
-                    "Normal",
-                    "Hotter",
-                    "ExtraHot"
-                ],
-                "availableStrengths": [
-                    "Regular",
-                    "Strong",
-                    "ExtraStrong"
-                ],
-                "sizes": [
-                    {
-                        "size": 6,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 8,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 10,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 12,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "TeaAuLait",
-                "recommendedSize": 10,
-                "availableTemperatures": [
-                    "Normal",
-                    "Hotter",
-                    "ExtraHot"
-                ],
-                "availableStrengths": [
-                    "Regular",
-                    "Strong",
-                    "ExtraStrong"
-                ],
-                "sizes": [
-                    {
-                        "size": 6,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 8,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 10,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 12,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "TeaLatte",
-                "recommendedSize": 10,
-                "availableTemperatures": [
-                    "Normal",
-                    "Hotter",
-                    "ExtraHot"
-                ],
-                "availableStrengths": [
-                    "Regular",
-                    "Strong",
-                    "ExtraStrong"
-                ],
-                "sizes": [
-                    {
-                        "size": 6,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 8,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 10,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 12,
-                        "recommendedBrew": {
-                            "strength": "Regular",
-                            "temperature": "Normal"
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "VanillaTeaAuLait",
-                "recommendedSize": 10,
-                "availableTemperatures": [
-                    "Normal",
-                    "Hotter",
-                    "ExtraHot"
-                ],
-                "availableStrengths": [
-                    "Regular",
-                    "Strong",
-                    "ExtraStrong"
-                ],
-                "sizes": [
-                    {
-                        "size": 6,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 8,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 10,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 12,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "VanillaTeaLatte",
-                "recommendedSize": 10,
-                "availableTemperatures": [
-                    "Normal",
-                    "Hotter",
-                    "ExtraHot"
-                ],
-                "availableStrengths": [
-                    "Regular",
-                    "Strong",
-                    "ExtraStrong"
-                ],
-                "sizes": [
-                    {
-                        "size": 6,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 8,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 10,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    },
-                    {
-                        "size": 12,
-                        "recommendedBrew": {
-                            "strength": "Strong",
-                            "temperature": "Normal"
-                        }
-                    }
-                ]
+  "reservationEndsAt": "2021-02-09T17:55:35Z",
+  "capabilities": {
+    "brewerSecurityCode": "ABCDEFABCDEF",
+    "pod": {
+      "podId": "BBBB-VVVV-LLL",
+      "podImage": "",
+      "customBackground": false,
+      "customBackgroundImage": ""
+    },
+    "brewerId": "mNN-XXXXXXXXXXXXXXXXXXXXXXXX",
+    "beverageTypes": [
+      {
+        "type": "Tea",
+        "recommendedSize": 10,
+        "availableTemperatures": ["Iced", "Normal", "Hotter", "ExtraHot"],
+        "availableStrengths": ["Regular", "Strong", "ExtraStrong"],
+        "sizes": [
+          {
+            "size": 6,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
             }
+          },
+          {
+            "size": 8,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 10,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 12,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
+            }
+          }
         ]
-    }
+      },
+      {
+        "type": "TeaAuLait",
+        "recommendedSize": 10,
+        "availableTemperatures": ["Normal", "Hotter", "ExtraHot"],
+        "availableStrengths": ["Regular", "Strong", "ExtraStrong"],
+        "sizes": [
+          {
+            "size": 6,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 8,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 10,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 12,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          }
+        ]
+      },
+      {
+        "type": "TeaLatte",
+        "recommendedSize": 10,
+        "availableTemperatures": ["Normal", "Hotter", "ExtraHot"],
+        "availableStrengths": ["Regular", "Strong", "ExtraStrong"],
+        "sizes": [
+          {
+            "size": 6,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 8,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 10,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 12,
+            "recommendedBrew": {
+              "strength": "Regular",
+              "temperature": "Normal"
+            }
+          }
+        ]
+      },
+      {
+        "type": "VanillaTeaAuLait",
+        "recommendedSize": 10,
+        "availableTemperatures": ["Normal", "Hotter", "ExtraHot"],
+        "availableStrengths": ["Regular", "Strong", "ExtraStrong"],
+        "sizes": [
+          {
+            "size": 6,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 8,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 10,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 12,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          }
+        ]
+      },
+      {
+        "type": "VanillaTeaLatte",
+        "recommendedSize": 10,
+        "availableTemperatures": ["Normal", "Hotter", "ExtraHot"],
+        "availableStrengths": ["Regular", "Strong", "ExtraStrong"],
+        "sizes": [
+          {
+            "size": 6,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 8,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 10,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          },
+          {
+            "size": 12,
+            "recommendedBrew": {
+              "strength": "Strong",
+              "temperature": "Normal"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
