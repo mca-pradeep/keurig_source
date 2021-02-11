@@ -1,4 +1,5 @@
 import * as general_codes from "../../language/codes/general/general";
+import { system_temprature } from "../../config/constants";
 import OptionCarousel from "./OptionCarousel";
 const tempratureOptions = (props) => {
   return (
@@ -15,7 +16,7 @@ const tempratureOptions = (props) => {
               className={
                 temprature === props.user_selected_temprature ? "active" : ""
               }>
-              <span>{temprature}</span>
+              <span>{system_temprature[temprature]}</span>
             </div>
           );
         })}

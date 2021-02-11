@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-
+import { Base64 } from "js-base64";
 import DefaultOptions from "./defaultOptions";
 import SizeListElement from "./size_list_element";
 import TempratureOptions from "./temprature_options";
@@ -9,19 +9,20 @@ import * as general_codes from "../../language/codes/general/general";
 import "../../assets/css/beverage_details.css";
 import * as constant from "../../config/constants";
 // import beverages_list from "../../config/temp_beverages";
-import size_list from "../../config/sizes";
+//import size_list from "../../config/sizes";
 
 class BeverageDetails extends Component {
   state = {
     general_messages: null,
     beverages_messages: null,
     is_submit: false,
-    user_selected_size: "8",
-    user_selected_strength: "Regular",
-    user_selected_temprature: "Normal",
+    user_selected_size: null,
+    user_selected_strength: null,
+    user_selected_temprature: null,
     customize_option: null,
-    strength_options: ["Regular", "Strong", "Extra Strong"],
-    temprature_options: ["Iced", "Normal", "Hotter", "Extra Hot"],
+    size_list: null,
+    strength_options: null,
+    temprature_options: null,
   };
 
   showSize = (content) => {
@@ -32,9 +33,39 @@ class BeverageDetails extends Component {
   componentDidMount() {
     //do call api for getting available beverages
     //console.log("HERE in details", this.state);
+    let savedBeverageTypes = localStorage.getItem("bever_list");
+    if (savedBeverageTypes !== null && this.state.user_selected_size === null) {
+      savedBeverageTypes = JSON.parse(savedBeverageTypes);
+      let beverages = savedBeverageTypes.capabilities.beverageTypes;
+      const beverageArr = beverages.filter(
+        (item) => item.type === Base64.decode(this.props.match.params.code)
+      );
+      if (beverageArr !== null && beverageArr.length) {
+        const beverage = beverageArr[0];
+        const selectedSize = beverage.sizes.filter(
+          (size) => size.size === beverage.recommendedSize
+        );
+
+        this.setState({
+          size_list: beverage.sizes,
+          strength_options: beverage.availableStrengths,
+          temprature_options: beverage.availableTemperatures,
+          user_selected_size: beverage.recommendedSize,
+          user_selected_strength:
+            selectedSize && selectedSize[0]
+              ? selectedSize[0].recommendedBrew.strength
+              : null,
+          user_selected_temprature:
+            selectedSize && selectedSize[0]
+              ? selectedSize[0].recommendedBrew.temperature
+              : null,
+        });
+      }
+    }
+
     //do language specific things
     let defaultLanguage = localStorage.getItem("default_language");
-    if (this.state.sizes == null) {
+    if (this.state.size_list == null) {
       this.setState({
         general_messages: require(`../../language/${defaultLanguage}/general/general`),
         beverages_messages: require(`../../language/${defaultLanguage}/beverages/beverages`),
@@ -121,9 +152,9 @@ class BeverageDetails extends Component {
       <React.Fragment>
         <form onSubmit={this.submitHandler}>
           <div className="beverage-details with-padding">
-            {this.size_list !== null ? (
+            {this.state.size_list !== null ? (
               <SizeListElement
-                size_lists={size_list}
+                size_lists={this.state.size_list}
                 general_messages={this.state.general_messages}
                 userSelectedSize={this.state.user_selected_size}
                 customizeSizeHandler={this.customizeSizeHandler}

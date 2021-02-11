@@ -12,21 +12,6 @@ const OptionCarousel = (props) => {
     appendDots: false,
     arrows: false,
   };
-  return (
-    <Carousel
-      {...settings}
-      // rows={1}
-      // slidesPerRow={1}
-      // slidesToShow={3}
-      // className="carousel-container"
-      // centerMode={true}
-      // centerPadding={0}
-      // arrows={false}
-      // arrowsBlock={false}
-      //className="carousel-item"
-    >
-      {props.children}
-    </Carousel>
-  );
+  return <Carousel {...settings}>{props.children}</Carousel>;
 };
 export default OptionCarousel;

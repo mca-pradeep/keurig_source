@@ -1,4 +1,5 @@
 import * as general_codes from "../../language/codes/general/general";
+import { system_strength } from "../../config/constants";
 import OptionCarousel from "./OptionCarousel";
 
 const strengthOptions = (props) => {
@@ -16,7 +17,7 @@ const strengthOptions = (props) => {
               className={
                 strength === props.user_selected_strength ? "active" : ""
               }>
-              <span>{strength}</span>
+              <span>{system_strength[strength]}</span>
             </div>
           );
         })}
