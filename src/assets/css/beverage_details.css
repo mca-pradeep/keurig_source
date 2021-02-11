@@ -3,7 +3,7 @@
 }
 
 .with-padding {
-  padding: 40px 35px;
+  padding: 40px 27px;
 }
 
 .beverage-sizes {
@@ -183,7 +183,7 @@
 
 .choose-options {
   background: #5b3427;
-  padding: 13px 30px;
+  padding: 13px 27px;
 }
 
 .choose-options strong {
@@ -226,7 +226,7 @@
 .carousel-item {
   padding: 2px 6px;
   width: auto !important;
-  min-width: 97px;
+  min-width: 105px;
   max-width: 120px;
   margin: 0;
   -webkit-overflow-scrolling: touch;
