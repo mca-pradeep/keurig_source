@@ -183,7 +183,7 @@
 
 .choose-options {
   background: #5b3427;
-  padding: 13px 35px;
+  padding: 13px 30px;
 }
 
 .choose-options strong {
@@ -193,13 +193,16 @@
   color: #faf5f0;
   margin-bottom: 10px;
   display: block;
+  text-align: left;
 }
 
-.choose-options ul {
-  /* display: grid; */
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+/* .choose-options .react-multi-carousel-track {
+  width: 100%;
 }
+
+.choose-options .carousel-item {
+  width: auto !important;
+} */
 
 .choose-options ul li span {
   font-size: 13px;
@@ -211,7 +214,7 @@
   border-radius: 35px;
   display: block;
   text-align: center;
-  padding: 6px 12px;
+  padding: 6px 7px;
   cursor: pointer;
 }
 
@@ -222,7 +225,9 @@
 
 .carousel-item {
   padding: 2px 6px;
-  width: auto;
+  width: auto !important;
+  min-width: 103px;
+  max-width: 120px;
   margin: 0;
 }
 

@@ -154,11 +154,10 @@ class BeverageDetails extends Component {
                 }}>
                 <img
                   className="submit-btn"
-                  src={`${window.location.origin}${
-                    !this.state.is_submit
-                      ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
-                      : constant.assets_images.SUBMIT_BUTTON_SELECTED
-                  }`}
+                  src={`${window.location.origin}${!this.state.is_submit
+                    ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
+                    : constant.assets_images.SUBMIT_BUTTON_SELECTED
+                    }`}
                   alt=""
                 />
               </button>
