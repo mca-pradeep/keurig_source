@@ -55,6 +55,7 @@ class Header extends Component {
 
   render() {
     let beverage = null;
+    let infoClasses = ["custom_model"];
     if (window.location.href.includes("beverage")) {
       let savedBeverageTypes = localStorage.getItem("bever_list");
       if (savedBeverageTypes !== null) {
@@ -70,7 +71,6 @@ class Header extends Component {
         this.gotoListing();
       }
     }
-    console.log(beverage);
     const headerClasses = ["h-wrapper"];
     let pod_details = null;
     if (this.props.is_back) {
@@ -81,6 +81,10 @@ class Header extends Component {
         // ];
         pod_details = beverageTypes[beverage.type].name;
       }
+    }
+
+    if (this.state.show_info) {
+      infoClasses.push("active");
     }
 
     return (
@@ -163,11 +167,7 @@ class Header extends Component {
             </div>
           )}
         </header>
-        <div
-          className="custom_model"
-          style={
-            this.state.show_info ? { display: "block" } : { display: "none" }
-          }>
+        <div className={infoClasses.join(" ")}>
           <div className="custom_model_inr">
             <div className="custom_model_color">
               <p>{beverage ? beverageTypes[beverage.type].desc : null}</p>

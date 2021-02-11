@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Container from "./Container";
 import Spinner from "./components/UI/LoadingIndicator";
-import { assets_images } from "./config/constants";
+import { beverageTypes, assets_images } from "./config/constants";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   let images = [];
@@ -9,6 +9,10 @@ function App() {
   images = useMemo(() => {
     for (const [key, assetImg] of Object.entries(assets_images)) {
       images.push(`${window.location.origin}${assetImg}`);
+    }
+    for (const [key, assetImg] of Object.entries(beverageTypes)) {
+      images.push(`${window.location.origin}${assetImg.listing}`);
+      images.push(`${window.location.origin}${assetImg.header}`);
     }
     return images;
   });
