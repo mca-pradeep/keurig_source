@@ -229,9 +229,7 @@
   min-width: 97px;
   max-width: 120px;
   margin: 0;
-  transition: all ease 0.5s;
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
+  -webkit-overflow-scrolling: touch;
 }
 
 div.aligned-vertical {
