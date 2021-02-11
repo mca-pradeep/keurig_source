@@ -204,7 +204,7 @@
   width: auto !important;
 } */
 
-.choose-options ul li span {
+.choose-options .carousel-row {
   font-size: 13px;
   font-weight: 700;
   line-height: 23px;
@@ -218,7 +218,7 @@
   cursor: pointer;
 }
 
-.choose-options ul li div.active span {
+.choose-options .carousel-item.active .carousel-row {
   color: #5b3427;
   background: #faf5f0;
 }
@@ -226,7 +226,7 @@
 .carousel-item {
   padding: 2px 6px;
   width: auto !important;
-  min-width: 105px;
+  min-width: 109px;
   max-width: 120px;
   margin: 0;
   -webkit-overflow-scrolling: touch;

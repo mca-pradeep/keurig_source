@@ -8,10 +8,10 @@ const OptionCarousel = (props) => {
       slidesToShow={3}
       className="carousel-container"
       centerMode={true}
-      centerPadding={10}
+      centerPadding={0}
       arrows={false}
       arrowsBlock={false}
-      //className="carousel-item"
+    //className="carousel-item"
     >
       {props.children}
     </Carousel>
