@@ -7,12 +7,19 @@ body.hidden-body {
 }
 
 .custom_model {
-  /* display: none;
-  position: absolute; */
   top: 0;
   width: 100%;
-  height: 73px;
+  height: 0;
+  visibility: hidden;
   z-index: 11;
+  transition: all ease 0.1s;
+  -webkit-transition: all ease 0.1s;
+  -moz-transition: all ease 0.1s;
+}
+
+.custom_model.active {
+  height: 73px;
+  visibility: visible;
   transition: all ease 0.5s;
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
