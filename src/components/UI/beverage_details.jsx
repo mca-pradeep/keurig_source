@@ -20,8 +20,8 @@ class BeverageDetails extends Component {
     user_selected_strength: "Regular",
     user_selected_temprature: "Normal",
     customize_option: null,
-    strength_options: ["Regular", "Strong", "ExtraStrong"],
-    temprature_options: ["Iced", "Normal", "Hotter", "ExtraHot"],
+    strength_options: ["Regular", "Strong", "Extra Strong"],
+    temprature_options: ["Iced", "Normal", "Hotter", "Extra Hot"],
   };
 
   showSize = (content) => {
@@ -154,11 +154,10 @@ class BeverageDetails extends Component {
                 }}>
                 <img
                   className="submit-btn"
-                  src={`${window.location.origin}${
-                    !this.state.is_submit
-                      ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
-                      : constant.assets_images.SUBMIT_BUTTON_SELECTED
-                  }`}
+                  src={`${window.location.origin}${!this.state.is_submit
+                    ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
+                    : constant.assets_images.SUBMIT_BUTTON_SELECTED
+                    }`}
                   alt=""
                 />
               </button>
