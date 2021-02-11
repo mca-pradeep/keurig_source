@@ -35,10 +35,10 @@ export const GREET_MESSAGE_GOOD_EVENING = "Good Evening";
 //choose options
 export const BREWING_OPTIONS = "BREWING OPTIONS";
 export const STRENGTH = "Strength";
-export const TEMPRATURE = "Temprature";
+export const TEMPRATURE = "Temperature";
 
 export const CHOOSE_STRENGTH = "Choose Strength";
-export const CHOOSE_TEMPRATURE = "Choose Temprature";
+export const CHOOSE_TEMPRATURE = "Choose Temperature";
 
 //size options
 export const SIZE_04 = "4";
