@@ -230,6 +230,7 @@ export const beverageTypes = {
     header: "/imgs/bev-images/brew-screen/header_bev_0003_cafe_escapes.png",
   },
 };
+
 export const strength = {
   Regular: "Regular",
   Strong: "Strong",
