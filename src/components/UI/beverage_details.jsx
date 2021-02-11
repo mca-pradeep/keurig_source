@@ -8,13 +8,10 @@ import StrengthOptions from "./strength_options";
 import * as general_codes from "../../language/codes/general/general";
 import "../../assets/css/beverage_details.css";
 import * as constant from "../../config/constants";
-// import beverages_list from "../../config/temp_beverages";
-//import size_list from "../../config/sizes";
 
 class BeverageDetails extends Component {
   state = {
     general_messages: null,
-    beverages_messages: null,
     is_submit: false,
     user_selected_size: null,
     user_selected_strength: null,
@@ -32,35 +29,38 @@ class BeverageDetails extends Component {
   };
   componentDidMount() {
     //do call api for getting available beverages
-    //console.log("HERE in details", this.state);
     let savedBeverageTypes = localStorage.getItem("bever_list");
-    if (savedBeverageTypes !== null && this.state.user_selected_size === null) {
-      savedBeverageTypes = JSON.parse(savedBeverageTypes);
-      let beverages = savedBeverageTypes.capabilities.beverageTypes;
-      const beverageArr = beverages.filter(
-        (item) => item.type === Base64.decode(this.props.match.params.code)
-      );
-      if (beverageArr !== null && beverageArr.length) {
-        const beverage = beverageArr[0];
-        const selectedSize = beverage.sizes.filter(
-          (size) => size.size === beverage.recommendedSize
+    if (savedBeverageTypes !== null) {
+      if (this.state.user_selected_size === null) {
+        savedBeverageTypes = JSON.parse(savedBeverageTypes);
+        let beverages = savedBeverageTypes.capabilities.beverageTypes;
+        const beverageArr = beverages.filter(
+          (item) => item.type === Base64.decode(this.props.match.params.code)
         );
+        if (beverageArr !== null && beverageArr.length) {
+          const beverage = beverageArr[0];
+          const selectedSize = beverage.sizes.filter(
+            (size) => size.size === beverage.recommendedSize
+          );
 
-        this.setState({
-          size_list: beverage.sizes,
-          strength_options: beverage.availableStrengths,
-          temprature_options: beverage.availableTemperatures,
-          user_selected_size: beverage.recommendedSize,
-          user_selected_strength:
-            selectedSize && selectedSize[0]
-              ? selectedSize[0].recommendedBrew.strength
-              : null,
-          user_selected_temprature:
-            selectedSize && selectedSize[0]
-              ? selectedSize[0].recommendedBrew.temperature
-              : null,
-        });
+          this.setState({
+            size_list: beverage.sizes,
+            strength_options: beverage.availableStrengths,
+            temprature_options: beverage.availableTemperatures,
+            user_selected_size: beverage.recommendedSize,
+            user_selected_strength:
+              selectedSize && selectedSize[0]
+                ? selectedSize[0].recommendedBrew.strength
+                : null,
+            user_selected_temprature:
+              selectedSize && selectedSize[0]
+                ? selectedSize[0].recommendedBrew.temperature
+                : null,
+          });
+        }
       }
+    } else {
+      this.props.history.push(`/${this.props.location.search}`);
     }
 
     //do language specific things
@@ -68,13 +68,29 @@ class BeverageDetails extends Component {
     if (this.state.size_list == null) {
       this.setState({
         general_messages: require(`../../language/${defaultLanguage}/general/general`),
-        beverages_messages: require(`../../language/${defaultLanguage}/beverages/beverages`),
       });
     }
   }
 
   customizeSizeHandler = (e, customSize) => {
     e.preventDefault();
+
+    const selectedSize = this.state.size_list.filter(
+      (size) => size.size === this.state.user_selected_size
+    );
+    if (selectedSize && selectedSize.length) {
+      this.setState({
+        user_selected_strength:
+          selectedSize && selectedSize[0]
+            ? selectedSize[0].recommendedBrew.strength
+            : null,
+        user_selected_temprature:
+          selectedSize && selectedSize[0]
+            ? selectedSize[0].recommendedBrew.temperature
+            : null,
+      });
+    }
+
     this.setState({
       user_selected_size: customSize,
     });

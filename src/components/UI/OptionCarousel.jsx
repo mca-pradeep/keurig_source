@@ -11,6 +11,7 @@ const OptionCarousel = (props) => {
     swipeToSlide: true,
     appendDots: false,
     arrows: false,
+    slickGoTo: props.selectedIndex
   };
   return <Carousel {...settings}>{props.children}</Carousel>;
 };

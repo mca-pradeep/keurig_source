@@ -4,9 +4,12 @@ import OptionCarousel from "./OptionCarousel";
 
 const strengthOptions = (props) => {
   return (
-    <div className="choose-options">
+    <div className="choose-options active">
       <strong>{props.general_messages[general_codes.CHOOSE_STRENGTH]}</strong>
-      <OptionCarousel>
+      <OptionCarousel
+        selectedIndex={props.strength_options.findIndex(
+          (item) => item === props.user_selected_strength
+        )}>
         {props.strength_options.map((strength) => {
           return (
             <div

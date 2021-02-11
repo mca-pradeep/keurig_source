@@ -10,7 +10,8 @@ class Header extends Component {
     this.state = {
       show_info: false,
       general_messages: null,
-      beverages_messages: null,
+      podImgOk: false,
+      pod: props.pod,
     };
   }
 
@@ -39,17 +40,25 @@ class Header extends Component {
 
   componentDidMount() {
     //do language specific things
-
+    const podImg = this.state.pod.podImage;
+    new Promise(function (resolve, reject) {
+      const img = new Image();
+      img.src = podImg;
+      img.onload = () => resolve();
+      img.onerror = () => reject();
+    }).then((resp) => {
+      this.setState({
+        podImgOk: true,
+      });
+    });
     let defaultLanguage = localStorage.getItem("default_language");
     if (defaultLanguage == null) {
       defaultLanguage = "en";
       localStorage.setItem("default_language", defaultLanguage);
     }
     const general_messages = require(`../language/${defaultLanguage}/general/general`);
-    const beverages_messages = require(`../language/${defaultLanguage}/beverages/beverages`);
     this.setState({
       general_messages: general_messages,
-      beverages_messages: beverages_messages,
     });
   }
 
@@ -76,9 +85,6 @@ class Header extends Component {
     if (this.props.is_back) {
       headerClasses.push("h-detail");
       if (beverage) {
-        // pod_details = this.state.beverages_messages[
-        //   Base64.decode(this.props.match.params.code)
-        // ];
         pod_details = beverageTypes[beverage.type].name;
       }
     }
@@ -90,27 +96,35 @@ class Header extends Component {
     return (
       <React.Fragment>
         <header className={headerClasses.join(" ")}>
-          {!this.props.is_back ? (
+          {this.props.pod && this.props.pod.customBackground ? (
             <img
               className="bg-img"
-              src={`${window.location.origin}${assets_images.POD_BG_000}`}
+              src={`${this.props.pod.customBackgroundImage}`}
               alt=""
             />
           ) : (
             <img
               className="bg-img"
-              src={`${window.location.origin}${assets_images.POD_BG_001}`}
+              src={`${window.location.origin}${assets_images.POD_BG_000}`}
               alt=""
             />
           )}
           {!this.props.is_back ? (
             <div className="logo-wrapper">
               <div className="logo-inner">
-                <img
-                  className="logo-img"
-                  src={`${window.location.origin}${assets_images.POD_000}`}
-                  alt=""
-                />
+                {this.state.podImgOk && this.props.pod.podImage ? (
+                  <img
+                    className="logo-img"
+                    src={`${this.props.pod.podImage}`}
+                    alt=""
+                  />
+                ) : (
+                  <img
+                    className="logo-img"
+                    src={`${window.location.origin}${assets_images.POD_000}`}
+                    alt=""
+                  />
+                )}
               </div>
             </div>
           ) : (

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withRouter, Route, Switch } from "react-router-dom";
 import Network from "./services/network_service";
 import "./assets/css/App.css";
-import * as beverages_codes from "./language/codes/beverages/beverages";
 import * as general_codes from "./language/codes/general/general";
 import * as QueryString from "query-string";
 import Header from "./components/header";
@@ -19,15 +18,12 @@ if (
   localStorage.setItem("default_language", defaultLanguage);
 }
 const general_messages = require(`./language/${defaultLanguage}/general/general`);
-const beverages_messages = require(`./language/${defaultLanguage}/beverages/beverages`);
 
 class Container extends Component {
   state = {
     language: defaultLanguage,
     general_messages: general_messages,
-    beverages_messages: beverages_messages,
     general_codes: general_codes,
-    beverages_codes: beverages_codes,
     beverages: [],
     brewerSecurityCode: null,
     brewerId: null,
@@ -67,7 +63,6 @@ class Container extends Component {
       }
       this.setState({
         general_messages: require(`./language/${defaultLanguage}/general/general`),
-        beverages_messages: require(`./language/${defaultLanguage}/beverages/beverages`),
       });
     }
   }
@@ -82,35 +77,29 @@ class Container extends Component {
       <React.Fragment>
         <Switch>
           <Route path="/" exact>
-            <Header
-              loader={this.props.loader}
-              pod={this.state.pod}
-              beverage_codes={this.state.beverages_codes}
-              beverage_messages={this.state.beverages_messages}
-              is_back={false}
-              is_footer={false}
-            />
+            {this.state.pod ? (
+              <Header
+                loader={this.props.loader}
+                pod={this.state.pod}
+                is_back={false}
+                is_footer={false}
+              />
+            ) : null}
             <Beverages
               loader={this.props.loader}
-              beverage_codes={this.state.beverages_codes}
               beverages={this.state.beverages}
-              beverage_messages={this.state.beverages_messages}
             />
           </Route>
           <Route path="/beverage/:code" exact>
-            <Header
-              loader={this.props.loader}
-              pod={this.state.pod}
-              beverage_codes={this.state.beverages_codes}
-              beverage_messages={this.state.beverages_messages}
-              is_back={true}
-              is_footer={true}
-            />
-            <BeverageDetails
-              loader={this.props.loader}
-              beverage_codes={this.state.beverages_codes}
-              beverage_messages={this.state.beverages_messages}
-            />
+            {this.state.pod ? (
+              <Header
+                loader={this.props.loader}
+                pod={this.state.pod}
+                is_back={true}
+                is_footer={true}
+              />
+            ) : null}
+            <BeverageDetails loader={this.props.loader} />
           </Route>
         </Switch>
         {footer}

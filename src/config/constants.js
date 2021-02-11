@@ -179,31 +179,31 @@ export const beverageTypes = {
     name: "Tea Au Lait",
     desc:
       "Freshly brewed tea from your favorite pod and a splash of warmed milk",
-    listing: "/imgs/bev-images/bev-selection/bev_selec_0007_tea_latte.png",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0005_tea_milk.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0007_tea_milk.png",
   },
   TeaLatte: {
     name: "Tea Latte",
     desc:
       "Rich, creamy tea brewed with your favorite pod and blended with warmed milk.",
-    listing:
-      "/imgs/bev-images/bev-selection/bev_selec_0006_tea_latte_vanilla.png",
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0007_tea_latte.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0009_tea_latte.png",
   },
   VanillaTeaAuLait: {
     name: "Vanilla Tea Au Lait",
     desc:
       "Freshly brewed tea from your favorite pod and a splash of warmed vanilla milk",
-    listing: "/imgs/bev-images/bev-selection/bev_selec_0005_tea_milk.png",
-    header: "/imgs/bev-images/brew-screen/header_bev_0015_latte_vanilla.png",
+    listing:
+      "/imgs/bev-images/bev-selection/bev_selec_0006_tea_latte_vanilla.png",
+    header:
+      "/imgs/bev-images/brew-screen/header_bev_0008_tea_latte_vanilla.png",
   },
   VanillaTeaLatte: {
     name: "Vanilla Tea Latte",
     desc:
       "Rich, creamy tea brewed with your favorite pod and blended with warmed vanilla milk",
     listing: "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
-    header:
-      "/imgs/bev-images/brew-screen/header_bev_0008_tea_latte_vanilla.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0006_tea_vanilla.png",
   },
   HotChocolate: {
     name: "Hot Chocolate",

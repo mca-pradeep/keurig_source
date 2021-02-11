@@ -3,9 +3,12 @@ import { system_temprature } from "../../config/constants";
 import OptionCarousel from "./OptionCarousel";
 const tempratureOptions = (props) => {
   return (
-    <div className="choose-options">
+    <div className="choose-options active">
       <strong>{props.general_messages[general_codes.CHOOSE_TEMPRATURE]}</strong>
-      <OptionCarousel>
+      <OptionCarousel
+        selectedIndex={props.temprature_options.findIndex(
+          (item) => item === props.user_selected_temprature
+        )}>
         {props.temprature_options.map((temprature) => {
           return (
             <div

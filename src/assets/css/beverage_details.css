@@ -76,6 +76,19 @@
 .beverage-sizes ul li.active .size-unit {
   color: #fff;
 }
+.choose-options {
+  /* transition: 0.25s;
+  transition-timing-function: ease-out;
+  transform: translateY(0);
+  opacity: 1; */
+  height: 0;
+  transition-timing-function: ease-in;
+  transition-delay: 1s;
+  transition: height 2ms;
+}
+.choose-options.active {
+  height: auto;
+}
 
 .brew-customize .customize-title {
   margin-bottom: 45px;
@@ -201,8 +214,6 @@
   text-align: left;
 }
 
-
-
 .choose-options .slick-list .slick-slide span {
   font-size: 13px;
   font-weight: 700;
@@ -237,7 +248,17 @@ div.aligned-vertical {
   display: inline-block;
 }
 
-@media screen and (max-width:350px) {
+.choose-options .slick-list .slick-slide.slick-current span {
+  color: #faf5f0;
+  background: #5b3427;
+}
+
+.choose-options .slick-list .slick-slide .active span {
+  color: #5b3427;
+  background: #faf5f0;
+}
+
+@media screen and (max-width: 350px) {
   .beverage-sizes ul {
     grid-gap: 9px;
   }
