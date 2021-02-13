@@ -35,7 +35,7 @@
 }
 
 .beverage-sizes ul li.active path {
-  fill: #fff;
+  fill: #FAF5F0;
 }
 
 .du_beverage-sizescup_list ul li.active .size-wrapper .size-name {
@@ -43,7 +43,7 @@
 }
 
 .beverage-sizes ul li.active .size-wrapper .size-unit {
-  color: #fff;
+  color: #FAF5F0;
 }
 
 .beverage-sizes ul li .beverage-size {
@@ -74,7 +74,7 @@
 
 .beverage-sizes ul li.active .size-name,
 .beverage-sizes ul li.active .size-unit {
-  color: #fff;
+  color: #FAF5F0;
 }
 
 .choose-options {
@@ -204,14 +204,10 @@
 }
 
 .choose-options strong {
-  padding: 0 27px;
-}
-
-.choose-options strong {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: normal;
-  color: #faf5f0;
+  color: #FAF5F0;
   margin-bottom: 10px;
   display: block;
   text-align: left;
