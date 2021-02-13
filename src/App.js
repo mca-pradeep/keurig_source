@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     cacheImages(images);
-  }, [images]);
+  }, []);
 
   const showLoading = (loadingFlag) => {
     setIsLoading(loadingFlag);

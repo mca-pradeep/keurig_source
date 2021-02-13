@@ -88,6 +88,7 @@
 }
 .choose-options.active {
   height: auto;
+  padding-left: 27px;
 }
 
 .brew-customize .customize-title {

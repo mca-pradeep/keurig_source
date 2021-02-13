@@ -9,7 +9,7 @@ class NetworkService {
   fetchOptions(reqMethod, multipart) {
     let optionObj = {
       method: null,
-      //mode: 'no-cors',
+      //mode: "no-cors",
       cache: "no-cache",
       headers: {
         "Content-Type": "application/json",

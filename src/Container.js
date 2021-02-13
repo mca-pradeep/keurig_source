@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Route, Switch } from "react-router-dom";
+import { Base64 } from "js-base64";
 import Network from "./services/network_service";
 import "./assets/css/App.css";
 import * as general_codes from "./language/codes/general/general";
@@ -40,12 +41,24 @@ class Container extends Component {
       .then((resp) => {
         this.props.loader(false);
         localStorage.setItem("bever_list", JSON.stringify(resp));
-        this.setState({
-          brewerSecurityCode: resp.capabilities.brewerSecurityCode,
-          brewerId: resp.capabilities.brewerId,
-          pod: resp.capabilities.pod,
-          beverages: resp.capabilities.beverageTypes,
-        });
+        this.setState(
+          {
+            brewerSecurityCode: resp.capabilities.brewerSecurityCode,
+            brewerId: resp.capabilities.brewerId,
+            pod: resp.capabilities.pod,
+            beverages: resp.capabilities.beverageTypes,
+          },
+          () => {
+            if (this.state.beverages.length === 1) {
+              const beverage = this.state.beverages[0];
+              this.props.history.push(
+                `/beverage/${Base64.encode(beverage.type)}${
+                  this.props.location.search
+                }`
+              );
+            }
+          }
+        );
       })
       .catch((e) => this.props.loader(false));
     //do language specific things
@@ -99,7 +112,10 @@ class Container extends Component {
                 is_footer={true}
               />
             ) : null}
-            <BeverageDetails loader={this.props.loader} />
+            <BeverageDetails
+              loader={this.props.loader}
+              beverages={this.state.beverages}
+            />
           </Route>
         </Switch>
         {footer}
