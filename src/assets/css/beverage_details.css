@@ -76,6 +76,7 @@
 .beverage-sizes ul li.active .size-unit {
   color: #fff;
 }
+
 .choose-options {
   /* transition: 0.25s;
   transition-timing-function: ease-out;
@@ -86,6 +87,7 @@
   transition-delay: 1s;
   transition: height 2ms;
 }
+
 .choose-options.active {
   height: auto;
 }
@@ -164,7 +166,7 @@
 .temprature-streangth-inner .streangth-container span,
 .temprature-streangth-inner .temprature-container span {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   line-height: 18px;
   color: #5b3427;
@@ -173,7 +175,7 @@
 .temprature-streangth-inner .streangth-container strong,
 .temprature-streangth-inner .temprature-container strong {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 15px;
   line-height: normal;
   color: #5b3427;
