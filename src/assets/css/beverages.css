@@ -2,7 +2,16 @@
   padding: 15px 35px;
 }
 
-.beverages-wrapper.group ul {}
+.beverages-wrapper.group ul {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.beverages-wrapper.group ul li a {
+  display: flex;
+  align-items: center;
+}
+
+.beverages-wrapper.group ul li a .beverage-box {}
 
 .beverages-wrapper ul {
   display: grid;
