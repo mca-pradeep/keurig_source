@@ -11,7 +11,8 @@
   align-items: center;
 }
 
-.beverages-wrapper.group ul li a .beverage-box {}
+.beverages-wrapper.group ul li a .beverage-box {
+}
 
 .beverages-wrapper ul {
   display: grid;
@@ -27,7 +28,7 @@
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  color: #5B3427;
+  color: #5b3427;
 }
 
 .beverages-wrapper ul li .beverage-box img {
@@ -37,9 +38,10 @@
 
 .beverages-wrapper ul li h3 {
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   max-width: 120px;
   margin: 0 auto;
+  font-family: "MarkOT-Medium";
 }

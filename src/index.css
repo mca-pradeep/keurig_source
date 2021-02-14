@@ -9,77 +9,90 @@
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.ttf") format("truetype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.svg#MarkOT") format("svg");
 }
-@import url(//db.onlinewebfonts.com/c/1846241fbfa2b978f919cb6d3ac51df7?family=MarkOT-Bold);
-@import url(//db.onlinewebfonts.com/c/1846241fbfa2b978f919cb6d3ac51df7?family=MarkOT-Heavy);
-@import url(//db.onlinewebfonts.com/c/1846241fbfa2b978f919cb6d3ac51df7?family=MarkOT-Book);
-@import url(//db.onlinewebfonts.com/c/1846241fbfa2b978f919cb6d3ac51df7?family=MarkOT-Book-Italic);
 
-/* 
 @font-face {
-  font-family: 'MarkOTBlack';
-  font-family: 'MarkOT';
-  font-weight: 800;
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBlack.eot');
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBlack.eot') format('embedded-opentype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBlack.woff2') format('woff2'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBlack.woff') format('woff'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBlack.ttf') format('truetype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBlack.svg#MarkOTBlack') format('svg');
+  font-family: "MarkOT-Black";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.woff2") format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.woff") format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.ttf") format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.svg#MarkOTBlack") format("svg");
 }
 
 @font-face {
-  font-family: 'MarkOTBold';
-  font-family: 'MarkOT';
-  font-weight: 700;
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBold.eot');
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBold.eot') format('embedded-opentype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBold.woff2') format('woff2'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBold.woff') format('woff'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBold.ttf') format('truetype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBold.svg#MarkOTBold') format('svg');
+  font-family: "MarkOT-Bold";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.woff2")
+      format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.woff")
+      format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.ttf")
+      format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.svg#MarkOTBold")
+      format("svg");
 }
 
 @font-face {
-  font-family: 'MarkOTHeavy';
-  font-family: 'MarkOT';
-  font-weight: 800;
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTHeavy.eot');
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTHeavy.eot') format('embedded-opentype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTHeavy.woff2') format('woff2'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTHeavy.woff') format('woff'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTHeavy.ttf') format('truetype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTHeavy.svg#MarkOTHeavy') format('svg');
+  font-family: "MarkOT-Heavy";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.woff2") format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.woff") format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.ttf") format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.svg#MarkOTHeavy") format("svg");
 }
 
 @font-face {
-  font-family: 'MarkOTMedium';
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTMedium.eot');
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTMedium.eot') format('embedded-opentype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTMedium.woff2') format('woff2'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTMedium.woff') format('woff'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTMedium.ttf') format('truetype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTMedium.svg#MarkOTMedium') format('svg');
+  font-family: "MarkOT-Book";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.woff2") format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.woff") format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.ttf") format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.svg#MarkOTBook") format("svg");
 }
 
 @font-face {
-  font-family: 'MarkOTBook';
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBook.eot');
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBook.eot') format('embedded-opentype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBook.woff2') format('woff2'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBook.woff') format('woff'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBook.ttf') format('truetype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBook.svg#MarkOTBook') format('svg');
+  font-family: "MarkOT-Book-Italic";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.woff2") format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.woff") format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.ttf") format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.svg#MarkOTBookItalic")
+      format("svg");
 }
 
 @font-face {
-  font-family: 'MarkOTBookItalic';
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.eot');
-  src: url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.eot') format('embedded-opentype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.woff2') format('woff2'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.woff') format('woff'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.ttf') format('truetype'),
-    url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.svg#MarkOTBookItalic') format('svg');
-} */
+  font-family: "MarkOT-Medium";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.woff2") format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.woff") format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.ttf") format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.svg#MarkOTMedium")
+      format("svg");
+}
+
+@font-face {
+  font-family: "MarkOT-Italic";
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.eot");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.woff2") format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.woff") format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.ttf") format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.svg#MarkOT-Italic")
+      format("svg");
+}
 
 .transition {
   transition: all ease 0.5s;

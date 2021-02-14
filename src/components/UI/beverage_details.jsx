@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Spinner from "../UI/LoadingIndicator";
+// import Spinner from "../UI/LoadingIndicator";
 import { Base64 } from "js-base64";
 import DefaultOptions from "./defaultOptions";
 import SizeListElement from "./size_list_element";
@@ -192,13 +192,13 @@ class BeverageDetails extends Component {
               ) : null}
               <section className="brew-customize">
                 <div className="customize-title">
-                  <strong>
+                  <span>
                     {this.state.general_messages
                       ? this.state.general_messages[
                           general_codes.BREWING_OPTIONS
                         ]
                       : null}
-                  </strong>
+                  </span>
                 </div>
               </section>
               {contentFlag ? (

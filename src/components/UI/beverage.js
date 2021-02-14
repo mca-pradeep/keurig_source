@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Base64 } from "js-base64";
 import { withRouter, Link } from "react-router-dom";
 import { dashboard_views } from "../../config/constants";
@@ -6,7 +6,7 @@ import { beverageTypes /*, assets_images */ } from "../../config/constants";
 import "../../assets/css/beverage.css";
 
 const Beverage = (props) => {
-  let viewName = localStorage.getItem("listView");
+  let viewName = props.currentView || localStorage.getItem("listView");
   return (
     <li className="beverage" key={props.beverage.type}>
       <Link

@@ -3,6 +3,7 @@ import { Base64 } from "js-base64";
 import { withRouter } from "react-router-dom";
 import {
   dashboard_views,
+  views_svg,
   beverageTypes,
   assets_images,
 } from "../config/constants";
@@ -19,6 +20,12 @@ class Header extends Component {
       pod: props.pod,
     };
   }
+
+  showView = (content) => {
+    return {
+      __html: content,
+    };
+  };
   gotoListing() {
     this.setState({
       show_info: false,
@@ -93,7 +100,7 @@ class Header extends Component {
         this.gotoListing();
       }
     }
-    const headerClasses = ["h-wrapper","grid-listing"];
+    const headerClasses = ["h-wrapper", "grid-listing"];
     let pod_details = null;
     if (this.props.is_back) {
       headerClasses.push("h-detail");
@@ -101,10 +108,12 @@ class Header extends Component {
         pod_details = beverageTypes[beverage.type].name;
       }
     }
-    let viewName = localStorage.getItem("listView");
+    let viewName = this.props.currentView || localStorage.getItem("listView");
 
     if (viewName !== null && viewName === dashboard_views.GROUP) {
       headerClasses.push("grouped");
+    } else {
+      headerClasses.push("list");
     }
 
     if (this.state.show_info) {
@@ -148,16 +157,26 @@ class Header extends Component {
                     onClick={() =>
                       this.props.onViewHandler(dashboard_views.GROUP)
                     }
-                    className="grid">
-                    G
-                  </div>
+                    className={
+                      dashboard_views.GROUP == viewName
+                        ? `${dashboard_views.GROUP} active`
+                        : `${dashboard_views.GROUP}`
+                    }
+                    dangerouslySetInnerHTML={this.showView(
+                      views_svg[dashboard_views.GROUP]
+                    )}></div>
                   <div
                     onClick={() =>
                       this.props.onViewHandler(dashboard_views.LIST)
                     }
-                    className="list">
-                    L
-                  </div>
+                    dangerouslySetInnerHTML={this.showView(
+                      views_svg[dashboard_views.LIST]
+                    )}
+                    className={
+                      dashboard_views.LIST == viewName
+                        ? `${dashboard_views.LIST} active`
+                        : `${dashboard_views.LIST}`
+                    }></div>
                 </div>
               </div>
             </div>

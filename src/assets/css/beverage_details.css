@@ -35,7 +35,7 @@
 }
 
 .beverage-sizes ul li.active path {
-  fill: #FAF5F0;
+  fill: #faf5f0;
 }
 
 .du_beverage-sizescup_list ul li.active .size-wrapper .size-name {
@@ -43,7 +43,7 @@
 }
 
 .beverage-sizes ul li.active .size-wrapper .size-unit {
-  color: #FAF5F0;
+  color: #faf5f0;
 }
 
 .beverage-sizes ul li .beverage-size {
@@ -61,7 +61,7 @@
   text-align: center;
   letter-spacing: 0.366667px;
   color: #5b3427;
-  font-family: 'MarkOT-Heavy';
+  font-family: "MarkOT-Heavy";
 }
 
 .beverage-sizes ul li .size-wrapper .size-unit {
@@ -71,13 +71,12 @@
   text-align: center;
   letter-spacing: 0.2px;
   color: #5b3427;
-  font-family: 'MarkOT-Heavy';
+  font-family: "MarkOT-Heavy";
 }
-
 
 .beverage-sizes ul li.active .size-name,
 .beverage-sizes ul li.active .size-unit {
-  color: #FAF5F0;
+  color: #faf5f0;
 }
 
 .choose-options {
@@ -112,6 +111,7 @@
   height: 1px;
   background: #5b3427;
   width: 100%;
+  font-family: "MarkOT-Book";
 }
 
 .brew-customize .customize-title::before {
@@ -122,7 +122,7 @@
   right: 0;
 }
 
-.brew-customize .customize-title strong {
+.brew-customize .customize-title span {
   font-size: 13px;
   line-height: 30px;
   color: #5b3427;
@@ -131,6 +131,7 @@
   position: relative;
   z-index: 1;
   padding: 0 20px;
+  font-family: "MarkOT-Book";
 }
 
 .brew-customize .temprature-streangth {
@@ -147,6 +148,7 @@
   align-items: center;
   justify-content: space-around;
   position: relative;
+  font-family: "MarkOT-Book";
 }
 
 .brew-customize .temprature-streangth .temprature-streangth-inner::after {
@@ -169,18 +171,18 @@
 
 .temprature-streangth-inner .streangth-container span,
 .temprature-streangth-inner .temprature-container span {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   font-style: italic;
   color: #5b3427;
-  /* font-family: 'MarkOT-Book-Italic'; */
+  font-family: "MarkOT-Book-Italic";
 }
 
 .temprature-streangth-inner .streangth-container strong,
 .temprature-streangth-inner .temprature-container strong {
   font-style: normal;
-  font-family: 'MarkOT-Bold';
+  font-family: "MarkOT-Bold";
   font-size: 15px;
   line-height: normal;
   color: #5b3427;
@@ -206,18 +208,19 @@
 }
 
 .choose-options strong {
-  font-size: 15px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 700;
   line-height: normal;
-  color: #FAF5F0;
+  color: #faf5f0;
   margin-bottom: 10px;
   display: block;
   text-align: left;
+  font-family: "MarkOT-Bold";
 }
 
 .choose-options .slick-list .slick-slide span {
   font-size: 13px;
-  font-family: 'MarkOT-Bold';
+  font-family: "MarkOT-Bold";
   line-height: 23px;
   color: #faf5f0;
   border: 1.25px solid #faf5f0;

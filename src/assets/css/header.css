@@ -12,9 +12,11 @@
   right: 20px;
 }
 
-.grid-list-view .grid {}
+.grid-list-view .grid {
+}
 
-.grid-list-view .list {}
+.grid-list-view .list {
+}
 
 .h-wrapper img.bg-img {
   width: 100%;
@@ -117,16 +119,21 @@
   max-width: 165px;
   min-height: 56px;
   text-align: left;
-  /* font-family: 'MarkOT-Book'; */
+  font-family: "MarkOT-Book";
 }
 
 .lightbox {
   cursor: pointer;
 }
 
-.grid-list-view {}
+.grid-list-view {
+}
 
 .grid-list-view .grid,
 .grid-list-view .list {
   cursor: pointer;
+}
+
+.grid-list-view div.active path {
+  fill: #5b3427;
 }

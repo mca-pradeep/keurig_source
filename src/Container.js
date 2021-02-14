@@ -8,8 +8,13 @@ import * as QueryString from "query-string";
 import Header from "./components/header";
 import Beverages from "./components/beverages";
 import BeverageDetails from "./components/UI/beverage_details";
+import ErrorModel from "./components/UI/ErrorModal";
 import Footer from "./UI/footer";
-import { PATHS, effective_languages } from "./config/constants";
+import {
+  PATHS,
+  dashboard_views,
+  effective_languages,
+} from "./config/constants";
 import LoadingIndicator from "./components/UI/LoadingIndicator";
 let defaultLanguage = localStorage.getItem("default_language");
 if (
@@ -30,7 +35,8 @@ class Container extends Component {
     brewerSecurityCode: null,
     brewerId: null,
     pod: null,
-    listView: true,
+    listView: dashboard_views.LIST,
+    error: false,
   };
 
   componentDidMount() {
@@ -42,8 +48,9 @@ class Container extends Component {
       //new Network(`${window.location.origin}/keuring-reserve.json`, "GET")
       .hitNetwork()
       .then((resp) => {
-        this.props.setIsLoading(false);
+        setIsLoading(false);
         localStorage.setItem("bever_list", JSON.stringify(resp));
+        localStorage.setItem("listView", dashboard_views.LIST);
         this.setState(
           {
             brewerSecurityCode: resp.capabilities.brewerSecurityCode,
@@ -63,7 +70,12 @@ class Container extends Component {
           }
         );
       })
-      .catch((e) => this.props.setIsLoading(false));
+      .catch((e) => {
+        setIsLoading(false);
+        this.setState({
+          error: true,
+        });
+      });
     //do language specific things
     let defaultLanguage = localStorage.getItem("default_language");
     if (
@@ -94,6 +106,15 @@ class Container extends Component {
     );
   };
 
+  errorModalCloseHandler = () => {
+    // this.setState((prevState) => {
+    //   return {
+    //     ...prevState,
+    //     error: !prevState.error,
+    //   };
+    // });
+  };
+
   render() {
     let footer = null;
     if (this.state.is_footer) {
@@ -113,14 +134,23 @@ class Container extends Component {
                   is_back={false}
                   is_footer={false}
                   onViewHandler={this.viewHandler}
+                  currentView={this.state.listView}
                 />
                 <Beverages
                   isLoading={this.props.isLoading}
                   setIsLoading={this.props.setIsLoading}
                   beverages={this.state.beverages}
                   onViewHandler={this.viewHandler}
+                  currentView={this.state.listView}
                 />
               </React.Fragment>
+            ) : this.state.error ? (
+              <ErrorModel
+                btn_okay={"Okay"}
+                title={"ERROR!"}
+                message={"Something went wrong!!!"}
+                onClose={this.errorModalCloseHandler}
+              />
             ) : null}
           </Route>
           <Route path="/beverage/:code" exact>
