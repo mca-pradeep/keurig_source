@@ -3,11 +3,11 @@
 }
 
 .with-padding {
-  padding: 40px 27px;
+  padding: 28px 27px;
 }
 
 .beverage-sizes {
-  margin-bottom: 30px;
+  margin-bottom: 21px;
 }
 
 .beverage-sizes ul {
@@ -94,7 +94,7 @@
 }
 
 .brew-customize .customize-title {
-  margin-bottom: 45px;
+  margin-bottom: 18px;
   text-align: center;
   position: relative;
 }
@@ -184,13 +184,11 @@
 
 .submit-button-container {
   padding: 0 0 20px 0;
-  margin-top: 45px;
+  margin-top: 40px;
 }
 
 .submit-button-container .submit-button-inner {
   text-align: center;
-  border-top: 1px solid #5b3427;
-  padding-top: 20px;
 }
 
 .submit-button-container .submit-button-inner img.submit-btn {

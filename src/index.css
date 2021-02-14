@@ -10,8 +10,9 @@
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.svg#MarkOT") format("svg");
 }
 
+/* 
 @font-face {
-  /* font-family: 'MarkOTBlack'; */
+  font-family: 'MarkOTBlack';
   font-family: 'MarkOT';
   font-weight: 800;
   src: url('./assets/fonts/Mark-OT-TTF/MarkOTBlack.eot');
@@ -23,7 +24,7 @@
 }
 
 @font-face {
-  /* font-family: 'MarkOTBold'; */
+  font-family: 'MarkOTBold';
   font-family: 'MarkOT';
   font-weight: 700;
   src: url('./assets/fonts/Mark-OT-TTF/MarkOTBold.eot');
@@ -35,7 +36,7 @@
 }
 
 @font-face {
-  /* font-family: 'MarkOTHeavy'; */
+  font-family: 'MarkOTHeavy';
   font-family: 'MarkOT';
   font-weight: 800;
   src: url('./assets/fonts/Mark-OT-TTF/MarkOTHeavy.eot');
@@ -74,7 +75,7 @@
     url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.woff') format('woff'),
     url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.ttf') format('truetype'),
     url('./assets/fonts/Mark-OT-TTF/MarkOTBookItalic.svg#MarkOTBookItalic') format('svg');
-}
+} */
 
 
 
