@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Base64 } from "js-base64";
 import { withRouter } from "react-router-dom";
-import { beverageTypes, assets_images } from "../config/constants";
+import {
+  dashboard_views,
+  beverageTypes,
+  assets_images,
+} from "../config/constants";
 import "../assets/css/header.css";
 
 class Header extends Component {
@@ -97,6 +101,11 @@ class Header extends Component {
         pod_details = beverageTypes[beverage.type].name;
       }
     }
+    let viewName = localStorage.getItem("listView");
+
+    if (viewName !== null && viewName === dashboard_views.GROUP) {
+      headerClasses.push("grouped");
+    }
 
     if (this.state.show_info) {
       infoClasses.push("active");
@@ -135,8 +144,20 @@ class Header extends Component {
                   />
                 )}
                 <div className="grid-list-view">
-                  <div className="grid">G</div>
-                  <div className="list">L</div>
+                  <div
+                    onClick={() =>
+                      this.props.onViewHandler(dashboard_views.GROUP)
+                    }
+                    className="grid">
+                    G
+                  </div>
+                  <div
+                    onClick={() =>
+                      this.props.onViewHandler(dashboard_views.LIST)
+                    }
+                    className="list">
+                    L
+                  </div>
                 </div>
               </div>
             </div>

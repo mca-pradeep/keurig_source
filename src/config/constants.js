@@ -257,3 +257,8 @@ export const PATHS = {
   BASE_PATH: "https://bf-keurig-touchless-api.azurewebsites.net/v1/",
   RESERVE: "reserve",
 };
+
+export const dashboard_views = {
+  LIST: 'list',
+  GROUP: 'group'
+}

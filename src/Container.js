@@ -105,20 +105,23 @@ class Container extends Component {
         <Switch>
           <Route path="/" exact>
             {this.state.pod ? (
-              <Header
-                isLoading={this.props.isLoading}
-                setIsLoading={this.props.setIsLoading}
-                pod={this.state.pod}
-                is_back={false}
-                is_footer={false}
-              />
+              <React.Fragment>
+                <Header
+                  isLoading={this.props.isLoading}
+                  setIsLoading={this.props.setIsLoading}
+                  pod={this.state.pod}
+                  is_back={false}
+                  is_footer={false}
+                  onViewHandler={this.viewHandler}
+                />
+                <Beverages
+                  isLoading={this.props.isLoading}
+                  setIsLoading={this.props.setIsLoading}
+                  beverages={this.state.beverages}
+                  onViewHandler={this.viewHandler}
+                />
+              </React.Fragment>
             ) : null}
-            <Beverages
-              isLoading={this.props.isLoading}
-              setIsLoading={this.props.setIsLoading}
-              beverages={this.state.beverages}
-              onViewHandler={this.viewHandler}
-            />
           </Route>
           <Route path="/beverage/:code" exact>
             {this.state.pod ? (
