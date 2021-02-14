@@ -93,7 +93,7 @@ class Header extends Component {
         this.gotoListing();
       }
     }
-    const headerClasses = ["h-wrapper"];
+    const headerClasses = ["h-wrapper","grid-listing"];
     let pod_details = null;
     if (this.props.is_back) {
       headerClasses.push("h-detail");

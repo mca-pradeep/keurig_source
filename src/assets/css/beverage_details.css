@@ -61,6 +61,7 @@
   text-align: center;
   letter-spacing: 0.366667px;
   color: #5b3427;
+  font-family: 'MarkOT-Heavy';
 }
 
 .beverage-sizes ul li .size-wrapper .size-unit {
@@ -70,7 +71,9 @@
   text-align: center;
   letter-spacing: 0.2px;
   color: #5b3427;
+  font-family: 'MarkOT-Heavy';
 }
+
 
 .beverage-sizes ul li.active .size-name,
 .beverage-sizes ul li.active .size-unit {
@@ -166,17 +169,18 @@
 
 .temprature-streangth-inner .streangth-container span,
 .temprature-streangth-inner .temprature-container span {
-  font-style: italic;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
+  font-style: italic;
   color: #5b3427;
+  /* font-family: 'MarkOT-Book-Italic'; */
 }
 
 .temprature-streangth-inner .streangth-container strong,
 .temprature-streangth-inner .temprature-container strong {
   font-style: normal;
-  font-weight: 900;
+  font-family: 'MarkOT-Bold';
   font-size: 15px;
   line-height: normal;
   color: #5b3427;
@@ -213,7 +217,7 @@
 
 .choose-options .slick-list .slick-slide span {
   font-size: 13px;
-  font-weight: 700;
+  font-family: 'MarkOT-Bold';
   line-height: 23px;
   color: #faf5f0;
   border: 1.25px solid #faf5f0;

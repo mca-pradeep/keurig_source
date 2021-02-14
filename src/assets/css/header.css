@@ -4,6 +4,18 @@
   overflow: hidden;
 }
 
+.grid-list-view {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.grid-list-view .grid {}
+
+.grid-list-view .list {}
+
 .h-wrapper img.bg-img {
   width: 100%;
   position: relative;
@@ -105,13 +117,15 @@
   max-width: 165px;
   min-height: 56px;
   text-align: left;
+  /* font-family: 'MarkOT-Book'; */
 }
 
 .lightbox {
   cursor: pointer;
 }
-.grid-list-view {
-}
+
+.grid-list-view {}
+
 .grid-list-view .grid,
 .grid-list-view .list {
   cursor: pointer;

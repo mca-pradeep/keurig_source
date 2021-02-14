@@ -2,6 +2,8 @@
   padding: 15px 35px;
 }
 
+.beverages-wrapper.group ul {}
+
 .beverages-wrapper ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -17,6 +19,11 @@
   line-height: 20px;
   text-align: center;
   color: #5B3427;
+}
+
+.beverages-wrapper ul li .beverage-box img {
+  width: 118px;
+  height: 118px;
 }
 
 .beverages-wrapper ul li h3 {
