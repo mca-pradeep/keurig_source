@@ -3,12 +3,13 @@
 @font-face {
   font-family: "MarkOT";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOT.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT.eot") format("embedded-opentype"),
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT.eot") format("embedded-opentype"),  
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.woff2") format("woff2"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.ttf") format("truetype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.svg#MarkOT") format("svg");
 }
+
 
 .transition {
   transition: all ease 0.5s;
@@ -18,7 +19,7 @@
 
 a,
 a.tooltip,
-a.tooltip:hover>span,
+a.tooltip:hover > span,
 button:focus,
 del.video-inner-tiltle,
 input:focus,

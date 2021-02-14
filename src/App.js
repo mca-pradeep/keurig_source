@@ -8,11 +8,20 @@ function App() {
 
   images = useMemo(() => {
     for (const [key, assetImg] of Object.entries(assets_images)) {
-      images.push(`${window.location.origin}${assetImg}`);
+      images.push({
+        key: `${window.location.origin}${assetImg}`,
+        status: false,
+      });
     }
     for (const [key, assetImg] of Object.entries(beverageTypes)) {
-      images.push(`${window.location.origin}${assetImg.listing}`);
-      images.push(`${window.location.origin}${assetImg.header}`);
+      images.push({
+        key: `${window.location.origin}${assetImg.listing}`,
+        status: false,
+      });
+      images.push({
+        key: `${window.location.origin}${assetImg.header}`,
+        status: false,
+      });
     }
     return images;
   });
@@ -21,28 +30,33 @@ function App() {
     cacheImages(images);
   }, []);
 
-  const showLoading = (loadingFlag) => {
-    setIsLoading(loadingFlag);
-  };
-
   const cacheImages = async (srcArray) => {
     const promises = await srcArray.map((src) => {
       return new Promise(function (resolve, reject) {
         const img = new Image();
-        img.src = src;
-        img.onload = () => resolve();
-        img.onerror = () => reject();
+        img.src = src.key;
+        img.onload = () => {
+          resolve();
+          src.status = true;
+        };
+        img.onerror = () => {
+          reject();
+        };
       });
     });
     await Promise.all(promises);
-    // setTimeout(() => {
     setIsLoading(false);
-    // }, 2500);
   };
+
+  const stateIsLoading = () => isLoading;
 
   return (
     <React.Fragment>
-      {isLoading ? <Spinner /> : <Container loader={showLoading} />}
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <Container isLoading={stateIsLoading} setIsLoading={setIsLoading} />
+      )}
     </React.Fragment>
   );
 }

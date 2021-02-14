@@ -43,12 +43,11 @@
   align-items: center;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .beverages-img-container {
     width: 145px;
   }
 }
-
 
 .beverage-info {
   position: relative;
@@ -109,5 +108,11 @@
 }
 
 .lightbox {
+  cursor: pointer;
+}
+.grid-list-view {
+}
+.grid-list-view .grid,
+.grid-list-view .list {
   cursor: pointer;
 }

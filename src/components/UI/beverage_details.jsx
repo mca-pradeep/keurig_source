@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Spinner from "../UI/LoadingIndicator";
 import { Base64 } from "js-base64";
 import DefaultOptions from "./defaultOptions";
 import SizeListElement from "./size_list_element";
@@ -20,6 +21,7 @@ class BeverageDetails extends Component {
     size_list: null,
     strength_options: null,
     temprature_options: null,
+    beverages: this.props.beverages,
   };
 
   showSize = (content) => {
@@ -29,42 +31,50 @@ class BeverageDetails extends Component {
   };
   componentDidMount() {
     //do call api for getting available beverages
-    let savedBeverageTypes = localStorage.getItem("bever_list");
-    if (savedBeverageTypes !== null) {
-      if (this.state.user_selected_size === null) {
-        savedBeverageTypes = JSON.parse(savedBeverageTypes);
-        if (savedBeverageTypes.capabilities !== null) {
-          let beverages = savedBeverageTypes.capabilities.beverageTypes;
-          const beverageArr = beverages.filter(
-            (item) => item.type === Base64.decode(this.props.match.params.code)
-          );
-          if (beverageArr !== null && beverageArr.length) {
-            const beverage = beverageArr[0];
-            const selectedSize = beverage.sizes.filter(
-              (size) => size.size === beverage.recommendedSize
-            );
+    let beverages = null;
+    if (this.state.beverages === null || this.state.beverages.length === 0) {
+      let savedBeverageTypes = localStorage.getItem("bever_list");
 
-            this.setState({
-              size_list: beverage.sizes,
-              strength_options: beverage.availableStrengths,
-              temprature_options: beverage.availableTemperatures,
-              user_selected_size: beverage.recommendedSize,
-              user_selected_strength:
-                selectedSize && selectedSize[0]
-                  ? selectedSize[0].recommendedBrew.strength
-                  : null,
-              user_selected_temprature:
-                selectedSize && selectedSize[0]
-                  ? selectedSize[0].recommendedBrew.temperature
-                  : null,
-            });
+      if (savedBeverageTypes !== null) {
+        if (this.state.user_selected_size === null) {
+          savedBeverageTypes = JSON.parse(savedBeverageTypes);
+          if (savedBeverageTypes.capabilities !== null) {
+            beverages = savedBeverageTypes.capabilities.beverageTypes;
           }
         }
       }
     } else {
-      this.props.history.push(`/${this.props.location.search}`);
+      beverages = this.state.beverages;
     }
 
+    if (beverages === null) {
+      this.props.history.push(`/${this.props.location.search}`);
+    } else {
+      const beverageArr = beverages.filter(
+        (item) => item.type === Base64.decode(this.props.match.params.code)
+      );
+      if (beverageArr !== null && beverageArr.length) {
+        const beverage = beverageArr[0];
+        const selectedSize = beverage.sizes.filter(
+          (size) => size.size === beverage.recommendedSize
+        );
+
+        this.setState({
+          size_list: beverage.sizes,
+          strength_options: beverage.availableStrengths,
+          temprature_options: beverage.availableTemperatures,
+          user_selected_size: beverage.recommendedSize,
+          user_selected_strength:
+            selectedSize && selectedSize[0]
+              ? selectedSize[0].recommendedBrew.strength
+              : null,
+          user_selected_temprature:
+            selectedSize && selectedSize[0]
+              ? selectedSize[0].recommendedBrew.temperature
+              : null,
+        });
+      }
+    }
     //do language specific things
     let defaultLanguage = localStorage.getItem("default_language");
     if (this.state.size_list == null) {
@@ -119,7 +129,7 @@ class BeverageDetails extends Component {
 
   submitHandler = (e) => {
     e.preventDefault();
-    console.log("here");
+    console.log("brewing");
   };
 
   render() {
@@ -168,52 +178,56 @@ class BeverageDetails extends Component {
     }
     return (
       <React.Fragment>
-        <form onSubmit={this.submitHandler}>
-          <div className="beverage-details with-padding">
-            {this.state.size_list !== null ? (
-              <SizeListElement
-                size_lists={this.state.size_list}
-                general_messages={this.state.general_messages}
-                userSelectedSize={this.state.user_selected_size}
-                customizeSizeHandler={this.customizeSizeHandler}
-                showSvgContent={this.showSize}
-              />
-            ) : null}
-            <section className="brew-customize">
-              <div className="customize-title">
-                <strong>
-                  {this.state.general_messages
-                    ? this.state.general_messages[general_codes.BREWING_OPTIONS]
-                    : null}
-                </strong>
-              </div>
-            </section>
-            {contentFlag ? (
+        {this.props.isLoading ? (
+          <form onSubmit={this.submitHandler}>
+            <div className="beverage-details with-padding">
+              {this.state.size_list !== null ? (
+                <SizeListElement
+                  size_lists={this.state.size_list}
+                  general_messages={this.state.general_messages}
+                  userSelectedSize={this.state.user_selected_size}
+                  customizeSizeHandler={this.customizeSizeHandler}
+                  showSvgContent={this.showSize}
+                />
+              ) : null}
+              <section className="brew-customize">
+                <div className="customize-title">
+                  <strong>
+                    {this.state.general_messages
+                      ? this.state.general_messages[
+                          general_codes.BREWING_OPTIONS
+                        ]
+                      : null}
+                  </strong>
+                </div>
+              </section>
+              {contentFlag ? (
+                <section className="brew-customize">{tempOptions}</section>
+              ) : null}
+            </div>
+            {!contentFlag ? (
               <section className="brew-customize">{tempOptions}</section>
             ) : null}
-          </div>
-          {!contentFlag ? (
-            <section className="brew-customize">{tempOptions}</section>
-          ) : null}
-          <section className="submit-button-container">
-            <div className="submit-button-inner">
-              <button
-                onClick={(e) => {
-                  this.setState({ is_submit: true });
-                }}>
-                <img
-                  className="submit-btn"
-                  src={`${window.location.origin}${
-                    !this.state.is_submit
-                      ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
-                      : constant.assets_images.SUBMIT_BUTTON_SELECTED
-                  }`}
-                  alt=""
-                />
-              </button>
-            </div>
-          </section>
-        </form>
+            <section className="submit-button-container">
+              <div className="submit-button-inner">
+                <button
+                  onClick={(e) => {
+                    this.setState({ is_submit: true });
+                  }}>
+                  <img
+                    className="submit-btn"
+                    src={`${window.location.origin}${
+                      !this.state.is_submit
+                        ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
+                        : constant.assets_images.SUBMIT_BUTTON_SELECTED
+                    }`}
+                    alt=""
+                  />
+                </button>
+              </div>
+            </section>
+          </form>
+        ) : null}
       </React.Fragment>
     );
   }
