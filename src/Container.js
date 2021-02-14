@@ -10,6 +10,7 @@ import Beverages from "./components/beverages";
 import BeverageDetails from "./components/UI/beverage_details";
 import Footer from "./UI/footer";
 import { PATHS, effective_languages } from "./config/constants";
+import LoadingIndicator from "./components/UI/LoadingIndicator";
 let defaultLanguage = localStorage.getItem("default_language");
 if (
   defaultLanguage === null ||
@@ -29,17 +30,19 @@ class Container extends Component {
     brewerSecurityCode: null,
     brewerId: null,
     pod: null,
+    listView: true,
   };
 
   componentDidMount() {
     //do call api for getting available beverages
     let path = `${PATHS.BASE_PATH}${PATHS.RESERVE}`;
     const queryObjs = QueryString.parse(this.props.location.search);
+    const setIsLoading = this.props.setIsLoading;
     new Network(path, "POST", queryObjs)
       //new Network(`${window.location.origin}/keuring-reserve.json`, "GET")
       .hitNetwork()
       .then((resp) => {
-        this.props.loader(false);
+        this.props.setIsLoading(false);
         localStorage.setItem("bever_list", JSON.stringify(resp));
         this.setState(
           {
@@ -60,7 +63,7 @@ class Container extends Component {
           }
         );
       })
-      .catch((e) => this.props.loader(false));
+      .catch((e) => this.props.setIsLoading(false));
     //do language specific things
     let defaultLanguage = localStorage.getItem("default_language");
     if (
@@ -80,6 +83,17 @@ class Container extends Component {
     }
   }
 
+  viewHandler = (statusFlag) => {
+    this.setState(
+      {
+        listView: statusFlag,
+      },
+      () => {
+        localStorage.setItem("listView", statusFlag);
+      }
+    );
+  };
+
   render() {
     let footer = null;
     if (this.state.is_footer) {
@@ -92,30 +106,39 @@ class Container extends Component {
           <Route path="/" exact>
             {this.state.pod ? (
               <Header
-                loader={this.props.loader}
+                isLoading={this.props.isLoading}
+                setIsLoading={this.props.setIsLoading}
                 pod={this.state.pod}
                 is_back={false}
                 is_footer={false}
               />
             ) : null}
             <Beverages
-              loader={this.props.loader}
+              isLoading={this.props.isLoading}
+              setIsLoading={this.props.setIsLoading}
               beverages={this.state.beverages}
+              onViewHandler={this.viewHandler}
             />
           </Route>
           <Route path="/beverage/:code" exact>
             {this.state.pod ? (
-              <Header
-                loader={this.props.loader}
-                pod={this.state.pod}
-                is_back={true}
-                is_footer={true}
-              />
-            ) : null}
-            <BeverageDetails
-              loader={this.props.loader}
-              beverages={this.state.beverages}
-            />
+              <React.Fragment>
+                <Header
+                  isLoading={this.props.isLoading}
+                  setIsLoading={this.props.setIsLoading}
+                  pod={this.state.pod}
+                  is_back={true}
+                  is_footer={true}
+                />
+                <BeverageDetails
+                  isLoading={this.props.isLoading}
+                  setIsLoading={this.props.setIsLoading}
+                  beverages={this.state.beverages}
+                />
+              </React.Fragment>
+            ) : (
+              <LoadingIndicator />
+            )}
           </Route>
         </Switch>
         {footer}

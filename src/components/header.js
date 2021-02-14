@@ -11,10 +11,10 @@ class Header extends Component {
       show_info: false,
       general_messages: null,
       podImgOk: false,
+      setIsLoading: props.setIsLoading,
       pod: props.pod,
     };
   }
-
   gotoListing() {
     this.setState({
       show_info: false,
@@ -40,17 +40,26 @@ class Header extends Component {
 
   componentDidMount() {
     //do language specific things
-    const podImg = this.state.pod.podImage;
-    new Promise(function (resolve, reject) {
-      const img = new Image();
-      img.src = podImg;
-      img.onload = () => resolve();
-      img.onerror = () => reject();
-    }).then((resp) => {
-      this.setState({
-        podImgOk: true,
+    if (this.state.pod) {
+      const setIsLoading = this.state.setIsLoading;
+      const podImgSrc = this.state.pod.podImage;
+      new Promise(function (resolve, reject) {
+        const img = new Image();
+        img.src = podImgSrc;
+        img.onload = () => {
+          setIsLoading(false);
+          return resolve();
+        };
+        img.onerror = () => {
+          setIsLoading(false);
+          return reject();
+        };
+      }).then((resp) => {
+        this.setState({
+          podImgOk: true,
+        });
       });
-    });
+    }
     let defaultLanguage = localStorage.getItem("default_language");
     if (defaultLanguage == null) {
       defaultLanguage = "en";
@@ -96,10 +105,10 @@ class Header extends Component {
     return (
       <React.Fragment>
         <header className={headerClasses.join(" ")}>
-          {this.props.pod && this.props.pod.customBackground ? (
+          {this.state.pod && this.state.pod.customBackground ? (
             <img
               className="bg-img"
-              src={`${this.props.pod.customBackgroundImage}`}
+              src={`${this.state.pod.customBackgroundImage}`}
               alt=""
             />
           ) : (
@@ -112,7 +121,7 @@ class Header extends Component {
           {!this.props.is_back ? (
             <div className="logo-wrapper">
               <div className="logo-inner">
-                {this.state.podImgOk && this.props.pod.podImage ? (
+                {this.state.podImgOk && this.state.pod.podImage ? (
                   <img
                     className="logo-img"
                     src={`${this.props.pod.podImage}`}
@@ -125,6 +134,10 @@ class Header extends Component {
                     alt=""
                   />
                 )}
+                <div className="grid-list-view">
+                  <div className="grid">G</div>
+                  <div className="list">L</div>
+                </div>
               </div>
             </div>
           ) : (
