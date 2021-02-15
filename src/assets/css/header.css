@@ -12,10 +12,32 @@
   right: 20px;
 }
 
-.grid-list-view .grid {
+.grid-list-view div {
+  display: flex;
+  align-items: center;
 }
 
+
+
 .grid-list-view .list {
+  margin-left: 10px;
+  position: relative;
+  top: -1px;
+}
+
+.grid-list-view .list.active path {
+  fill: #5b3427;
+  stroke: #5b3427;
+  opacity: 1;
+}
+
+.grid-list-view .group.active path {
+  fill: #5b3427;
+  stroke: #5b3427;
+}
+
+.grid-list-view .group.active g {
+  opacity: 1;
 }
 
 .h-wrapper img.bg-img {
@@ -57,11 +79,6 @@
   align-items: center;
 }
 
-@media screen and (max-width: 500px) {
-  .beverages-img-container {
-    width: 145px;
-  }
-}
 
 .beverage-info {
   position: relative;
@@ -126,14 +143,13 @@
   cursor: pointer;
 }
 
-.grid-list-view {
-}
-
 .grid-list-view .grid,
 .grid-list-view .list {
   cursor: pointer;
 }
 
-.grid-list-view div.active path {
-  fill: #5b3427;
+@media screen and (max-width: 500px) {
+  .beverages-img-container {
+    width: 145px;
+  }
 }
