@@ -12,9 +12,9 @@ const Beverages = (props) => {
     props.currentView === dashboard_views.GROUP ||
     (viewName !== null && viewName === dashboard_views.GROUP)
   ) {
-    wrapperClasses.push(dashboard_views.GROUP);
-  } else {
     wrapperClasses.push(dashboard_views.LIST);
+  } else {
+    wrapperClasses.push(dashboard_views.GROUP);
   }
 
   return (

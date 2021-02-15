@@ -260,8 +260,12 @@ export const PATHS = {
 export const views_svg = {
   list:
     '<svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M1 1.5H17.5M1 7.5H17.5M1 14H17.5" stroke="#5B3427" stroke-width="2" stroke-linecap="round"/></svg>',
+  //list:
+  //  '<svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5H17.5M1 7.5H17.5M1 14H17.5" stroke="#5B3427" stroke-width="2" stroke-linecap="round"/></svg>',
   group:
     '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.4"><rect x="0.875" y="0.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/><rect x="0.875" y="10.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/><rect x="10.875" y="0.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/><rect x="10.875" y="10.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/></g></svg>',
+  //group:
+  //  '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.875" y="0.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/><rect x="0.875" y="10.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/><rect x="10.875" y="0.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/><rect x="10.875" y="10.875" width="6.25" height="6.25" rx="1.125" stroke="#5B3427" stroke-width="1.75"/></svg>',
 };
 export const dashboard_views = {
   LIST: "list",

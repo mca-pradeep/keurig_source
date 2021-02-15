@@ -158,7 +158,7 @@ class Header extends Component {
                       this.props.onViewHandler(dashboard_views.GROUP)
                     }
                     className={
-                      dashboard_views.GROUP == viewName
+                      dashboard_views.GROUP === viewName
                         ? `${dashboard_views.GROUP} active`
                         : `${dashboard_views.GROUP}`
                     }
@@ -173,7 +173,7 @@ class Header extends Component {
                       views_svg[dashboard_views.LIST]
                     )}
                     className={
-                      dashboard_views.LIST == viewName
+                      dashboard_views.LIST === viewName
                         ? `${dashboard_views.LIST} active`
                         : `${dashboard_views.LIST}`
                     }></div>

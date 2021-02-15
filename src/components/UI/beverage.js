@@ -29,7 +29,7 @@ const Beverage = (props) => {
         </div>
         {beverageTypes[props.beverage.type] &&
         viewName !== null &&
-        viewName === dashboard_views.GROUP ? (
+        viewName === dashboard_views.LIST ? (
           <div className="beverage-info">
             <h3>{beverageTypes[props.beverage.type].name}</h3>
             <p>{beverageTypes[props.beverage.type].desc}</p>

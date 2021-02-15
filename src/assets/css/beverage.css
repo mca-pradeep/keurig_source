@@ -8,3 +8,9 @@ li.beverage a {
   color: #5b3427;
   cursor: pointer;
 }
+
+.beverage .beverage-info p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}

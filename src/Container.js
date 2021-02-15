@@ -35,7 +35,7 @@ class Container extends Component {
     brewerSecurityCode: null,
     brewerId: null,
     pod: null,
-    listView: dashboard_views.LIST,
+    listView: dashboard_views.GROUP,
     error: false,
   };
 
@@ -50,7 +50,7 @@ class Container extends Component {
       .then((resp) => {
         setIsLoading(false);
         localStorage.setItem("bever_list", JSON.stringify(resp));
-        localStorage.setItem("listView", dashboard_views.LIST);
+        localStorage.setItem("listView", dashboard_views.GROUP);
         this.setState(
           {
             brewerSecurityCode: resp.capabilities.brewerSecurityCode,
@@ -115,7 +115,8 @@ class Container extends Component {
         };
       },
       () => {
-        this.props.history.replace(`/${this.props.location.search}`);
+        //this.props.history.replace(`/${this.props.location.search}`);
+        window.location.reload();
       }
     );
   };
