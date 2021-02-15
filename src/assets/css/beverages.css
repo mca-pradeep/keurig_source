@@ -7,11 +7,13 @@
 }
 
 .beverages-wrapper.group ul li a {
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-auto-flow: column;
   text-align: start;
-  grid-gap: 10px;
+}
+
+.beverages-wrapper.group ul li .beverage-box {
+  margin-right: 20px;
 }
 
 .beverages-wrapper.group ul li h3 {
@@ -48,4 +50,19 @@
   max-width: 120px;
   margin: 0 auto;
   font-family: "MarkOT-Medium";
+}
+
+@media screen and (max-width:500px) {
+  .beverages-wrapper.group ul li a {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    text-align: start;
+    grid-gap: 10px;
+  }
+
+  .beverages-wrapper.group ul li .beverage-box {
+    margin-right: 0px;
+  }
+
 }
