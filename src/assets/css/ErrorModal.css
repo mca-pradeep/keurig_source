@@ -26,6 +26,9 @@
   justify-content: flex-end;
   padding: 0 0.5rem;
 }
+.error-modal__actions button {
+  cursor: pointer;
+}
 
 .backdrop {
   position: fixed;

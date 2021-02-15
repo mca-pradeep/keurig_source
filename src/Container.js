@@ -107,12 +107,17 @@ class Container extends Component {
   };
 
   errorModalCloseHandler = () => {
-    // this.setState((prevState) => {
-    //   return {
-    //     ...prevState,
-    //     error: !prevState.error,
-    //   };
-    // });
+    this.setState(
+      (prevState) => {
+        return {
+          ...prevState,
+          error: !prevState.error,
+        };
+      },
+      () => {
+        this.props.history.replace(`/${this.props.location.search}`);
+      }
+    );
   };
 
   render() {

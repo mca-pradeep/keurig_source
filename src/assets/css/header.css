@@ -15,9 +15,8 @@
 .grid-list-view div {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
-
-
 
 .grid-list-view .list {
   margin-left: 10px;
@@ -78,7 +77,6 @@
   display: flex;
   align-items: center;
 }
-
 
 .beverage-info {
   position: relative;
