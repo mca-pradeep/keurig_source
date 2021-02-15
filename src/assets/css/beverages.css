@@ -7,11 +7,15 @@
 }
 
 .beverages-wrapper.group ul li a {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-auto-flow: column;
+  text-align: start;
+  grid-gap: 10px;
 }
 
-.beverages-wrapper.group ul li a .beverage-box {
+.beverages-wrapper.group ul li h3 {
+  max-width: unset;
 }
 
 .beverages-wrapper ul {
