@@ -10,7 +10,7 @@
     url("./assets/Fonts/Mark-OT-TTF/MarkOT.svg#MarkOT") format("svg");
 }
 
-/* 
+
 @font-face {
   font-family: "MarkOT-Black";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.eot");
@@ -79,7 +79,7 @@
     url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.ttf") format("truetype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.svg#MarkOT-Italic") format("svg");
-} */
+}
 
 .transition {
   transition: all ease 0.5s;
