@@ -1,8 +1,7 @@
 import React from "react";
 import { Base64 } from "js-base64";
 import { withRouter, Link } from "react-router-dom";
-import { dashboard_views } from "../../config/constants";
-import { beverageTypes /*, assets_images */ } from "../../config/constants";
+import { dashboard_views, beverageTypes } from "../../config/constants";
 import "../../assets/css/beverage.css";
 
 const Beverage = (props) => {
@@ -31,11 +30,23 @@ const Beverage = (props) => {
         viewName !== null &&
         viewName === dashboard_views.LIST ? (
           <div className="beverage-info">
-            <h3>{beverageTypes[props.beverage.type].name}</h3>
-            <p>{beverageTypes[props.beverage.type].desc}</p>
+            <h3>
+              {
+                props.general_messages["BEVERAGE_TYPES"][props.beverage.type]
+                  .name
+              }
+            </h3>
+            <p>
+              {
+                props.general_messages["BEVERAGE_TYPES"][props.beverage.type]
+                  .desc
+              }
+            </p>
           </div>
         ) : (
-          <h3>{beverageTypes[props.beverage.type].name}</h3>
+          <h3>
+            {props.general_messages["BEVERAGE_TYPES"][props.beverage.type].name}
+          </h3>
         )}
       </Link>
     </li>

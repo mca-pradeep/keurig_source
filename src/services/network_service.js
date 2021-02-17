@@ -1,9 +1,10 @@
 class NetworkService {
-  constructor(url, type, parameter) {
+  constructor(url, type, parameter, securityCode) {
     this.url = url;
     this.method = type;
     if (parameter === undefined) parameter = null;
     this.reqObject = parameter;
+    this.securityCode = securityCode;
   }
 
   fetchOptions(reqMethod, multipart) {
@@ -25,6 +26,9 @@ class NetworkService {
       } else {
         optionObj.body = JSON.stringify(this.reqObject);
       }
+    }
+    if (this.securityCode !== undefined) {
+      optionObj.headers["X-Brewer-OTP"] = this.securityCode;
     }
     return optionObj;
   }

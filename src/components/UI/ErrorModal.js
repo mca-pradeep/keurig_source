@@ -7,6 +7,8 @@ const ErrorModal = (props) => {
     <React.Fragment>
       <div className="backdrop" onClick={props.onClose} />
       <div className="error-modal">
+        <div
+          dangerouslySetInnerHTML={props.showSvgContent(props.infoImg)}></div>
         <h2>{props.title}</h2>
         <p>{props.message}</p>
         <div className="error-modal__actions">

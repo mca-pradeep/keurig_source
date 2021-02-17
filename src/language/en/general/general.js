@@ -1,50 +1,120 @@
-//ANY Time
-export const ANY_TIME_001 = "Perfectly made just the way you like it";
-export const ANY_TIME_002 = "What can we help you brew today?";
-export const ANY_TIME_003 = "Enjoy all the delicious possibilities";
-export const ANY_TIME_004 = "What can we brew for you today?";
-export const ANY_TIME_005 = "A perfect pick-me-up, just for you";
-export const ANY_TIME_006 = "The perfect cup is at your fingertips";
-export const ANY_TIME_007 = "You'll never leave with an empty cup";
-export const ANY_TIME_008 = "Your coffeehouse favorities are waiting";
-export const ANY_TIME_009 = "The perfect cup, just the way you like it";
-export const ANY_TIME_010 = "Let's get brewing";
+export const BEVERAGE_TYPES = {
+  Coffee: {
+    name: "Coffee",
+    desc: "Freshly brewed coffee with your favorite pod",
+  },
+  IcedCoffee: {
+    name: "Iced Coffee",
+    desc:
+      "Fill a cup (do not use glass) with ice and brew a refreshing iced coffee with your favorite pod",
+  },
+  CafeAuLait: {
+    name: "Café Au Lait",
+    desc: "Fresh coffee brewed with your favorite pod and a splash of milk",
+  },
+  Latte: {
+    name: "Latte",
+    desc:
+      "Rich, creamy coffee brewed with your favorite pod and blended with warmed milk.",
+  },
+  Cappuccino: {
+    name: "Cappuccino",
+    desc:
+      "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed milk.",
+  },
+  CafeMocha: {
+    name: "Café Mocha",
+    desc:
+      "Freshly brewed coffee from your favorite pod, made with the rich taste of chocolate milk",
+  },
+  MochaLatte: {
+    name: "Mocha Latte",
+    desc:
+      "Rich, creamy coffee brewed with your favorite pod and blended with warmed chocolate milk.",
+  },
+  MochaCappuccino: {
+    name: "Mocha Cappuccino",
+    desc:
+      "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed chocolate milk.",
+  },
+  CafeVanilla: {
+    name: "Café Vanilla",
+    desc:
+      "Freshly brewed coffee from your favorite pod, made with the vibrant taste of vanilla milk",
+  },
+  VanillaLatte: {
+    name: '"Vanilla Latte"',
+    desc:
+      "Rich, creamy coffee brewed with your favorite pod and blended with warmed vanilla milk.",
+  },
+  VanillaCappuccino: {
+    name: "Vanilla Cappuccino",
+    desc:
+      "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed vanilla milk.",
+  },
+  Tea: {
+    name: "Tea",
+    desc: "Freshly brewed tea with your favorite pod",
+  },
+  IcedTea: {
+    name: "Iced Tea",
+    desc:
+      "Fill a cup (do not use glass) with ice and brew a refreshing iced tea with your favorite pod",
+  },
+  TeaAuLait: {
+    name: "Tea Au Lait",
+    desc:
+      "Freshly brewed tea from your favorite pod and a splash of warmed milk",
+  },
+  TeaLatte: {
+    name: "Tea Latte",
+    desc:
+      "Rich, creamy tea brewed with your favorite pod and blended with warmed milk.",
+  },
+  VanillaTeaAuLait: {
+    name: "Vanilla Tea Au Lait",
+    desc:
+      "Freshly brewed tea from your favorite pod and a splash of warmed vanilla milk",
+  },
+  VanillaTeaLatte: {
+    name: "Vanilla Tea Latte",
+    desc:
+      "Rich, creamy tea brewed with your favorite pod and blended with warmed vanilla milk",
+  },
+  HotChocolate: {
+    name: "Hot Chocolate",
+    desc: "Ready-to-go hot chocolate brewed with your favorite pod",
+  },
+  CafeStyleBeverage: {
+    name: "Café Style Beverage",
+    desc: "Freshly brewed, creamy café-style beverage with your favorite pod",
+  },
+  Cider: {
+    name: "Cider",
+    desc: "Ready-to-go hot cider brewed with your favorite pod",
+  },
+  CafeEscapes: {
+    name: "Café Escapes",
+    desc: "Freshly brewed, creamy café-style beverage with your favorite pod",
+  },
+};
 
-//Day Based
-export const DAY_BASED_MONDAY_ONLY_001 = "Happy Mmm-onday";
-export const DAY_BASED_MONDAY_ONLY_002 =
-  "It's still Monday, but at least it tastes better now";
-export const DAY_BASED_THURSDAY_ONLY_001 =
-  "It's not just Thursday, it's Friday eve";
-export const DAY_BASED_FRIDAY_ONLY_001 = "Like drinking Friday in a cup";
-export const DAY_BASED_FRIDAY_ONLY_002 =
-  "Here’s to one more day until the weekend";
+export const SYSTEM_STRENGTH = {
+  Regular: "Regular",
+  Strong: "Strong",
+  ExtraStrong: "Extra Strong",
+};
 
-//Time Based
-export const TIME_BASED_001 = "Start each day with a full cup";
-export const TIME_BASED_MORNING_ONLY_001 =
-  "Go forth, and have a delicious morning!";
-export const TIME_BASED_AFTERNOON_ONLY_001 =
-  "This afternoon pick-me-up won't let you down";
-
-//General Messages
-export const GREET_MESSAGE_GOOD_MORNING = "Good Morning";
-export const GREET_MESSAGE_GOOD_AFTERNOON = "Good Afternoon";
-export const GREET_MESSAGE_GOOD_EVENING = "Good Evening";
-
-//choose options
+export const SYSTEM_TEMPERATURE = {
+  Iced: "Iced",
+  Hot: "Hot",
+  Hotter: "Hotter",
+  ExtraHot: "Extra Hot",
+};
 export const BREWING_OPTIONS = "BREWING OPTIONS";
-export const STRENGTH = "Strength";
-export const TEMPRATURE = "Temperature";
-
 export const CHOOSE_STRENGTH = "Choose Strength";
-export const CHOOSE_TEMPRATURE = "Choose Temperature";
+export const CHOOSE_TEMPERATURE = "Choose Temperature";
+export const STRENGTH = "Strength";
+export const TEMPERATURE = "Temperature";
 
-//size options
-export const SIZE_04 = "4";
-export const SIZE_06 = "6";
-export const SIZE_08 = "8";
-export const SIZE_10 = "10";
-export const SIZE_12 = "12";
-
-export const SIZE_UNIT = "oz";
+export const BREWER_MESSAGE = "Check your brewer and enjoy!";

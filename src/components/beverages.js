@@ -28,6 +28,7 @@ const Beverages = (props) => {
                   beverage={item}
                   query_string={query_string_obj}
                   currentView={props.currentView}
+                  general_messages={props.general_messages}
                 />
               );
             })

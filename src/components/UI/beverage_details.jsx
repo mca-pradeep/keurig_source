@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 // import Spinner from "../UI/LoadingIndicator";
 import { Base64 } from "js-base64";
+
 import DefaultOptions from "./defaultOptions";
 import SizeListElement from "./size_list_element";
 import TempratureOptions from "./temprature_options";
@@ -24,11 +25,6 @@ class BeverageDetails extends Component {
     beverages: this.props.beverages,
   };
 
-  showSize = (content) => {
-    return {
-      __html: content,
-    };
-  };
   componentDidMount() {
     //do call api for getting available beverages
     let beverages = null;
@@ -59,20 +55,28 @@ class BeverageDetails extends Component {
           (size) => size.size === beverage.recommendedSize
         );
 
-        this.setState({
-          size_list: beverage.sizes,
-          strength_options: beverage.availableStrengths,
-          temprature_options: beverage.availableTemperatures,
-          user_selected_size: beverage.recommendedSize,
-          user_selected_strength:
-            selectedSize && selectedSize[0]
-              ? selectedSize[0].recommendedBrew.strength
-              : null,
-          user_selected_temprature:
-            selectedSize && selectedSize[0]
-              ? selectedSize[0].recommendedBrew.temperature
-              : null,
-        });
+        this.setState(
+          {
+            size_list: beverage.sizes,
+            strength_options: beverage.availableStrengths,
+            temprature_options: beverage.availableTemperatures,
+          },
+          () => {
+            this.props.onUpdateBrewingStateHandler("type", beverage.type);
+            this.props.onUpdateBrewingStateHandler(
+              "size",
+              beverage.recommendedSize
+            );
+            this.props.onUpdateBrewingStateHandler(
+              "strength",
+              selectedSize[0].recommendedBrew.strength
+            );
+            this.props.onUpdateBrewingStateHandler(
+              "temperature",
+              selectedSize[0].recommendedBrew.temperature
+            );
+          }
+        );
       }
     }
     //do language specific things
@@ -88,24 +92,19 @@ class BeverageDetails extends Component {
     e.preventDefault();
 
     const selectedSize = this.state.size_list.filter(
-      (size) => size.size === this.state.user_selected_size
+      (size) => size.size === customSize //this.props.userSelection.size
     );
     if (selectedSize && selectedSize.length) {
-      this.setState({
-        user_selected_strength:
-          selectedSize && selectedSize[0]
-            ? selectedSize[0].recommendedBrew.strength
-            : null,
-        user_selected_temprature:
-          selectedSize && selectedSize[0]
-            ? selectedSize[0].recommendedBrew.temperature
-            : null,
-      });
+      this.props.onUpdateBrewingStateHandler(
+        "strength",
+        selectedSize[0].recommendedBrew.strength
+      );
+      this.props.onUpdateBrewingStateHandler(
+        "temperature",
+        selectedSize[0].recommendedBrew.temperature
+      );
     }
-
-    this.setState({
-      user_selected_size: customSize,
-    });
+    this.props.onUpdateBrewingStateHandler("size", customSize);
   };
   chooseOptionHandler = (option) => {
     this.setState({
@@ -115,21 +114,24 @@ class BeverageDetails extends Component {
 
   customizeStrengthTempratureHandler = (option, value) => {
     if (option === "temprature") {
-      this.setState({
-        user_selected_temprature: value,
-        customize_option: null,
-      });
+      this.setState(
+        {
+          customize_option: null,
+        },
+        () => {
+          this.props.onUpdateBrewingStateHandler("temperature", value);
+        }
+      );
     } else if (option === "strength") {
-      this.setState({
-        user_selected_strength: value,
-        customize_option: null,
-      });
+      this.setState(
+        {
+          customize_option: null,
+        },
+        () => {
+          this.props.onUpdateBrewingStateHandler("strength", value);
+        }
+      );
     }
-  };
-
-  submitHandler = (e) => {
-    e.preventDefault();
-    console.log("brewing");
   };
 
   render() {
@@ -140,8 +142,8 @@ class BeverageDetails extends Component {
         <DefaultOptions
           chooseOptionHandler={this.chooseOptionHandler}
           general_messages={this.state.general_messages}
-          user_selected_strength={this.state.user_selected_strength}
-          user_selected_temprature={this.state.user_selected_temprature}
+          user_selected_strength={this.props.userSelection.strength}
+          user_selected_temprature={this.props.userSelection.temperature}
         />
       );
       contentFlag = true;
@@ -154,7 +156,7 @@ class BeverageDetails extends Component {
       tempOptions = (
         <TempratureOptions
           temprature_options={this.state.temprature_options}
-          user_selected_temprature={this.state.user_selected_temprature}
+          user_selected_temprature={this.props.userSelection.temperature}
           onTempratureHandler={this.customizeStrengthTempratureHandler}
           general_messages={this.state.general_messages}
         />
@@ -169,7 +171,7 @@ class BeverageDetails extends Component {
       tempOptions = (
         <StrengthOptions
           strength_options={this.state.strength_options}
-          user_selected_strength={this.state.user_selected_strength}
+          user_selected_strength={this.props.userSelection.strength}
           onStrengthHandler={this.customizeStrengthTempratureHandler}
           general_messages={this.state.general_messages}
         />
@@ -179,15 +181,15 @@ class BeverageDetails extends Component {
     return (
       <React.Fragment>
         {this.props.isLoading ? (
-          <form onSubmit={this.submitHandler}>
+          <form onSubmit={this.props.onBrewSubmitHandler}>
             <div className="beverage-details with-padding">
               {this.state.size_list !== null ? (
                 <SizeListElement
                   size_lists={this.state.size_list}
                   general_messages={this.state.general_messages}
-                  userSelectedSize={this.state.user_selected_size}
+                  userSelectedSize={this.props.userSelection.size}
                   customizeSizeHandler={this.customizeSizeHandler}
-                  showSvgContent={this.showSize}
+                  showSvgContent={this.props.showSvgContent}
                 />
               ) : null}
               <section className="brew-customize">
@@ -210,10 +212,7 @@ class BeverageDetails extends Component {
             ) : null}
             <section className="submit-button-container">
               <div className="submit-button-inner">
-                <button
-                  onClick={(e) => {
-                    this.setState({ is_submit: true });
-                  }}>
+                <button>
                   <img
                     className="submit-btn"
                     src={`${window.location.origin}${

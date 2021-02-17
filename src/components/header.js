@@ -14,7 +14,7 @@ class Header extends Component {
     super(props);
     this.state = {
       show_info: false,
-      general_messages: null,
+      general_messages: props.general_messages,
       podImgOk: false,
       setIsLoading: props.setIsLoading,
       pod: props.pod,
@@ -71,15 +71,15 @@ class Header extends Component {
         });
       });
     }
-    let defaultLanguage = localStorage.getItem("default_language");
-    if (defaultLanguage == null) {
-      defaultLanguage = "en";
-      localStorage.setItem("default_language", defaultLanguage);
-    }
-    const general_messages = require(`../language/${defaultLanguage}/general/general`);
-    this.setState({
-      general_messages: general_messages,
-    });
+    // let defaultLanguage = localStorage.getItem("default_language");
+    // if (defaultLanguage == null) {
+    //   defaultLanguage = "en";
+    //   localStorage.setItem("default_language", defaultLanguage);
+    // }
+    // const general_messages = require(`../language/${defaultLanguage}/general/general`);
+    // this.setState({
+    //   general_messages: general_messages,
+    // });
   }
 
   render() {
@@ -105,7 +105,9 @@ class Header extends Component {
     if (this.props.is_back) {
       headerClasses.push("h-detail");
       if (beverage) {
-        pod_details = beverageTypes[beverage.type].name;
+        pod_details = this.state.general_messages["BEVERAGE_TYPES"][
+          beverage.type
+        ].name;
       }
     }
     let viewName = this.props.currentView || localStorage.getItem("listView");
@@ -237,7 +239,12 @@ class Header extends Component {
         <div className={infoClasses.join(" ")}>
           <div className="custom_model_inr">
             <div className="custom_model_color">
-              <p>{beverage ? beverageTypes[beverage.type].desc : null}</p>
+              <p>
+                {beverage
+                  ? this.state.general_messages["BEVERAGE_TYPES"][beverage.type]
+                      .desc
+                  : null}
+              </p>
             </div>
           </div>
         </div>

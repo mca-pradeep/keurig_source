@@ -4,7 +4,9 @@ import OptionCarousel from "./OptionCarousel";
 const tempratureOptions = (props) => {
   return (
     <div className="choose-options active">
-      <strong>{props.general_messages[general_codes.CHOOSE_TEMPRATURE]}</strong>
+      <strong>
+        {props.general_messages[general_codes.CHOOSE_TEMPERATURE]}
+      </strong>
       <OptionCarousel
         selectedIndex={props.temprature_options.findIndex(
           (item) => item === props.user_selected_temprature
@@ -19,7 +21,13 @@ const tempratureOptions = (props) => {
               className={
                 temprature === props.user_selected_temprature ? "active" : ""
               }>
-              <span>{system_temprature[temprature]}</span>
+              <span>
+                {
+                  props.general_messages[general_codes.SYSTEM_TEMPERATURE][
+                    temprature
+                  ]
+                }
+              </span>
             </div>
           );
         })}
