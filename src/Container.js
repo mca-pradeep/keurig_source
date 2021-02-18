@@ -42,7 +42,7 @@ class Container extends Component {
     brewerId: null,
     pod: null,
     listView: dashboard_views.GROUP,
-    error: true,
+    error: false,
     is_brewing: false,
     title: "Brewer Timeout",
     message: "Rescan the QR Code on your brewer to begin again",

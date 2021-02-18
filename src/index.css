@@ -80,6 +80,18 @@
     url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.svg#MarkOT-Italic") format("svg");
 }
 
+@font-face {
+  font-family: 'Archer-Book';
+  src: url('./assets/Fonts/Archer/Archer-Book.eot');
+  src: url('./assets/Fonts/Archer/Archer-Book.eot?#iefix') format('embedded-opentype'),
+    url('./assets/Fonts/Archer/Archer-Book.otf') format('otf'),
+    url('./assets/Fonts/Archer/Archer-Book.svg#Archer-Book') format('svg'),
+    url('./assets/Fonts/Archer/Archer-Book.ttf') format('truetype'),
+    url('./assets/Fonts/Archer/Archer-Book.woff') format('woff'),
+    url('./assets/Fonts/Archer/Archer-Book.woff2') format('woff2');
+}
+
+
 .transition {
   transition: all ease 0.5s;
   -webkit-transition: all ease 0.5s;
