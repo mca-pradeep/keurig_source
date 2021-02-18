@@ -1,24 +1,36 @@
 .error-modal {
   position: fixed;
-  top: 30vh;
-  left: calc(50% - 10rem);
-  width: 20rem;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 188px;
+  max-width: 263px;
+  background: #FAF5F0;
+  border: 0.875px solid #5B3427;
+  border-radius: 24.0625px;
+  display: flex;
   z-index: 100;
-  border-radius: 7px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .error-modal h2 {
-  margin: 0;
-  padding: 1rem;
+  margin: 6px 0 0;
   color: #5b3427;
-  border-radius: 7px 7px 0 0;
   font-family: "MarkOT-Bold";
+  line-height: normal;
+  font-size: 18px;
 }
 
 .error-modal p {
-  padding: 1rem;
+  margin: 6px auto 0;
+  color: #5b3427;
+  line-height: 19px;
+  font-size: 16px;
+  max-width: 190px;
 }
 
 .error-modal__actions {
@@ -26,6 +38,7 @@
   justify-content: flex-end;
   padding: 0 0.5rem;
 }
+
 .error-modal__actions button {
   cursor: pointer;
 }
