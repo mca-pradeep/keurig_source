@@ -181,7 +181,7 @@ class Container extends Component {
           .hitNetwork()
           .then((resp) => {
             console.log("Brewer Response ::::", resp, this.state);
-            if (resp.code != 200) {
+            if (resp.code !== 200) {
               this.setState({
                 error: true,
                 code: resp.code,
@@ -296,6 +296,7 @@ class Container extends Component {
                 title={"ERROR!"}
                 message={"Something went wrong!!!"}
                 onClose={this.errorModalCloseHandler}
+                showSvgContent={this.showDangerousContentHandler}
               />
             ) : null}
           </Route>
