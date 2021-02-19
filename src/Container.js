@@ -18,6 +18,7 @@ import {
   effective_languages,
   ERRORS,
   KEURIG_LOGO,
+  assets_images,
 } from "./config/constants";
 import LoadingIndicator from "./components/UI/LoadingIndicator";
 let defaultLanguage = localStorage.getItem("default_language");
@@ -30,7 +31,13 @@ if (
 }
 const general_messages = require(`./language/${defaultLanguage}/general/general`);
 const error_messages = require(`./language/${defaultLanguage}/errors/errors`);
-
+const bgerrorImg = {
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  width: "100%",
+  height: "100vh",
+  opacity: "0.7",
+};
 class Container extends Component {
   state = {
     language: defaultLanguage,
@@ -44,9 +51,12 @@ class Container extends Component {
     listView: dashboard_views.GROUP,
     error: false,
     is_brewing: false,
-    title: "Brewer Timeout",
-    message: "Rescan the QR Code on your brewer to begin again",
-    code: 400,
+    title: "",
+    message: "",
+    code: null,
+    timer: 2 * 60 * 1000,
+    brewer_timer: null,
+    bgerrorImg: null,
     brewing: {
       type: null,
       size: null,
@@ -61,45 +71,6 @@ class Container extends Component {
     let path = `${PATHS.BASE_PATH}${PATHS.RESERVE}`;
     const queryObjs = QueryString.parse(this.props.location.search);
     const setIsLoading = this.props.setIsLoading;
-    new Network(path, "POST", queryObjs)
-      //new Network(`${window.location.origin}/keuring-reserve.json`, "GET")
-      .hitNetwork()
-      .then((resp) => {
-        //console.log("Network Response", resp);
-        setIsLoading(false);
-        localStorage.setItem("bever_list", JSON.stringify(resp));
-        localStorage.setItem("listView", dashboard_views.GROUP);
-        let modelType = resp.capabilities.modelType;
-        const brewing = {
-          ...this.state.brewing,
-          modelType: modelType ? modelType : "00",
-        };
-        this.setState(
-          {
-            brewerSecurityCode: resp.capabilities.brewerSecurityCode,
-            brewerId: resp.capabilities.brewerId,
-            pod: resp.capabilities.pod,
-            beverages: resp.capabilities.beverageTypes,
-            brewing: brewing,
-          },
-          () => {
-            if (this.state.beverages.length === 1) {
-              const beverage = this.state.beverages[0];
-              this.props.history.push(
-                `/beverage/${Base64.encode(beverage.type)}${
-                  this.props.location.search
-                }`
-              );
-            }
-          }
-        );
-      })
-      .catch((e) => {
-        setIsLoading(false);
-        this.setState({
-          error: true,
-        });
-      });
     //do language specific things
     let defaultLanguage = localStorage.getItem("default_language");
     if (
@@ -113,16 +84,84 @@ class Container extends Component {
         defaultLanguage = "en";
         localStorage.setItem("default_language", defaultLanguage);
       }
-      this.setState(
-        {
-          general_messages: require(`./language/${defaultLanguage}/general/general`),
-          error_messages: require(`./language/${defaultLanguage}/errors/errors`),
-        },
-        () => {
-          console.log("HHHH EEEE", this.state);
-        }
-      );
+      this.setState({
+        general_messages: require(`./language/${defaultLanguage}/general/general`),
+        error_messages: require(`./language/${defaultLanguage}/errors/errors`),
+      });
     }
+    new Network(path, "POST", queryObjs)
+      //new Network(`${window.location.origin}/keuring-reserve.json`, "GET")
+      .hitNetwork()
+      .then((resp) => {
+        console.log("Network Response", resp);
+        localStorage.setItem("listView", dashboard_views.GROUP);
+        localStorage.removeItem("bever_list");
+        setIsLoading(false);
+        if (resp.code !== 200) {
+          this.setState({
+            error: true,
+            code: resp.code,
+            title: resp.message,
+            message: this.state.error_messages[error_codes.ERROR_MESSAGES][
+              resp.code
+            ]
+              ? this.state.error_messages[error_codes.ERROR_MESSAGES][resp.code]
+                  .message
+              : null,
+            bgerrorImg: {
+              ...bgerrorImg,
+              backgroundImage: `url(${assets_images.BREWING_LOADER_HOME_IMG})`,
+            },
+          });
+        } else {
+          const respBody = resp.body;
+          localStorage.setItem("bever_list", JSON.stringify(respBody));
+          let modelType = respBody.capabilities.modelType;
+          const brewing = {
+            ...this.state.brewing,
+            modelType: modelType ? modelType : queryObjs.t,
+          };
+
+          let brewer_timer = window.setTimeout(() => {
+            this.setState({
+              error: true,
+              code: 105,
+              title: this.state.error_messages[error_codes.ERROR_MESSAGES][105]
+                .title,
+              message: this.state.error_messages[
+                error_codes.ERROR_MESSAGES
+              ][105].message,
+            });
+          }, this.state.timer);
+
+          this.setState(
+            {
+              brewerSecurityCode: respBody.capabilities.brewerSecurityCode,
+              brewerId: respBody.capabilities.brewerId,
+              pod: respBody.capabilities.pod,
+              beverages: respBody.capabilities.beverageTypes,
+              brewing: brewing,
+              brewer_timer: brewer_timer,
+            },
+            () => {
+              if (this.state.beverages.length === 1) {
+                const beverage = this.state.beverages[0];
+                this.props.history.push(
+                  `/beverage/${Base64.encode(beverage.type)}${
+                    this.props.location.search
+                  }`
+                );
+              }
+            }
+          );
+        }
+      })
+      .catch((e) => {
+        setIsLoading(false);
+        this.setState({
+          error: true,
+        });
+      });
   }
 
   updateBrewingStateHandler = (key, value) => {
@@ -159,65 +198,53 @@ class Container extends Component {
         };
       },
       () => {
-        //this.props.history.replace(`/${this.props.location.search}`);
-        window.location.reload();
+        //window.location.reload();
       }
     );
   };
 
   brewSubmitHandler = (e) => {
     e.preventDefault();
-    this.setState(
-      {
-        is_brewing: true,
-      },
-      () => {
-        let path = `${PATHS.BASE_PATH}${PATHS.START_BREW}`.replace(
-          "{brewerId}",
-          this.state.brewerId
-        );
-        const reqData = this.state.brewing;
-        new Network(path, "POST", reqData, this.state.brewerSecurityCode)
-          .hitNetwork()
-          .then((resp) => {
-            console.log("Brewer Response ::::", resp, this.state);
-            if (resp.code !== 200) {
-              this.setState({
-                error: true,
-                code: resp.code,
-                title: this.state.error_messages[error_codes.ERROR_MESSAGES][
-                  resp.code
-                ]
-                  ? this.state.error_messages[error_codes.ERROR_MESSAGES][
-                      resp.code
-                    ].title
-                  : null,
-                message: this.state.error_messages[error_codes.ERROR_MESSAGES][
-                  resp.code
-                ]
-                  ? this.state.error_messages[error_codes.ERROR_MESSAGES][
-                      resp.code
-                    ].message
-                  : null,
-              });
-            } else {
-              //
-            }
-          })
-          .catch((e) => {
-            this.setState({
-              error: true,
-              code: 500,
-              title: this.state.error_messages[error_codes.ERROR_500]
-                ? this.state.error_messages[error_codes.ERROR_500]
-                : null,
-              message: this.state.error_messages[
-                error_codes.ERROR_MESSAGES
-              ][500].message,
-            });
-          });
-      }
+    window.clearTimeout(this.state.brewer_timer);
+
+    let path = `${PATHS.BASE_PATH}${PATHS.START_BREW}`.replace(
+      "{brewerId}",
+      this.state.brewerId
     );
+    const reqData = this.state.brewing;
+    new Network(path, "POST", reqData, this.state.brewerSecurityCode)
+      .hitNetwork()
+      .then((resp) => {
+        if (resp.code !== 200) {
+          const body = resp.body;
+          this.setState({
+            error: true,
+            code: resp.code,
+            title: resp.message,
+            message: this.state.error_messages[error_codes.ERROR_MESSAGES][
+              resp.code
+            ]
+              ? this.state.error_messages[error_codes.ERROR_MESSAGES][resp.code]
+                  .message
+              : null,
+          });
+        } else {
+          this.setState({
+            is_brewing: true,
+          });
+        }
+      })
+      .catch((e) => {
+        this.setState({
+          error: true,
+          code: 500,
+          title: this.state.error_messages[error_codes.ERROR_500]
+            ? this.state.error_messages[error_codes.ERROR_500]
+            : null,
+          message: this.state.error_messages[error_codes.ERROR_MESSAGES][500]
+            .message,
+        });
+      });
   };
 
   render() {
@@ -225,7 +252,10 @@ class Container extends Component {
     if (this.state.is_footer) {
       footer = <Footer />;
     }
-
+    let errorStyle = {};
+    if (this.state.bgerrorImg) {
+      errorStyle = this.state.bgerrorImg;
+    }
     let brewingPage = this.state.is_brewing ? (
       <Brewing
         message={this.state.general_messages[general_codes.BREWER_MESSAGE]}
@@ -253,14 +283,16 @@ class Container extends Component {
           onBrewSubmitHandler={this.brewSubmitHandler}
         />
         {this.state.error ? (
-          <ErrorModel
-            btn_okay={null}
-            title={this.state.title}
-            message={this.state.message}
-            infoImg={ERRORS[this.state.code]}
-            showSvgContent={this.showDangerousContentHandler}
-            onClose={this.errorModalCloseHandler}
-          />
+          <div className="error-wrapper" style={errorStyle}>
+            <ErrorModel
+              btn_okay={null}
+              title={this.state.title}
+              message={this.state.message}
+              infoImg={ERRORS[this.state.code]}
+              showSvgContent={this.showDangerousContentHandler}
+              onClose={this.errorModalCloseHandler}
+            />
+          </div>
         ) : null}
       </React.Fragment>
     );
@@ -268,7 +300,26 @@ class Container extends Component {
     return (
       <React.Fragment>
         <Switch>
-          <Route path="/" exact>
+          <Route path="/beverage/:code" exact>
+            <React.Fragment>
+              {this.state.pod ? (
+                brewingPage
+              ) : this.state.error ? (
+                <div className="error-wrapper" style={errorStyle}>
+                  <ErrorModel
+                    btn_okay={null}
+                    title={this.state.title}
+                    message={this.state.message}
+                    onClose={this.errorModalCloseHandler}
+                    showSvgContent={this.showDangerousContentHandler}
+                  />
+                </div>
+              ) : (
+                <LoadingIndicator />
+              )}
+            </React.Fragment>
+          </Route>
+          <Route path="/">
             {general_messages && this.state.pod ? (
               <React.Fragment>
                 <Header
@@ -291,19 +342,16 @@ class Container extends Component {
                 />
               </React.Fragment>
             ) : this.state.error ? (
-              <ErrorModel
-                btn_okay={"Okay"}
-                title={"ERROR!"}
-                message={"Something went wrong!!!"}
-                onClose={this.errorModalCloseHandler}
-                showSvgContent={this.showDangerousContentHandler}
-              />
+              <div className="error-wrapper" style={errorStyle}>
+                <ErrorModel
+                  btn_okay={null}
+                  title={"ERROR!"}
+                  message={"Something went wrong!!!"}
+                  onClose={this.errorModalCloseHandler}
+                  showSvgContent={this.showDangerousContentHandler}
+                />
+              </div>
             ) : null}
-          </Route>
-          <Route path="/beverage/:code" exact>
-            <React.Fragment>
-              {this.state.pod ? brewingPage : <LoadingIndicator />}
-            </React.Fragment>
           </Route>
         </Switch>
         {footer}

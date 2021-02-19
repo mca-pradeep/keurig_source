@@ -90,7 +90,6 @@ class BeverageDetails extends Component {
 
   customizeSizeHandler = (e, customSize) => {
     e.preventDefault();
-
     const selectedSize = this.state.size_list.filter(
       (size) => size.size === customSize //this.props.userSelection.size
     );
@@ -180,7 +179,7 @@ class BeverageDetails extends Component {
     }
     return (
       <React.Fragment>
-        {this.props.isLoading ? (
+        {!this.props.isLoading ? (
           <form onSubmit={this.props.onBrewSubmitHandler}>
             <div className="beverage-details with-padding">
               {this.state.size_list !== null ? (

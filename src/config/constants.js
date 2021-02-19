@@ -91,6 +91,8 @@ export const assets_images = {
   // POD_BG_010: "/imgs/pods/bg/BevSelection_enhcd.jpg",
 
   // beverageTypesDefaultImage: "/imgs/pods/POD.png",
+  BREWING_IMG: "/imgs/svg/brewing_bg.svg",
+  BREWING_LOADER_HOME_IMG: "/imgs/svg/bg_home.svg",
 };
 export const beverageTypes = {
   Coffee: {
@@ -154,14 +156,14 @@ export const beverageTypes = {
     header: "/imgs/bev-images/brew-screen/header_bev_0009_tea_latte.png",
   },
   VanillaTeaAuLait: {
+    listing: "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
+    header: "/imgs/bev-images/brew-screen/header_bev_0006_tea_vanilla.png",
+  },
+  VanillaTeaLatte: {
     listing:
       "/imgs/bev-images/bev-selection/bev_selec_0006_tea_latte_vanilla.png",
     header:
       "/imgs/bev-images/brew-screen/header_bev_0008_tea_latte_vanilla.png",
-  },
-  VanillaTeaLatte: {
-    listing: "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
-    header: "/imgs/bev-images/brew-screen/header_bev_0006_tea_vanilla.png",
   },
   HotChocolate: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0003_hot_choc.png",
@@ -213,4 +215,5 @@ export const ERRORS = {
   404: ERROR_INFO,
   405: ERROR_INFO,
   500: ERROR_INFO,
+  105: ERROR_INFO,
 };

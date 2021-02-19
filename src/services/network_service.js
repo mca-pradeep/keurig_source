@@ -14,7 +14,6 @@ class NetworkService {
       cache: "no-cache",
       headers: {
         "Content-Type": "application/json",
-        //Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
       },
       body: null,
     };
@@ -35,12 +34,20 @@ class NetworkService {
 
   applyThis(url, method, isMultipart) {
     let options = this.fetchOptions(method, isMultipart);
+    let responseCode = null;
+    let responseStatusText = null;
     return fetch(url, options)
       .then(function (response) {
+        responseCode = response.status;
+        responseStatusText = response.statusText;
         return response.json();
       })
       .then(function (jsonData) {
-        return jsonData;
+        return {
+          code: responseCode,
+          message: responseStatusText,
+          body: jsonData,
+        };
       })
       .catch(function (e) {
         console.log(e);

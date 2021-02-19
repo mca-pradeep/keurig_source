@@ -47,15 +47,15 @@ function App() {
     await Promise.all(promises);
     setIsLoading(false);
   };
-
-  const stateIsLoading = () => isLoading;
-
+  document.getElementById("root").style[
+    "background-image"
+  ] = `${window.location.origin}${assets_images.BREWING_LOADER_HOME_IMG}`;
   return (
     <React.Fragment>
       {isLoading ? (
         <Spinner />
       ) : (
-        <Container isLoading={stateIsLoading} setIsLoading={setIsLoading} />
+        <Container isLoading={isLoading} setIsLoading={setIsLoading} />
       )}
     </React.Fragment>
   );

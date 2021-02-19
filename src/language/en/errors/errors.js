@@ -18,25 +18,32 @@ export const POD_BIN_FULL_MSG_002 = "Please reinsert pod bin.";
 
 export const ERROR_500 = "Internal Server Error";
 
+export const GENERAL_ERROR_MESSAGE =
+  "Rescan the QR Code on your brewer to begin again";
+
 export const ERROR_MESSAGES = {
   400: {
     title: "Invalid Size",
-    message: "Size is invalid",
+    message: GENERAL_ERROR_MESSAGE,
   },
   401: {
     title: "Invalid Security Key",
-    message: "The security key has expired or is invalid",
+    message: GENERAL_ERROR_MESSAGE,
   },
   404: {
     title: "Brewer Not Found",
-    message: "Brewer Not Found",
+    message: GENERAL_ERROR_MESSAGE,
   },
   405: {
     title: "Not Suppoted",
-    message: "Operation Not Supported on this brewer",
+    message: GENERAL_ERROR_MESSAGE,
   },
   500: {
     title: "InternalServerError",
-    message: "Internal Server Error",
+    message: GENERAL_ERROR_MESSAGE,
+  },
+  105: {
+    title: "Brewer Timeout",
+    message: GENERAL_ERROR_MESSAGE,
   },
 };
