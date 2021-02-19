@@ -20,6 +20,7 @@ body,
   font-size: 51px;
   color: #5b3427;
   font-family: "Archer-Book";
+  text-align: center;
 }
 
 .brewing-container .brewing-logo {
@@ -28,6 +29,7 @@ body,
   right: 0;
   margin: auto;
   bottom: 30px;
+  text-align: center;
 }
 
 @media screen and (max-width: 500px) {
