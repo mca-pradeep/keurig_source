@@ -276,6 +276,14 @@ div.aligned-vertical {
     width: 45px;
   }
 }
-.slick-track {
-  display: inline-block;
+.temp-strength {
+  display: none;
+}
+.brew-customize.active {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 0;
 }

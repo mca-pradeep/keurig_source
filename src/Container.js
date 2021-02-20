@@ -295,6 +295,7 @@ class Container extends Component {
         <BeverageDetails
           isLoading={this.props.isLoading}
           setIsLoading={this.props.setIsLoading}
+          general_codes={general_codes}
           general_messages={this.state.general_messages}
           beverages={this.state.beverages}
           showSvgContent={this.showDangerousContentHandler}

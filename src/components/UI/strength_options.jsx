@@ -1,10 +1,11 @@
-import * as general_codes from "../../language/codes/general/general";
 import OptionCarousel from "./OptionCarousel";
 
 const strengthOptions = (props) => {
   return (
     <div className="choose-options active">
-      <strong>{props.general_messages[general_codes.CHOOSE_STRENGTH]}</strong>
+      <strong>
+        {props.general_messages[props.general_codes.CHOOSE_STRENGTH]}
+      </strong>
       <OptionCarousel
         selectedIndex={props.strength_options.findIndex(
           (item) => item === props.user_selected_strength
@@ -21,7 +22,7 @@ const strengthOptions = (props) => {
               }>
               <span>
                 {
-                  props.general_messages[general_codes.SYSTEM_STRENGTH][
+                  props.general_messages[props.general_codes.SYSTEM_STRENGTH][
                     strength
                   ]
                 }

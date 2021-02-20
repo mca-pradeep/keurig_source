@@ -7,13 +7,12 @@ import DefaultOptions from "./defaultOptions";
 import SizeListElement from "./size_list_element";
 import TempratureOptions from "./temprature_options";
 import StrengthOptions from "./strength_options";
-import * as general_codes from "../../language/codes/general/general";
+
 import "../../assets/css/beverage_details.css";
 import * as constant from "../../config/constants";
 
 class BeverageDetails extends Component {
   state = {
-    general_messages: null,
     is_submit: false,
     user_selected_size: null,
     user_selected_strength: null,
@@ -79,13 +78,6 @@ class BeverageDetails extends Component {
         );
       }
     }
-    //do language specific things
-    let defaultLanguage = localStorage.getItem("default_language");
-    if (this.state.size_list == null) {
-      this.setState({
-        general_messages: require(`../../language/${defaultLanguage}/general/general`),
-      });
-    }
   }
 
   customizeSizeHandler = (e, customSize) => {
@@ -112,70 +104,40 @@ class BeverageDetails extends Component {
   };
 
   customizeStrengthTempratureHandler = (option, value) => {
+    const TIME = 300;
     if (option === "temprature") {
-      this.setState(
-        {
+      this.props.onUpdateBrewingStateHandler("temperature", value);
+      setTimeout(() => {
+        this.setState({
           customize_option: null,
-        },
-        () => {
-          this.props.onUpdateBrewingStateHandler("temperature", value);
-        }
-      );
+        });
+      }, TIME);
     } else if (option === "strength") {
-      this.setState(
-        {
+      this.props.onUpdateBrewingStateHandler("strength", value);
+      setTimeout(() => {
+        this.setState({
           customize_option: null,
-        },
-        () => {
-          this.props.onUpdateBrewingStateHandler("strength", value);
-        }
-      );
+        });
+      }, TIME);
     }
   };
 
   render() {
-    let tempOptions = null;
-    let contentFlag = false;
-    if (this.state.general_messages != null) {
-      tempOptions = (
-        <DefaultOptions
-          chooseOptionHandler={this.chooseOptionHandler}
-          general_messages={this.state.general_messages}
-          user_selected_strength={this.props.userSelection.strength}
-          user_selected_temprature={this.props.userSelection.temperature}
-        />
-      );
-      contentFlag = true;
-    }
+    let temperatureClasses = ["brew-customize", "temp-strength"];
+    let strengthClasses = ["brew-customize", "temp-strength"];
 
     if (
       this.state.customize_option &&
       this.state.customize_option === "temprature"
     ) {
-      tempOptions = (
-        <TempratureOptions
-          temprature_options={this.state.temprature_options}
-          user_selected_temprature={this.props.userSelection.temperature}
-          onTempratureHandler={this.customizeStrengthTempratureHandler}
-          general_messages={this.state.general_messages}
-        />
-      );
-      contentFlag = false;
+      temperatureClasses.push("active");
     }
 
     if (
       this.state.customize_option &&
       this.state.customize_option === "strength"
     ) {
-      tempOptions = (
-        <StrengthOptions
-          strength_options={this.state.strength_options}
-          user_selected_strength={this.props.userSelection.strength}
-          onStrengthHandler={this.customizeStrengthTempratureHandler}
-          general_messages={this.state.general_messages}
-        />
-      );
-      contentFlag = false;
+      strengthClasses.push("active");
     }
     return (
       <React.Fragment>
@@ -185,7 +147,7 @@ class BeverageDetails extends Component {
               {this.state.size_list !== null ? (
                 <SizeListElement
                   size_lists={this.state.size_list}
-                  general_messages={this.state.general_messages}
+                  general_messages={this.props.general_messages}
                   userSelectedSize={this.props.userSelection.size}
                   customizeSizeHandler={this.customizeSizeHandler}
                   showSvgContent={this.props.showSvgContent}
@@ -194,21 +156,51 @@ class BeverageDetails extends Component {
               <section className="brew-customize">
                 <div className="customize-title">
                   <span>
-                    {this.state.general_messages
-                      ? this.state.general_messages[
-                          general_codes.BREWING_OPTIONS
-                        ]
-                      : null}
+                    {
+                      this.props.general_messages[
+                        this.props.general_codes.BREWING_OPTIONS
+                      ]
+                    }
                   </span>
                 </div>
               </section>
-              {contentFlag ? (
-                <section className="brew-customize">{tempOptions}</section>
-              ) : null}
+              <section className="brew-customize">
+                <DefaultOptions
+                  chooseOptionHandler={this.chooseOptionHandler}
+                  general_messages={this.props.general_messages}
+                  general_codes={this.props.general_codes}
+                  user_selected_strength={this.props.userSelection.strength}
+                  user_selected_temprature={
+                    this.props.userSelection.temperature
+                  }
+                  customizeOption={this.state.customize_option}
+                />
+              </section>
             </div>
-            {!contentFlag ? (
-              <section className="brew-customize">{tempOptions}</section>
-            ) : null}
+            <section className={temperatureClasses.join(" ")}>
+              {this.state.temprature_options ? (
+                <TempratureOptions
+                  temprature_options={this.state.temprature_options}
+                  user_selected_temprature={
+                    this.props.userSelection.temperature
+                  }
+                  onTempratureHandler={this.customizeStrengthTempratureHandler}
+                  general_codes={this.props.general_codes}
+                  general_messages={this.props.general_messages}
+                />
+              ) : null}
+            </section>
+            <section className={strengthClasses.join(" ")}>
+              {this.state.strength_options ? (
+                <StrengthOptions
+                  strength_options={this.state.strength_options}
+                  user_selected_strength={this.props.userSelection.strength}
+                  onStrengthHandler={this.customizeStrengthTempratureHandler}
+                  general_codes={this.props.general_codes}
+                  general_messages={this.props.general_messages}
+                />
+              ) : null}
+            </section>
             <section className="submit-button-container">
               <div className="submit-button-inner">
                 <button>

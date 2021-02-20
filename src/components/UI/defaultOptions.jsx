@@ -1,25 +1,34 @@
-import * as general_codes from "../../language/codes/general/general";
 const defaultOptions = (props) => {
-  const strengths = props.general_messages[general_codes.SYSTEM_STRENGTH];
+  const strengths = props.general_messages[props.general_codes.SYSTEM_STRENGTH];
+  const strengthClasses = ["streangth-container"];
+  const tempClasses = ["temprature-container"];
+  if (props.customizeOption === "temprature") {
+    tempClasses.push("selected");
+  } else if (props.customizeOption === "strength") {
+    strengthClasses.push("selected");
+  }
+
   return (
     <div className="temprature-streangth">
       <div className="temprature-streangth-inner">
         <div
-          className="streangth-container"
+          className={strengthClasses.join(" ")}
           onClick={(e) => props.chooseOptionHandler("strength")}>
           <span className="put-in-next">
-            <span>{props.general_messages[general_codes.STRENGTH]}</span>
+            <span>{props.general_messages[props.general_codes.STRENGTH]}</span>
             <strong>{strengths[props.user_selected_strength]}</strong>
           </span>
         </div>
         <div
-          className="temprature-container"
+          className={tempClasses.join(" ")}
           onClick={(e) => props.chooseOptionHandler("temprature")}>
           <span className="put-in-next">
-            <span>{props.general_messages[general_codes.TEMPERATURE]}</span>
+            <span>
+              {props.general_messages[props.general_codes.TEMPERATURE]}
+            </span>
             <strong>
               {
-                props.general_messages[general_codes.SYSTEM_TEMPERATURE][
+                props.general_messages[props.general_codes.SYSTEM_TEMPERATURE][
                   props.user_selected_temprature
                 ]
               }
