@@ -49,37 +49,34 @@ class Header extends Component {
     );
   }
 
+  cacheImages = async (srcArray) => {
+    const promises = await srcArray.map((src) => {
+      return new Promise(function (resolve, reject) {
+        const img = new Image();
+        img.src = src.key;
+        img.onload = () => {
+          resolve();
+        };
+        img.onerror = () => {
+          reject();
+        };
+      });
+    });
+    await Promise.all(promises);
+  };
+
   componentDidMount() {
     //do language specific things
     if (this.state.pod) {
-      const setIsLoading = this.state.setIsLoading;
+      //const setIsLoading = this.state.setIsLoading;
       const podImgSrc = this.state.pod.podImage;
-      new Promise(function (resolve, reject) {
-        const img = new Image();
-        img.src = podImgSrc;
-        img.onload = () => {
-          setIsLoading(false);
-          return resolve();
-        };
-        img.onerror = () => {
-          setIsLoading(false);
-          return reject();
-        };
-      }).then((resp) => {
+      if (podImgSrc !== undefined && podImgSrc !== "") {
+        this.cacheImages([podImgSrc]);
         this.setState({
           podImgOk: true,
         });
-      });
+      }
     }
-    // let defaultLanguage = localStorage.getItem("default_language");
-    // if (defaultLanguage == null) {
-    //   defaultLanguage = "en";
-    //   localStorage.setItem("default_language", defaultLanguage);
-    // }
-    // const general_messages = require(`../language/${defaultLanguage}/general/general`);
-    // this.setState({
-    //   general_messages: general_messages,
-    // });
   }
 
   render() {

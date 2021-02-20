@@ -16,18 +16,21 @@ const Beverages = (props) => {
   } else {
     wrapperClasses.push(dashboard_views.GROUP);
   }
-
+  const beverages_list = props.beverages.filter(
+    (item) => item.type !== undefined
+  );
   return (
     <section className={wrapperClasses.join(" ")}>
       <ul>
-        {props.beverages
-          ? props.beverages.map((item) => {
+        {beverages_list
+          ? beverages_list.map((item) => {
               return (
                 <Beverage
                   key={`${item.type}-`}
                   beverage={item}
                   query_string={query_string_obj}
                   currentView={props.currentView}
+                  general_codes={props.general_codes}
                   general_messages={props.general_messages}
                 />
               );

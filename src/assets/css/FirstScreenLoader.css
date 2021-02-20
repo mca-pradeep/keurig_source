@@ -1,0 +1,26 @@
+.first-screen {
+  height: 100%;
+  /* background: url("../images/bg_home@3x.svg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.first-screen::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background: url("../images/beverage_loader.svg");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}

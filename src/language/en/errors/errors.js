@@ -18,6 +18,9 @@ export const POD_BIN_FULL_MSG_002 = "Please reinsert pod bin.";
 
 export const ERROR_500 = "Internal Server Error";
 
+export const ERROR_404 = "Something went wrong!!!";
+export const ERROR_404_TITLE = "ERROR!";
+
 export const GENERAL_ERROR_MESSAGE =
   "Rescan the QR Code on your brewer to begin again";
 
@@ -39,7 +42,7 @@ export const ERROR_MESSAGES = {
     message: GENERAL_ERROR_MESSAGE,
   },
   500: {
-    title: "InternalServerError",
+    title: ERROR_500,
     message: GENERAL_ERROR_MESSAGE,
   },
   105: {

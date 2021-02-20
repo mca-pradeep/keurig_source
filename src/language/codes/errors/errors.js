@@ -17,3 +17,6 @@ export const POD_BIN_FULL_MSG_002 = "POD_BIN_FULL_MSG_001";
 
 export const ERROR_MESSAGES = "ERROR_MESSAGES";
 export const ERROR_500 = "ERROR_500";
+
+export const ERROR_404 = "ERROR_404";
+export const ERROR_404_TITLE = "ERROR_404_TITLE";

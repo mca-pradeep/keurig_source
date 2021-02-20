@@ -36,7 +36,6 @@ const bgerrorImg = {
   backgroundSize: "cover",
   width: "100%",
   height: "100vh",
-  opacity: "0.7",
 };
 class Container extends Component {
   state = {
@@ -51,6 +50,7 @@ class Container extends Component {
     listView: dashboard_views.GROUP,
     error: false,
     is_brewing: false,
+    is_submit: false,
     title: "",
     message: "",
     code: null,
@@ -89,79 +89,91 @@ class Container extends Component {
         error_messages: require(`./language/${defaultLanguage}/errors/errors`),
       });
     }
-    new Network(path, "POST", queryObjs)
-      //new Network(`${window.location.origin}/keuring-reserve.json`, "GET")
-      .hitNetwork()
-      .then((resp) => {
-        console.log("Network Response", resp);
-        localStorage.setItem("listView", dashboard_views.GROUP);
-        localStorage.removeItem("bever_list");
-        setIsLoading(false);
-        if (resp.code !== 200) {
-          this.setState({
-            error: true,
-            code: resp.code,
-            title: resp.message,
-            message: this.state.error_messages[error_codes.ERROR_MESSAGES][
-              resp.code
-            ]
-              ? this.state.error_messages[error_codes.ERROR_MESSAGES][resp.code]
-                  .message
-              : null,
-            bgerrorImg: {
-              ...bgerrorImg,
-              backgroundImage: `url(${assets_images.BREWING_LOADER_HOME_IMG})`,
-            },
-          });
-        } else {
-          const respBody = resp.body;
-          localStorage.setItem("bever_list", JSON.stringify(respBody));
-          let modelType = respBody.capabilities.modelType;
-          const brewing = {
-            ...this.state.brewing,
-            modelType: modelType ? modelType : queryObjs.t,
-          };
-
-          let brewer_timer = window.setTimeout(() => {
+    if (this.state.pod === null) {
+      new Network(path, "POST", queryObjs)
+        //new Network(`${window.location.origin}/keuring-reserve.json`, "GET")
+        .hitNetwork()
+        .then((resp) => {
+          //console.log("Network Response", resp);
+          localStorage.setItem("listView", dashboard_views.GROUP);
+          localStorage.removeItem("bever_list");
+          setIsLoading(false);
+          if (resp.code !== 200) {
             this.setState({
               error: true,
-              code: 105,
-              title: this.state.error_messages[error_codes.ERROR_MESSAGES][105]
-                .title,
-              message: this.state.error_messages[
-                error_codes.ERROR_MESSAGES
-              ][105].message,
+              code: resp.code,
+              title: resp.message,
+              message: this.state.error_messages[error_codes.ERROR_MESSAGES][
+                resp.code
+              ]
+                ? this.state.error_messages[error_codes.ERROR_MESSAGES][
+                    resp.code
+                  ].message
+                : null,
+              bgerrorImg: {
+                ...bgerrorImg,
+                backgroundImage: `url(${assets_images.BREWING_LOADER_HOME_IMG})`,
+              },
             });
-          }, this.state.timer);
+          } else {
+            const respBody = resp.body;
+            localStorage.setItem("bever_list", JSON.stringify(respBody));
+            let modelType = respBody.capabilities.modelType;
+            const brewing = {
+              ...this.state.brewing,
+              modelType: modelType ? modelType : queryObjs.t,
+            };
 
-          this.setState(
-            {
-              brewerSecurityCode: respBody.capabilities.brewerSecurityCode,
-              brewerId: respBody.capabilities.brewerId,
-              pod: respBody.capabilities.pod,
-              beverages: respBody.capabilities.beverageTypes,
-              brewing: brewing,
-              brewer_timer: brewer_timer,
-            },
-            () => {
-              if (this.state.beverages.length === 1) {
-                const beverage = this.state.beverages[0];
-                this.props.history.push(
-                  `/beverage/${Base64.encode(beverage.type)}${
-                    this.props.location.search
-                  }`
-                );
+            // let brewer_timer = window.setTimeout(() => {
+            //   this.setState({
+            //     error: true,
+            //     code: 105,
+            //     title: this.state.error_messages[error_codes.ERROR_MESSAGES][105]
+            //       .title,
+            //     message: this.state.error_messages[
+            //       error_codes.ERROR_MESSAGES
+            //     ][105].message,
+            //   });
+            // }, this.state.timer);
+
+            this.setState(
+              {
+                brewerSecurityCode: respBody.capabilities.brewerSecurityCode,
+                brewerId: respBody.capabilities.brewerId,
+                pod: respBody.capabilities.pod,
+                beverages: respBody.capabilities.beverageTypes,
+                brewing: brewing,
+                //brewer_timer: brewer_timer,
+              },
+              () => {
+                if (this.state.beverages.length === 1) {
+                  const beverage = this.state.beverages[0];
+                  this.props.history.push(
+                    `/beverage/${Base64.encode(beverage.type)}${
+                      this.props.location.search
+                    }`
+                  );
+                }
+
+                const oldState = { ...queryObjs };
+                delete queryObjs["s"];
+                delete queryObjs["b"];
+                let newStr = QueryString.stringify(queryObjs);
+                this.props.history.replace(`/?${newStr}`, {
+                  ...this.state,
+                  oldState: oldState,
+                });
               }
-            }
-          );
-        }
-      })
-      .catch((e) => {
-        setIsLoading(false);
-        this.setState({
-          error: true,
+            );
+          }
+        })
+        .catch((e) => {
+          setIsLoading(false);
+          this.setState({
+            error: true,
+          });
         });
-      });
+    }
   }
 
   updateBrewingStateHandler = (key, value) => {
@@ -205,46 +217,54 @@ class Container extends Component {
 
   brewSubmitHandler = (e) => {
     e.preventDefault();
-    window.clearTimeout(this.state.brewer_timer);
-
-    let path = `${PATHS.BASE_PATH}${PATHS.START_BREW}`.replace(
-      "{brewerId}",
-      this.state.brewerId
+    //window.clearTimeout(this.state.brewer_timer);
+    this.setState(
+      {
+        is_submit: true,
+      },
+      () => {
+        let path = `${PATHS.BASE_PATH}${PATHS.START_BREW}`.replace(
+          "{brewerId}",
+          this.state.brewerId
+        );
+        const reqData = this.state.brewing;
+        new Network(path, "POST", reqData, this.state.brewerSecurityCode)
+          .hitNetwork()
+          .then((resp) => {
+            if (resp.code !== 200) {
+              //const body = resp.body;
+              this.setState({
+                error: true,
+                code: resp.code,
+                title: resp.message,
+                message: this.state.error_messages[error_codes.ERROR_MESSAGES][
+                  resp.code
+                ]
+                  ? this.state.error_messages[error_codes.ERROR_MESSAGES][
+                      resp.code
+                    ].message
+                  : null,
+              });
+            } else {
+              this.setState({
+                is_brewing: true,
+              });
+            }
+          })
+          .catch((e) => {
+            this.setState({
+              error: true,
+              code: 500,
+              title: this.state.error_messages[error_codes.ERROR_500]
+                ? this.state.error_messages[error_codes.ERROR_500]
+                : null,
+              message: this.state.error_messages[
+                error_codes.ERROR_MESSAGES
+              ][500].message,
+            });
+          });
+      }
     );
-    const reqData = this.state.brewing;
-    new Network(path, "POST", reqData, this.state.brewerSecurityCode)
-      .hitNetwork()
-      .then((resp) => {
-        if (resp.code !== 200) {
-          const body = resp.body;
-          this.setState({
-            error: true,
-            code: resp.code,
-            title: resp.message,
-            message: this.state.error_messages[error_codes.ERROR_MESSAGES][
-              resp.code
-            ]
-              ? this.state.error_messages[error_codes.ERROR_MESSAGES][resp.code]
-                  .message
-              : null,
-          });
-        } else {
-          this.setState({
-            is_brewing: true,
-          });
-        }
-      })
-      .catch((e) => {
-        this.setState({
-          error: true,
-          code: 500,
-          title: this.state.error_messages[error_codes.ERROR_500]
-            ? this.state.error_messages[error_codes.ERROR_500]
-            : null,
-          message: this.state.error_messages[error_codes.ERROR_MESSAGES][500]
-            .message,
-        });
-      });
   };
 
   render() {
@@ -265,7 +285,7 @@ class Container extends Component {
     ) : (
       <React.Fragment>
         <Header
-          general_messages={general_messages}
+          general_messages={this.state.general_messages}
           isLoading={this.props.isLoading}
           setIsLoading={this.props.setIsLoading}
           pod={this.state.pod}
@@ -275,12 +295,13 @@ class Container extends Component {
         <BeverageDetails
           isLoading={this.props.isLoading}
           setIsLoading={this.props.setIsLoading}
-          general_messages={general_messages}
+          general_messages={this.state.general_messages}
           beverages={this.state.beverages}
           showSvgContent={this.showDangerousContentHandler}
           userSelection={this.state.brewing}
           onUpdateBrewingStateHandler={this.updateBrewingStateHandler}
           onBrewSubmitHandler={this.brewSubmitHandler}
+          isSubmitClicked={this.state.is_submit}
         />
         {this.state.error ? (
           <div className="error-wrapper" style={errorStyle}>
@@ -311,12 +332,11 @@ class Container extends Component {
                     title={this.state.title}
                     message={this.state.message}
                     onClose={this.errorModalCloseHandler}
+                    infoImg={ERRORS[this.state.code]}
                     showSvgContent={this.showDangerousContentHandler}
                   />
                 </div>
-              ) : (
-                <LoadingIndicator />
-              )}
+              ) : null}
             </React.Fragment>
           </Route>
           <Route path="/">
@@ -335,7 +355,8 @@ class Container extends Component {
                 <Beverages
                   isLoading={this.props.isLoading}
                   setIsLoading={this.props.setIsLoading}
-                  general_messages={general_messages}
+                  general_messages={this.state.general_messages}
+                  general_codes={general_codes}
                   beverages={this.state.beverages}
                   onViewHandler={this.viewHandler}
                   currentView={this.state.listView}
@@ -345,9 +366,10 @@ class Container extends Component {
               <div className="error-wrapper" style={errorStyle}>
                 <ErrorModel
                   btn_okay={null}
-                  title={"ERROR!"}
-                  message={"Something went wrong!!!"}
+                  title={this.state.error_messages[error_codes.ERROR_404_TITLE]}
+                  message={this.state.error_messages[error_codes.ERROR_404]}
                   onClose={this.errorModalCloseHandler}
+                  infoImg={ERRORS[this.state.code]}
                   showSvgContent={this.showDangerousContentHandler}
                 />
               </div>
@@ -355,6 +377,9 @@ class Container extends Component {
           </Route>
         </Switch>
         {footer}
+        {this.state.is_submit && this.state.is_brewing === false ? (
+          <LoadingIndicator />
+        ) : null}
       </React.Fragment>
     );
   }

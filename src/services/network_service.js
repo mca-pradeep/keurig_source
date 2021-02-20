@@ -43,6 +43,9 @@ class NetworkService {
         return response.json();
       })
       .then(function (jsonData) {
+        return jsonData;
+      })
+      .then(function (jsonData) {
         return {
           code: responseCode,
           message: responseStatusText,

@@ -215,7 +215,7 @@ class BeverageDetails extends Component {
                   <img
                     className="submit-btn"
                     src={`${window.location.origin}${
-                      !this.state.is_submit
+                      !this.props.isSubmitClicked
                         ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
                         : constant.assets_images.SUBMIT_BUTTON_SELECTED
                     }`}

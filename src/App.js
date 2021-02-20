@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Container from "./Container";
-import Spinner from "./components/UI/LoadingIndicator";
+import Spinner from "./components/UI/FirstScreenLoader";
 import { beverageTypes, assets_images } from "./config/constants";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +45,7 @@ function App() {
       });
     });
     await Promise.all(promises);
-    setIsLoading(false);
+    setTimeout(() => setIsLoading(false), 10000);
   };
   document.getElementById("root").style[
     "background-image"

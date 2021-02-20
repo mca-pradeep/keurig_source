@@ -11,7 +11,7 @@ const Beverage = (props) => {
       <Link
         to={{
           pathname: `/beverage/${Base64.encode(props.beverage.type)}`,
-          search: props.query_string,
+          //search: props.query_string,
           state: { beverage: props.beverage },
         }}
         replace={true}
@@ -32,20 +32,26 @@ const Beverage = (props) => {
           <div className="beverage-info">
             <h3>
               {
-                props.general_messages["BEVERAGE_TYPES"][props.beverage.type]
-                  .name
+                props.general_messages[props.general_codes.BEVERAGE_TYPES][
+                  props.beverage.type
+                ].name
               }
             </h3>
             <p>
               {
-                props.general_messages["BEVERAGE_TYPES"][props.beverage.type]
-                  .desc
+                props.general_messages[props.general_codes.BEVERAGE_TYPES][
+                  props.beverage.type
+                ].desc
               }
             </p>
           </div>
         ) : (
           <h3>
-            {props.general_messages["BEVERAGE_TYPES"][props.beverage.type].name}
+            {
+              props.general_messages[props.general_codes.BEVERAGE_TYPES][
+                props.beverage.type
+              ].name
+            }
           </h3>
         )}
       </Link>
