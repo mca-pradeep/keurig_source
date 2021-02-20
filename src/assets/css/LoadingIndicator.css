@@ -2,6 +2,7 @@
   text-align: center;
   vertical-align: middle;
 }
+
 .lds-ring {
   position: fixed;
   top: 0;
@@ -14,7 +15,9 @@
   height: 100%;
   text-align: center;
   vertical-align: middle;
+  z-index: 11;
 }
+
 .lds-ring img {
   width: 120px;
   display: block;
@@ -22,6 +25,7 @@
   top: calc(50% - 60px);
   left: calc(50% - 60px);
 }
+
 /*.lds-ring div {
   box-sizing: border-box;
   display: block;
