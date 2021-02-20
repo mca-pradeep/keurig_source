@@ -45,7 +45,7 @@ function App() {
       });
     });
     await Promise.all(promises);
-    setTimeout(() => setIsLoading(false), 10000);
+    //setTimeout(() => setIsLoading(false), 10000);
   };
   document.getElementById("root").style[
     "background-image"
