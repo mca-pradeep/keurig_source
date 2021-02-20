@@ -210,7 +210,7 @@ class Header extends Component {
                     />
                   ) : null}
                 </div>
-                <div className="beverage-info">
+                {/*<div className="beverage-info">
                   {!this.state.show_info ? (
                     <div onClick={(e) => this.showInfo(e)} className="lightbox">
                       <img
@@ -228,7 +228,7 @@ class Header extends Component {
                       />
                     </div>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           )}

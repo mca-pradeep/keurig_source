@@ -276,3 +276,6 @@ div.aligned-vertical {
     width: 45px;
   }
 }
+.slick-track {
+  display: inline-block;
+}
