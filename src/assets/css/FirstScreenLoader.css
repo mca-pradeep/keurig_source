@@ -8,7 +8,7 @@
   position: relative;
 }
 
-/* 
+
 .first-screen::before {
   content: "";
   position: absolute;
@@ -24,11 +24,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-} */
+}
 
 
 /**===== dots3 =====*/
-#dots3 {
+/* #dots3 {
   display: block;
   position: absolute;
   top: 50%;
@@ -64,14 +64,14 @@
   left: 30px;
   -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
-}
+} */
 
 /* #dots3 span:nth-child(4) {
   left: 45px;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
 } */
-
+/* 
 @keyframes dots3 {
   0% {
     background: #fff;
@@ -116,6 +116,6 @@
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-}
+} */
 
 /** END of dots3 */

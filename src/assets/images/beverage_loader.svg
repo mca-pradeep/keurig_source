@@ -30,7 +30,7 @@
          opacity: 1;
          }
          100% {
-         opacity: 0;
+         opacity: 0.6;
          }
          }
          @-webkit-keyframes ld-fade {
@@ -38,12 +38,12 @@
          opacity: 1;
          }
          100% {
-         opacity: 0;
+         opacity: 0.8;
          }
          }
          .ld.ld-fade {
-         -webkit-animation: ld-fade 1s infinite linear;
-         animation: ld-fade 1s infinite linear;
+         -webkit-animation: ld-fade 2s infinite linear;
+         animation: ld-fade 2s infinite linear;
          }
       </style>
    </svg>
