@@ -7,11 +7,11 @@ const FirstScreenLoader = () => {
     backgroundImage: `url(${assets_images.BREWING_LOADER_HOME_IMG})`,
   };
   return <div className="first-screen" style={bgStyle}>
-    <div id="dots3">
+    {/*<div id="dots3">
           <span></span>
           <span></span>
           <span></span>
-      </div>
+      </div> */ }
   </div>;
 };
 
