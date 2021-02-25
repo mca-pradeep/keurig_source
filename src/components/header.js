@@ -35,7 +35,7 @@ class Header extends Component {
 
   addWordBasedClass(text) {
     const words = text.split(" ");
-    if (words.length == 1) return "single-word";
+    if (words.length === 1) return "single-word";
     return "";
   }
 

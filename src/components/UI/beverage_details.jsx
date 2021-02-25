@@ -131,7 +131,7 @@ class BeverageDetails extends Component {
       this.state.customize_option === "temprature"
     ) {
       temperatureClasses.push("brew-active");
-      if (this.state.temprature_options.length == 1) {
+      if (this.state.temprature_options.length === 1) {
         sigleBeverageClass.push("single-beverage");
       }
     }
@@ -141,7 +141,7 @@ class BeverageDetails extends Component {
       this.state.customize_option === "strength"
     ) {
       strengthClasses.push("brew-active");
-      if (this.state.strength_options.length == 1) {
+      if (this.state.strength_options.length === 1) {
         sigleBeverageClass.push("single-beverage");
       }
     }
