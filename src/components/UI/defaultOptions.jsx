@@ -1,16 +1,19 @@
 const defaultOptions = (props) => {
   const strengths = props.general_messages[props.general_codes.SYSTEM_STRENGTH];
+  const mainBoxClasses = ["temprature-streangth-inner"];
   const strengthClasses = ["streangth-container"];
   const tempClasses = ["temprature-container"];
   if (props.customizeOption === "temprature") {
     tempClasses.push("selected");
+    mainBoxClasses.push("box-selected");
   } else if (props.customizeOption === "strength") {
     strengthClasses.push("selected");
+    mainBoxClasses.push("box-selected");
   }
 
   return (
     <div className="temprature-streangth">
-      <div className="temprature-streangth-inner">
+      <div className={mainBoxClasses.join(" ")}>
         <div
           className={strengthClasses.join(" ")}
           onClick={(e) => props.chooseOptionHandler("strength")}>
