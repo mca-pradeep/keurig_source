@@ -105,8 +105,12 @@
   justify-content: center;
 }
 
-..h-detail .logo-left.single-word {
+.h-detail .logo-left.single-word {
   align-items: center;
+}
+
+.h-detail .logo-left.single-word .logo-beverage {
+  margin: 0 auto;
 }
 
 .h-detail .logo-left .back-btn {
