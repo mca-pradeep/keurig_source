@@ -123,8 +123,8 @@ class BeverageDetails extends Component {
   };
 
   render() {
-    let temperatureClasses = ["brew-customize", "temp-strength"];
-    let strengthClasses = ["brew-customize", "temp-strength"];
+    let temperatureClasses = ["on-the-fly-box", "temp-strength"];
+    let strengthClasses = ["on-the-fly-box", "temp-strength"];
 
     if (
       this.state.customize_option &&
