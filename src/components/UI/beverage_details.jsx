@@ -125,12 +125,15 @@ class BeverageDetails extends Component {
   render() {
     let temperatureClasses = ["on-the-fly-box", "temp-strength"];
     let strengthClasses = ["on-the-fly-box", "temp-strength"];
-
+    let sigleBeverageClass = ["beverage-details-sleder-wrap"];
     if (
       this.state.customize_option &&
       this.state.customize_option === "temprature"
     ) {
       temperatureClasses.push("brew-active");
+      if (this.state.temprature_options.length == 1) {
+        sigleBeverageClass.push("single-beverage");
+      }
     }
 
     if (
@@ -138,6 +141,9 @@ class BeverageDetails extends Component {
       this.state.customize_option === "strength"
     ) {
       strengthClasses.push("brew-active");
+      if (this.state.strength_options.length == 1) {
+        sigleBeverageClass.push("single-beverage");
+      }
     }
     return (
       <React.Fragment>
@@ -158,7 +164,7 @@ class BeverageDetails extends Component {
                   <span>
                     {
                       this.props.general_messages[
-                      this.props.general_codes.BREWING_OPTIONS
+                        this.props.general_codes.BREWING_OPTIONS
                       ]
                     }
                   </span>
@@ -177,7 +183,7 @@ class BeverageDetails extends Component {
                 />
               </section>
             </div>
-            <div className="beverage-details-sleder-wrap">
+            <div className={sigleBeverageClass.join(" ")}>
               <section className={temperatureClasses.join(" ")}>
                 {this.state.temprature_options ? (
                   <TempratureOptions
@@ -185,7 +191,9 @@ class BeverageDetails extends Component {
                     user_selected_temprature={
                       this.props.userSelection.temperature
                     }
-                    onTempratureHandler={this.customizeStrengthTempratureHandler}
+                    onTempratureHandler={
+                      this.customizeStrengthTempratureHandler
+                    }
                     general_codes={this.props.general_codes}
                     general_messages={this.props.general_messages}
                   />
@@ -208,10 +216,11 @@ class BeverageDetails extends Component {
                 <button>
                   <img
                     className="submit-btn"
-                    src={`${window.location.origin}${!this.props.isSubmitClicked
-                      ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
-                      : constant.assets_images.SUBMIT_BUTTON_SELECTED
-                      }`}
+                    src={`${window.location.origin}${
+                      !this.props.isSubmitClicked
+                        ? constant.assets_images.SUBMIT_BUTTON_DEFAULT
+                        : constant.assets_images.SUBMIT_BUTTON_SELECTED
+                    }`}
                     alt=""
                   />
                 </button>
