@@ -11,7 +11,7 @@ const Beverage = (props) => {
       <Link
         to={{
           pathname: `/beverage/${Base64.encode(props.beverage.type)}`,
-          //search: props.query_string,
+          search: props.query_string,
           state: { beverage: props.beverage },
         }}
         replace={true}

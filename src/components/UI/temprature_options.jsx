@@ -1,4 +1,3 @@
-import { system_temprature } from "../../config/constants";
 import OptionCarousel from "./OptionCarousel";
 const tempratureOptions = (props) => {
   return (

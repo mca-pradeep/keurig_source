@@ -159,7 +159,7 @@ class Container extends Component {
                 delete queryObjs["s"];
                 delete queryObjs["b"];
                 let newStr = QueryString.stringify(queryObjs);
-                this.props.history.replace(`/?${newStr}`, {
+                this.props.history.push(`/?${newStr}`, {
                   ...this.state,
                   oldState: oldState,
                 });
@@ -341,7 +341,7 @@ class Container extends Component {
             </React.Fragment>
           </Route>
           <Route path="/">
-            {general_messages && this.state.pod ? (
+            {this.state.general_messages && this.state.pod ? (
               <React.Fragment>
                 <Header
                   isLoading={this.props.isLoading}
@@ -349,7 +349,7 @@ class Container extends Component {
                   pod={this.state.pod}
                   is_back={false}
                   is_footer={false}
-                  general_messages={general_messages}
+                  general_messages={this.state.general_messages}
                   onViewHandler={this.viewHandler}
                   currentView={this.state.listView}
                 />

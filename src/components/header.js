@@ -38,14 +38,14 @@ class Header extends Component {
     this.setState(
       (prevState) => ({
         show_info: !prevState.show_info,
-      }) /*,
+      }),
       () => {
         if (this.state.show_info) {
           document.body.classList.add("hidden-body");
         } else {
           document.body.classList.remove("hidden-body");
         }
-      }*/
+      }
     );
   }
 
@@ -210,7 +210,7 @@ class Header extends Component {
                     />
                   ) : null}
                 </div>
-                {/*<div className="beverage-info">
+                <div className="beverage-info">
                   {!this.state.show_info ? (
                     <div onClick={(e) => this.showInfo(e)} className="lightbox">
                       <img
@@ -228,7 +228,7 @@ class Header extends Component {
                       />
                     </div>
                   )}
-                </div> */}
+                </div>
               </div>
             </div>
           )}

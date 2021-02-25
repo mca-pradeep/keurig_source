@@ -1,4 +1,4 @@
-import { KEURIG_LOGO, assets_images } from "../../config/constants";
+import { assets_images } from "../../config/constants";
 import "../../assets/css/brewing.css";
 
 export const brewing = (props) => {
