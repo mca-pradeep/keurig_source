@@ -175,37 +175,32 @@ class BeverageDetails extends Component {
                   }
                   customizeOption={this.state.customize_option}
                 />
-                <section className={temperatureClasses.join(" ")}>
-                  {this.state.temprature_options ? (
-                    <TempratureOptions
-                      temprature_options={this.state.temprature_options}
-                      user_selected_temprature={
-                        this.props.userSelection.temperature
-                      }
-                      onTempratureHandler={
-                        this.customizeStrengthTempratureHandler
-                      }
-                      general_codes={this.props.general_codes}
-                      general_messages={this.props.general_messages}
-                    />
-                  ) : null}
-                </section>
-                <section className={strengthClasses.join(" ")}>
-                  {this.state.strength_options ? (
-                    <StrengthOptions
-                      strength_options={this.state.strength_options}
-                      user_selected_strength={this.props.userSelection.strength}
-                      onStrengthHandler={
-                        this.customizeStrengthTempratureHandler
-                      }
-                      general_codes={this.props.general_codes}
-                      general_messages={this.props.general_messages}
-                    />
-                  ) : null}
-                </section>
               </section>
             </div>
-
+            <section className={temperatureClasses.join(" ")}>
+              {this.state.temprature_options ? (
+                <TempratureOptions
+                  temprature_options={this.state.temprature_options}
+                  user_selected_temprature={
+                    this.props.userSelection.temperature
+                  }
+                  onTempratureHandler={this.customizeStrengthTempratureHandler}
+                  general_codes={this.props.general_codes}
+                  general_messages={this.props.general_messages}
+                />
+              ) : null}
+            </section>
+            <section className={strengthClasses.join(" ")}>
+              {this.state.strength_options ? (
+                <StrengthOptions
+                  strength_options={this.state.strength_options}
+                  user_selected_strength={this.props.userSelection.strength}
+                  onStrengthHandler={this.customizeStrengthTempratureHandler}
+                  general_codes={this.props.general_codes}
+                  general_messages={this.props.general_messages}
+                />
+              ) : null}
+            </section>
             <section className="submit-button-container">
               <div className="submit-button-inner">
                 <button>
