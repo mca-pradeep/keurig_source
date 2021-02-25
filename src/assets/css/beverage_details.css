@@ -312,6 +312,10 @@ div.aligned-vertical {
   background: #faf5f0;
 }
 
+.single-beverage .choose-options .slick-track {
+  margin-left: unset;
+}
+
 @media screen and (max-width: 350px) {
   .beverage-sizes ul {
     grid-gap: 9px;
