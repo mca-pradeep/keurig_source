@@ -33,6 +33,12 @@ class Header extends Component {
     this.props.history.push(`/${this.props.location.search}`);
   }
 
+  addWordBasedClass(text) {
+    const words = text.split(" ");
+    if (words.length == 1) return "single-word";
+    return "";
+  }
+
   showInfo(e) {
     e.preventDefault();
     this.setState(
@@ -99,12 +105,17 @@ class Header extends Component {
     }
     const headerClasses = ["h-wrapper", "grid-listing"];
     let pod_details = null;
+    let logoClasses = ["logo-left"];
     if (this.props.is_back) {
       headerClasses.push("h-detail");
       if (beverage) {
         pod_details = this.state.general_messages["BEVERAGE_TYPES"][
           beverage.type
         ].name;
+        let logo_class = this.addWordBasedClass(pod_details);
+        if (logo_class.length) {
+          logoClasses.push(logo_class);
+        }
       }
     }
     let viewName = this.props.currentView || localStorage.getItem("listView");
@@ -182,7 +193,7 @@ class Header extends Component {
           ) : (
             <div className="logo-wrapper">
               <div className="logo-inner">
-                <div className="logo-left">
+                <div className={logoClasses.join(" ")}>
                   <div className="back-btn">
                     <img
                       className="logo-img"
