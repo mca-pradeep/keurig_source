@@ -47,6 +47,7 @@ function App() {
     await Promise.all(promises);
     setTimeout(() => setIsLoading(false), 5000);
   };
+
   document.getElementById("root").style[
     "background-image"
   ] = `${window.location.origin}${assets_images.BREWING_LOADER_HOME_IMG}`;

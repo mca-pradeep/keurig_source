@@ -279,7 +279,7 @@ div.aligned-vertical {
 .temp-strength {
   display: none;
 }
-.brew-customize.active {
+.brew-customize.brew-active {
   display: block;
   position: absolute;
   width: 100%;
