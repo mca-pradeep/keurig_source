@@ -23,27 +23,28 @@ export const ERROR_404_TITLE = "ERROR!";
 
 export const GENERAL_ERROR_MESSAGE =
   "Rescan the QR Code on your brewer to begin again";
+export const OTHER_ERROR_MESSAGE = "Sorry, see your brewer to continue";
 
 export const ERROR_MESSAGES = {
   400: {
     title: "Invalid Size",
-    message: GENERAL_ERROR_MESSAGE,
+    message: OTHER_ERROR_MESSAGE,
   },
   401: {
     title: "Invalid Security Key",
-    message: GENERAL_ERROR_MESSAGE,
+    message: OTHER_ERROR_MESSAGE,
   },
   404: {
     title: "Brewer Not Found",
-    message: GENERAL_ERROR_MESSAGE,
+    message: OTHER_ERROR_MESSAGE,
   },
   405: {
     title: "Not Suppoted",
-    message: GENERAL_ERROR_MESSAGE,
+    message: OTHER_ERROR_MESSAGE,
   },
   500: {
     title: ERROR_500,
-    message: GENERAL_ERROR_MESSAGE,
+    message: OTHER_ERROR_MESSAGE,
   },
   105: {
     title: "Brewer Timeout",

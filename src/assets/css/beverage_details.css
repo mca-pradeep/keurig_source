@@ -234,13 +234,17 @@
   color: #fff;
 }
 
-.brew-customize .temprature-streangth .temprature-streangth-inner.box-selected::after {
+.brew-customize
+  .temprature-streangth
+  .temprature-streangth-inner.box-selected::after {
   display: none;
 }
 
 .submit-button-container {
   padding: 0 0 20px 0;
   margin-top: 40px;
+  position: relative;
+  z-index: 111;
 }
 
 .submit-button-container .submit-button-inner {

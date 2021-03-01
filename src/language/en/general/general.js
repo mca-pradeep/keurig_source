@@ -43,7 +43,7 @@ export const BEVERAGE_TYPES = {
       "Freshly brewed coffee from your favorite pod, made with the vibrant taste of vanilla milk",
   },
   VanillaLatte: {
-    name: '"Vanilla Latte"',
+    name: "Vanilla Latte",
     desc:
       "Rich, creamy coffee brewed with your favorite pod and blended with warmed vanilla milk.",
   },

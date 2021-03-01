@@ -153,16 +153,16 @@ class Container extends Component {
                       this.props.location.search
                     }`
                   );
+                }else{
+                  const oldState = { ...queryObjs };
+                  delete queryObjs["s"];
+                  delete queryObjs["b"];
+                  let newStr = QueryString.stringify(queryObjs);
+                  this.props.history.push(`/?${newStr}`, {
+                    ...this.state,
+                    oldState: oldState,
+                  });
                 }
-
-                const oldState = { ...queryObjs };
-                delete queryObjs["s"];
-                delete queryObjs["b"];
-                let newStr = QueryString.stringify(queryObjs);
-                this.props.history.push(`/?${newStr}`, {
-                  ...this.state,
-                  oldState: oldState,
-                });
               }
             );
           }
