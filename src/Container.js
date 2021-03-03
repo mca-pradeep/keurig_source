@@ -91,7 +91,6 @@ class Container extends Component {
     }
     if (this.state.pod === null) {
       new Network(path, "POST", queryObjs)
-        //new Network(`${window.location.origin}/keuring-reserve.json`, "GET")
         .hitNetwork()
         .then((resp) => {
           //console.log("Network Response", resp);

@@ -41,7 +41,6 @@ class BeverageDetails extends Component {
     } else {
       beverages = this.state.beverages;
     }
-
     if (beverages === null) {
       this.props.history.push(`/${this.props.location.search}`);
     } else {

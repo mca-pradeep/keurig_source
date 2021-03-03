@@ -14,7 +14,7 @@ const Beverage = (props) => {
           search: props.query_string,
           state: { beverage: props.beverage },
         }}
-        replace={true}
+        replace={false}
         search={props.query_string}>
         <div className="beverage-box">
           {beverageTypes[props.beverage.type] ? (

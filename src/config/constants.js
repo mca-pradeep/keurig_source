@@ -20,17 +20,6 @@ export const assets_images = {
 
   POD_BG_000: "/imgs/pods/bg/BevSelection.jpg",
   POD_BG_001: "/imgs/pods/bg/BevSelection.jpg",
-  // POD_BG_002: "/imgs/pods/bg/Bev_GMCR.jpg",
-  // POD_BG_003: "/imgs/pods/bg/Bev_GMCR-1.jpg",
-  // POD_BG_004: "/imgs/pods/bg/Bev_McCafe.jpg",
-  // POD_BG_005: "/imgs/pods/bg/Bev_McCafe-1.jpg",
-  // POD_BG_006: "/imgs/pods/bg/Bev_McCafe Copy.jpg",
-  // POD_BG_007: "/imgs/pods/bg/Bev_McCafe Copy 2.jpg",
-  // POD_BG_008: "/imgs/pods/bg/Bev_McCafe Copy 2-1.jpg",
-  // POD_BG_009: "/imgs/pods/bg/Bev_McCafe Copy-1.jpg",
-  // POD_BG_010: "/imgs/pods/bg/BevSelection_enhcd.jpg",
-
-  // beverageTypesDefaultImage: "/imgs/pods/POD.png",
 };
 export const beverageTypes = {
   Coffee: {
