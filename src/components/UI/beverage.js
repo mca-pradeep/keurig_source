@@ -47,11 +47,9 @@ const Beverage = (props) => {
           </div>
         ) : (
           <h3>
-            {
-              props.general_messages[props.general_codes.BEVERAGE_TYPES][
-                props.beverage.type
-              ].name
-            }
+            {props.general_messages[props.general_codes.BEVERAGE_TYPES][
+              props.beverage.type
+            ].name.replace("$$", "")}
           </h3>
         )}
       </Link>

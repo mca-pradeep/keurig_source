@@ -72,7 +72,7 @@ export const BEVERAGE_TYPES = {
       "Rich, creamy tea brewed with your favorite pod and blended with warmed milk.",
   },
   VanillaTeaAuLait: {
-    name: "Vanilla Tea Au Lait",
+    name: "Vanilla Tea $$ Au Lait",
     desc:
       "Freshly brewed tea from your favorite pod and a splash of warmed vanilla milk",
   },

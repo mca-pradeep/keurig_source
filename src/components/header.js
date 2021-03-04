@@ -111,7 +111,7 @@ class Header extends Component {
       if (beverage) {
         pod_details = this.state.general_messages["BEVERAGE_TYPES"][
           beverage.type
-        ].name;
+        ].name.replace("$$", "<br />");
         let logo_class = this.addWordBasedClass(pod_details);
         if (logo_class.length) {
           logoClasses.push(logo_class);
@@ -209,7 +209,7 @@ class Header extends Component {
                       alt=""
                     />
                   </div>
-                  <h1>{pod_details}</h1>
+                  <h1 dangerouslySetInnerHTML={this.showView(pod_details)}></h1>
                 </div>
                 <div className="beverages-img-container">
                   {beverage ? (
