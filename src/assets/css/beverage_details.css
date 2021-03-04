@@ -234,9 +234,7 @@
   color: #fff;
 }
 
-.brew-customize
-  .temprature-streangth
-  .temprature-streangth-inner.box-selected::after {
+.brew-customize .temprature-streangth .temprature-streangth-inner.box-selected::after {
   display: none;
 }
 
@@ -252,7 +250,7 @@
 }
 
 .submit-button-container .submit-button-inner img.submit-btn {
-  width: 78px;
+  width: 94px;
   cursor: pointer;
 }
 
