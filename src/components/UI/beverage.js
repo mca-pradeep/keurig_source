@@ -46,11 +46,12 @@ const Beverage = (props) => {
             </p>
           </div>
         ) : (
-          <h3>
-            {props.general_messages[props.general_codes.BEVERAGE_TYPES][
-              props.beverage.type
-            ].name.replace("$$", "")}
-          </h3>
+          <h3
+            dangerouslySetInnerHTML={props.showSvgContent(
+              props.general_messages[props.general_codes.BEVERAGE_TYPES][
+                props.beverage.type
+              ].name.replace("$$", "<br />")
+            )}></h3>
         )}
       </Link>
     </li>

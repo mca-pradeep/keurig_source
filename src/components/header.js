@@ -20,12 +20,6 @@ class Header extends Component {
       pod: props.pod,
     };
   }
-
-  showView = (content) => {
-    return {
-      __html: content,
-    };
-  };
   gotoListing() {
     this.setState({
       show_info: false,
@@ -172,14 +166,14 @@ class Header extends Component {
                         ? `${dashboard_views.GROUP} active`
                         : `${dashboard_views.GROUP}`
                     }
-                    dangerouslySetInnerHTML={this.showView(
+                    dangerouslySetInnerHTML={this.props.showSvgContent(
                       views_svg[dashboard_views.GROUP]
                     )}></div>
                   <div
                     onClick={() =>
                       this.props.onViewHandler(dashboard_views.LIST)
                     }
-                    dangerouslySetInnerHTML={this.showView(
+                    dangerouslySetInnerHTML={this.props.showSvgContent(
                       views_svg[dashboard_views.LIST]
                     )}
                     className={
@@ -209,7 +203,10 @@ class Header extends Component {
                       alt=""
                     />
                   </div>
-                  <h1 dangerouslySetInnerHTML={this.showView(pod_details)}></h1>
+                  <h1
+                    dangerouslySetInnerHTML={this.props.showSvgContent(
+                      pod_details
+                    )}></h1>
                 </div>
                 <div className="beverages-img-container">
                   {beverage ? (

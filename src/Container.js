@@ -152,7 +152,7 @@ class Container extends Component {
                       this.props.location.search
                     }`
                   );
-                }else{
+                } else {
                   const oldState = { ...queryObjs };
                   delete queryObjs["s"];
                   delete queryObjs["b"];
@@ -290,6 +290,7 @@ class Container extends Component {
           pod={this.state.pod}
           is_back={true}
           is_footer={true}
+          showSvgContent={this.showDangerousContentHandler}
         />
         <BeverageDetails
           isLoading={this.props.isLoading}
@@ -351,6 +352,7 @@ class Container extends Component {
                   general_messages={this.state.general_messages}
                   onViewHandler={this.viewHandler}
                   currentView={this.state.listView}
+                  showSvgContent={this.showDangerousContentHandler}
                 />
                 <Beverages
                   isLoading={this.props.isLoading}
@@ -360,6 +362,7 @@ class Container extends Component {
                   beverages={this.state.beverages}
                   onViewHandler={this.viewHandler}
                   currentView={this.state.listView}
+                  showSvgContent={this.showDangerousContentHandler}
                 />
               </React.Fragment>
             ) : this.state.error ? (

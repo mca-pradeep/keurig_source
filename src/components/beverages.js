@@ -32,6 +32,7 @@ const Beverages = (props) => {
                   currentView={props.currentView}
                   general_codes={props.general_codes}
                   general_messages={props.general_messages}
+                  showSvgContent={props.showSvgContent}
                 />
               );
             })
