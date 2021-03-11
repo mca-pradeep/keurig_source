@@ -97,9 +97,22 @@ class BeverageDetails extends Component {
     this.props.onUpdateBrewingStateHandler("size", customSize);
   };
   chooseOptionHandler = (option) => {
-    this.setState({
-      customize_option: option,
-    });
+    this.setState(
+      {
+        customize_option: option,
+      },
+      () => {
+        if (this.state.customize_option !== null) {
+          document.addEventListener("click", this.handleOutsideClick, false);
+        } else {
+          document.removeEventListener("click", this.handleOutsideClick, false);
+        }
+      }
+    );
+  };
+
+  handleOutsideClick = (e) => {
+    if (!this.node.contains(e.target)) this.chooseOptionHandler(null);
   };
 
   customizeStrengthTempratureHandler = (option, value) => {
@@ -169,46 +182,60 @@ class BeverageDetails extends Component {
                   </span>
                 </div>
               </section>
-              <section className="brew-customize">
-                <DefaultOptions
-                  chooseOptionHandler={this.chooseOptionHandler}
-                  general_messages={this.props.general_messages}
-                  general_codes={this.props.general_codes}
-                  user_selected_strength={this.props.userSelection.strength}
-                  user_selected_temprature={
-                    this.props.userSelection.temperature
-                  }
-                  customizeOption={this.state.customize_option}
-                />
-              </section>
             </div>
-            <div className={sigleBeverageClass.join(" ")}>
-              <section className={temperatureClasses.join(" ")}>
-                {this.state.temprature_options ? (
-                  <TempratureOptions
-                    temprature_options={this.state.temprature_options}
+            <div
+              ref={(node) => {
+                this.node = node;
+              }}>
+              <div className="beverage-details with-top-bottom-padding-0">
+                <section
+                  className="brew-customize"
+                  ref={(node) => {
+                    this.node = node;
+                  }}>
+                  <DefaultOptions
+                    chooseOptionHandler={this.chooseOptionHandler}
+                    general_messages={this.props.general_messages}
+                    general_codes={this.props.general_codes}
+                    user_selected_strength={this.props.userSelection.strength}
                     user_selected_temprature={
                       this.props.userSelection.temperature
                     }
-                    onTempratureHandler={
-                      this.customizeStrengthTempratureHandler
-                    }
-                    general_codes={this.props.general_codes}
-                    general_messages={this.props.general_messages}
+                    customizeOption={this.state.customize_option}
                   />
-                ) : null}
-              </section>
-              <section className={strengthClasses.join(" ")}>
-                {this.state.strength_options ? (
-                  <StrengthOptions
-                    strength_options={this.state.strength_options}
-                    user_selected_strength={this.props.userSelection.strength}
-                    onStrengthHandler={this.customizeStrengthTempratureHandler}
-                    general_codes={this.props.general_codes}
-                    general_messages={this.props.general_messages}
-                  />
-                ) : null}
-              </section>
+                </section>
+              </div>
+
+              <div className={sigleBeverageClass.join(" ")}>
+                <section className={temperatureClasses.join(" ")}>
+                  {this.state.temprature_options ? (
+                    <TempratureOptions
+                      temprature_options={this.state.temprature_options}
+                      user_selected_temprature={
+                        this.props.userSelection.temperature
+                      }
+                      onTempratureHandler={
+                        this.customizeStrengthTempratureHandler
+                      }
+                      general_codes={this.props.general_codes}
+                      general_messages={this.props.general_messages}
+                    />
+                  ) : null}
+                </section>
+                <section className={strengthClasses.join(" ")}>
+                  {this.state.strength_options ? (
+                    <StrengthOptions
+                      strength_options={this.state.strength_options}
+                      user_selected_strength={this.props.userSelection.strength}
+                      onStrengthHandler={
+                        this.customizeStrengthTempratureHandler
+                      }
+                      general_codes={this.props.general_codes}
+                      general_messages={this.props.general_messages}
+                    />
+                  ) : null}
+                </section>
+              </div>
             </div>
             <section className="submit-button-container">
               <div className="submit-button-inner">

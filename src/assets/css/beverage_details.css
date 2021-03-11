@@ -5,7 +5,9 @@
 .with-padding {
   padding: 28px 27px;
 }
-
+.with-top-bottom-padding-0 {
+  padding: 0 27px;
+}
 .beverage-sizes {
   margin-bottom: 21px;
 }
@@ -234,7 +236,9 @@
   color: #fff;
 }
 
-.brew-customize .temprature-streangth .temprature-streangth-inner.box-selected::after {
+.brew-customize
+  .temprature-streangth
+  .temprature-streangth-inner.box-selected::after {
   display: none;
 }
 

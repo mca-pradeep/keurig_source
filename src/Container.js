@@ -101,11 +101,17 @@ class Container extends Component {
             this.setState({
               error: true,
               code: resp.code,
-              title: resp.message,
-              message: this.state.error_messages[error_codes.ERROR_MESSAGES][
-                resp.code
-              ]
-                ? this.state.error_messages[error_codes.ERROR_MESSAGES][
+              title: this.state.error_messages[
+                error_codes.RESERVE_ERROR_MESSAGES
+              ][resp.code]
+                ? this.state.error_messages[error_codes.RESERVE_ERROR_MESSAGES][
+                    resp.code
+                  ].title
+                : null,
+              message: this.state.error_messages[
+                error_codes.RESERVE_ERROR_MESSAGES
+              ][resp.code]
+                ? this.state.error_messages[error_codes.RESERVE_ERROR_MESSAGES][
                     resp.code
                   ].message
                 : null,

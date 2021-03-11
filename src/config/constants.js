@@ -11,7 +11,8 @@ export const assets_images = {
   BEVERAGE_INFO: "/imgs/beverage-info/Info_button.svg",
   BEVERAGE_INFO_CLOSE: "/imgs/beverage-info/close_btn.svg",
 
-  SUBMIT_BUTTON_DEFAULT: "/imgs/buttons/default.svg",
+  //SUBMIT_BUTTON_DEFAULT: "/imgs/buttons/default.svg",
+  SUBMIT_BUTTON_DEFAULT: "/imgs/buttons/brewbutton.gif",
   SUBMIT_BUTTON_SELECTED: "/imgs/buttons/selected.svg",
 
   BACK_BUTTON_00: "/imgs/back/mobile.svg",
