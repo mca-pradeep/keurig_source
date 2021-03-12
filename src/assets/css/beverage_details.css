@@ -5,9 +5,11 @@
 .with-padding {
   padding: 28px 27px;
 }
+
 .with-top-bottom-padding-0 {
   padding: 0 27px;
 }
+
 .beverage-sizes {
   margin-bottom: 21px;
 }
@@ -83,7 +85,33 @@
 
 .choose-options {
   background: #5b3427;
-  padding: 13px 0 13px 27px;
+  padding: 13px;
+}
+
+.option-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+}
+
+.option-wrapper .brewing-option span {
+  font-size: 13px;
+  font-family: "MarkOT-Bold";
+  line-height: 23px;
+  outline: 0;
+  color: #faf5f0;
+  border: 1.25px solid #faf5f0;
+  box-sizing: border-box;
+  border-radius: 35px;
+  display: block;
+  text-align: center;
+  padding: 6px 25px;
+  cursor: pointer;
+}
+
+.option-wrapper .brewing-option.active span {
+  color: #5b3427;
+  background: #faf5f0;
 }
 
 .beverage-details-sleder-wrap {
@@ -236,9 +264,7 @@
   color: #fff;
 }
 
-.brew-customize
-  .temprature-streangth
-  .temprature-streangth-inner.box-selected::after {
+.brew-customize .temprature-streangth .temprature-streangth-inner.box-selected::after {
   display: none;
 }
 
