@@ -112,7 +112,9 @@ class BeverageDetails extends Component {
   };
 
   handleOutsideClick = (e) => {
-    if (!this.node.contains(e.target)) this.chooseOptionHandler(null);
+    if (e.target !== null && this.node !== null) {
+      if (!this.node.contains(e.target)) this.chooseOptionHandler(null);
+    }
   };
 
   customizeStrengthTempratureHandler = (option, value) => {
