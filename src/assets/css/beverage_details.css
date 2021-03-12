@@ -91,11 +91,12 @@
 .option-wrapper {
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
 .option-wrapper .brewing-option span {
-  font-size: 13px;
+  font-size: 12px;
   font-family: "MarkOT-Bold";
   line-height: 23px;
   outline: 0;
@@ -105,7 +106,7 @@
   border-radius: 35px;
   display: block;
   text-align: center;
-  padding: 6px 25px;
+  padding: 6px 5px;
   cursor: pointer;
 }
 
