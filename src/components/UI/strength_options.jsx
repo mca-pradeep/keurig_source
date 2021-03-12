@@ -1,4 +1,4 @@
-import OptionCarousel from "./OptionCarousel";
+// import OptionCarousel from "./OptionCarousel";
 
 const strengthOptions = (props) => {
   return (
@@ -6,10 +6,11 @@ const strengthOptions = (props) => {
       <strong>
         {props.general_messages[props.general_codes.CHOOSE_STRENGTH]}
       </strong>
-      <OptionCarousel
+      {/*<OptionCarousel
         selectedIndex={props.strength_options.findIndex(
           (item) => item === props.user_selected_strength
-        )}>
+        )}>*/}
+      <div className="option-wrapper">
         {props.strength_options.map((strength) => {
           return (
             <div
@@ -18,7 +19,9 @@ const strengthOptions = (props) => {
               }}
               key={strength}
               className={
-                strength === props.user_selected_strength ? "active" : ""
+                strength === props.user_selected_strength
+                  ? "brewing-option active"
+                  : "brewing-option"
               }>
               <span>
                 {
@@ -30,7 +33,8 @@ const strengthOptions = (props) => {
             </div>
           );
         })}
-      </OptionCarousel>
+      </div>
+      {/*</OptionCarousel>*/}
     </div>
   );
 };
