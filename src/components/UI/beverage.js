@@ -30,13 +30,12 @@ const Beverage = (props) => {
         viewName !== null &&
         viewName === dashboard_views.LIST ? (
           <div className="beverage-info">
-            <h3>
-              {
+            <h3
+              dangerouslySetInnerHTML={props.showSvgContent(
                 props.general_messages[props.general_codes.BEVERAGE_TYPES][
                   props.beverage.type
-                ].name
-              }
-            </h3>
+                ].name.replace("$$", "<br />")
+              )}></h3>
             <p>
               {
                 props.general_messages[props.general_codes.BEVERAGE_TYPES][
