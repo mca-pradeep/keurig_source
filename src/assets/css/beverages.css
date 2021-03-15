@@ -14,6 +14,7 @@
 
 .beverages-wrapper.group ul li .beverage-box {
   margin-right: 20px;
+  min-width: 118px;
 }
 
 .beverages-wrapper.group ul li h3 {
@@ -52,7 +53,7 @@
   font-family: "MarkOT-Medium";
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .beverages-wrapper.group ul li a {
     display: grid;
     align-items: center;
@@ -64,5 +65,4 @@
   .beverages-wrapper.group ul li .beverage-box {
     margin-right: 0px;
   }
-
 }
