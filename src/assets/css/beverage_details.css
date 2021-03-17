@@ -120,7 +120,7 @@
 }
 
 .on-the-fly-box {
-  top: 0;
+  top: -152px;
   width: 100%;
   z-index: 11;
   transform: translateY(80%);
@@ -265,7 +265,9 @@
   color: #fff;
 }
 
-.brew-customize .temprature-streangth .temprature-streangth-inner.box-selected::after {
+.brew-customize
+  .temprature-streangth
+  .temprature-streangth-inner.box-selected::after {
   display: none;
 }
 

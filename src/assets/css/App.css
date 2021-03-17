@@ -30,6 +30,7 @@ body.hidden-body {
   transform: translateY(0);
   opacity: 1;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .custom_model_inr {
