@@ -26,88 +26,109 @@ export const beverageTypes = {
   Coffee: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0020_coffee.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0022_coffee.png",
+    bottom: -5,
   },
   IcedCoffee: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0019_coffee_BOI.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0021_coffee_BOI.png",
+    bottom: -25,
   },
   CafeAuLait: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0018_coffee_milk.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0020_coffee_milk.png",
+    bottom: -5,
   },
   Latte: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0015_latte.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0017_latte.png",
+    bottom: -25,
   },
   Cappuccino: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0012_capp.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0014_capp.png",
+    bottom: -5,
   },
   CafeMocha: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0017_coffee_mocha.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0019_coffee_mocha.png",
+    bottom: -5,
   },
   MochaLatte: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0014_latte_mocha.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0016_latte_mocha.png",
+    bottom: -25,
   },
   MochaCappuccino: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0011_capp_mocha.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0013_capp_mocha.png",
+    bottom: -5,
   },
   CafeVanilla: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0016_coffee_vanilla.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0018_coffee_vanilla.png",
+    bottom: -5,
   },
   VanillaLatte: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0013_latte_vanilla.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0015_latte_vanilla.png",
+    bottom: -25,
   },
   VanillaCappuccino: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0010_capp_vanilla.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0012_capp_vanilla.png",
+    bottom: -5,
   },
   Tea: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0009_tea.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0011_tea.png",
+    bottom: -25,
   },
   IcedTea: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0008_tea_BOI.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0010_tea_BOI.png",
+    bottom: -25,
   },
   TeaAuLait: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0005_tea_milk.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0007_tea_milk.png",
+    bottom: -25,
   },
   TeaLatte: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0007_tea_latte.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0009_tea_latte.png",
+    bottom: -25,
   },
   VanillaTeaAuLait: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0004_tea_vanilla.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0006_tea_vanilla.png",
+    bottom: -25,
   },
   VanillaTeaLatte: {
     listing:
       "/imgs/bev-images/bev-selection/bev_selec_0006_tea_latte_vanilla.png",
     header:
       "/imgs/bev-images/brew-screen/header_bev_0008_tea_latte_vanilla.png",
+    bottom: -25,
   },
   HotChocolate: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0003_hot_choc.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0005_hot_choc.png",
+    bottom: -25,
   },
   CafeStyleBeverage: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0002_cafe_style.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0004_cafe_style.png",
+    bottom: -25,
   },
   Cider: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0000_cider.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0002_cider.png",
+    bottom: -25,
   },
   CafeEscapes: {
     listing: "/imgs/bev-images/bev-selection/bev_selec_0001_cafe_escapes.png",
     header: "/imgs/bev-images/brew-screen/header_bev_0003_cafe_escapes.png",
+    bottom: -25,
   },
 };
 export const system_size_unit = "oz";

@@ -208,7 +208,9 @@ class Header extends Component {
                       pod_details
                     )}></h1>
                 </div>
-                <div className="beverages-img-container">
+                <div
+                  className="beverages-img-container"
+                  style={{ bottom: beverageTypes[beverage.type].bottom }}>
                   {beverage ? (
                     <img
                       src={`${window.location.origin}${
