@@ -284,6 +284,9 @@ class Container extends Component {
     let brewingPage = this.state.is_brewing ? (
       <Brewing
         message={this.state.general_messages[general_codes.BREWER_MESSAGE]}
+        message_line_1={
+          this.state.general_messages[general_codes.BREWER_MESSAGE_LINE_1]
+        }
         showSvgContent={this.showDangerousContentHandler}
         logo={KEURIG_LOGO}
       />

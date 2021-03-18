@@ -117,4 +117,7 @@ export const CHOOSE_TEMPERATURE = "Choose Temperature";
 export const STRENGTH = "Strength";
 export const TEMPERATURE = "Temperature";
 
-export const BREWER_MESSAGE = "Check your brewer and enjoy!";
+export const BREWER_MESSAGE =
+  "Thank you for $$ using our mobile $$ experience!";
+export const BREWER_MESSAGE_LINE_1 =
+  "Your drink will be ready soon,$$ please check the brewer";

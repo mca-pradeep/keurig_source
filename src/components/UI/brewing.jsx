@@ -7,7 +7,15 @@ export const brewing = (props) => {
   };
   return (
     <div className="brewing-container" style={style}>
-      <div className="brewing-message">{props.message}</div>
+      <div
+        className="brewing-message"
+        dangerouslySetInnerHTML={props.showSvgContent(
+          props.message.split("$$").join("<br />")
+        )}></div>
+      <p
+        dangerouslySetInnerHTML={props.showSvgContent(
+          props.message_line_1.split("$$").join("<br />")
+        )}></p>
       <div
         className="brewing-logo"
         dangerouslySetInnerHTML={props.showSvgContent(props.logo)}></div>

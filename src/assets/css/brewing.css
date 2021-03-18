@@ -16,10 +16,21 @@ body,
 }
 
 .brewing-container .brewing-message {
-  line-height: 57px;
-  font-size: 51px;
+  line-height: 37px;
+  font-size: 35px;
+  font-weight: 400;
   color: #5b3427;
-  font-family: "Archer-Book";
+  font-style: normal;
+  font-family: "Archer-Medium";
+  text-align: center;
+}
+.brewing-container p {
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #5b3427;
+  font-style: normal;
+  font-family: "MarkOT-Medium";
   text-align: center;
 }
 
@@ -37,6 +48,6 @@ body,
     max-width: 250px;
     margin: 0 auto;
     position: relative;
-    top: -40px;
+    top: -20px;
   }
 }
