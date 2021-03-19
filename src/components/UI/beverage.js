@@ -34,7 +34,7 @@ const Beverage = (props) => {
               dangerouslySetInnerHTML={props.showSvgContent(
                 props.general_messages[props.general_codes.BEVERAGE_TYPES][
                   props.beverage.type
-                ].name.replace("$$", "<br />")
+                ].name.replace("$$", "")
               )}></h3>
             <p>
               {

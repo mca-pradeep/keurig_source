@@ -9,7 +9,7 @@ export const BEVERAGE_TYPES = {
       "Fill a cup (do not use glass) with ice and brew a refreshing iced coffee with your favorite pod",
   },
   CafeAuLait: {
-    name: "Café Au Lait",
+    name: "Café $$ Au Lait",
     desc: "Fresh coffee brewed with your favorite pod and a splash of milk",
   },
   Latte: {
@@ -62,7 +62,7 @@ export const BEVERAGE_TYPES = {
       "Fill a cup (do not use glass) with ice and brew a refreshing iced tea with your favorite pod",
   },
   TeaAuLait: {
-    name: "Tea Au Lait",
+    name: "Tea $$ Au Lait",
     desc:
       "Freshly brewed tea from your favorite pod and a splash of warmed milk",
   },
@@ -77,7 +77,7 @@ export const BEVERAGE_TYPES = {
       "Freshly brewed tea from your favorite pod and a splash of warmed vanilla milk",
   },
   VanillaTeaLatte: {
-    name: "Vanilla Tea Latte",
+    name: "Vanilla $$ Tea Latte",
     desc:
       "Rich, creamy tea brewed with your favorite pod and blended with warmed vanilla milk",
   },
