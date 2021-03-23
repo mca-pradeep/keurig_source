@@ -120,4 +120,4 @@ export const TEMPERATURE = "Temperature";
 export const BREWER_MESSAGE =
   "Thank you for $$ using our mobile $$ experience!";
 export const BREWER_MESSAGE_LINE_1 =
-  "Your drink will be ready soon,$$ please check the brewer";
+  "Your drink will be ready soon,$$ please check the brewer.";
