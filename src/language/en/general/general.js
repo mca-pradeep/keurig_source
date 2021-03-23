@@ -4,7 +4,7 @@ export const BEVERAGE_TYPES = {
     desc: "Freshly brewed coffee with your favorite pod",
   },
   IcedCoffee: {
-    name: "Iced Coffee",
+    name: "$$ Iced Coffee",
     desc:
       "Fill a cup (do not use glass) with ice and brew a refreshing iced coffee with your favorite pod",
   },
@@ -23,12 +23,12 @@ export const BEVERAGE_TYPES = {
       "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed milk.",
   },
   CafeMocha: {
-    name: "Café Mocha",
+    name: "$$ Café Mocha",
     desc:
       "Freshly brewed coffee from your favorite pod, made with the rich taste of chocolate milk",
   },
   MochaLatte: {
-    name: "Mocha Latte",
+    name: "$$ Mocha Latte",
     desc:
       "Rich, creamy coffee brewed with your favorite pod and blended with warmed chocolate milk.",
   },
@@ -38,12 +38,12 @@ export const BEVERAGE_TYPES = {
       "Freshly brewed with your favorite pod. Strong, smooth & topped with foamed chocolate milk.",
   },
   CafeVanilla: {
-    name: "Café Vanilla",
+    name: "$$ Café Vanilla",
     desc:
       "Freshly brewed coffee from your favorite pod, made with the vibrant taste of vanilla milk",
   },
   VanillaLatte: {
-    name: "Vanilla Latte",
+    name: "$$ Vanilla Latte",
     desc:
       "Rich, creamy coffee brewed with your favorite pod and blended with warmed vanilla milk.",
   },
@@ -57,7 +57,7 @@ export const BEVERAGE_TYPES = {
     desc: "Freshly brewed tea with your favorite pod",
   },
   IcedTea: {
-    name: "Iced Tea",
+    name: "$$ Iced Tea",
     desc:
       "Fill a cup (do not use glass) with ice and brew a refreshing iced tea with your favorite pod",
   },
@@ -67,7 +67,7 @@ export const BEVERAGE_TYPES = {
       "Freshly brewed tea from your favorite pod and a splash of warmed milk",
   },
   TeaLatte: {
-    name: "Tea Latte",
+    name: "$$ Tea Latte",
     desc:
       "Rich, creamy tea brewed with your favorite pod and blended with warmed milk.",
   },
@@ -94,7 +94,7 @@ export const BEVERAGE_TYPES = {
     desc: "Ready-to-go hot cider brewed with your favorite pod",
   },
   CafeEscapes: {
-    name: "Café Escapes",
+    name: "$$ Café Escapes",
     desc: "Freshly brewed, creamy café-style beverage with your favorite pod",
   },
 };
