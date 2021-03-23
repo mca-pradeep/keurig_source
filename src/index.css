@@ -13,7 +13,8 @@
 @font-face {
   font-family: "MarkOT-Black";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.eot") format("embedded-opentype"),
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.eot")
+      format("embedded-opentype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.woff2") format("woff2"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBlack.ttf") format("truetype"),
@@ -23,17 +24,23 @@
 @font-face {
   font-family: "MarkOT-Bold";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.eot") format("embedded-opentype"),
-    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.woff2") format("woff2"),
-    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.woff") format("woff"),
-    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.ttf") format("truetype"),
-    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.svg#MarkOTBold") format("svg");
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.eot")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.woff2")
+      format("woff2"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.woff")
+      format("woff"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.ttf")
+      format("truetype"),
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Bold/MarkOT-Bold.svg#MarkOTBold")
+      format("svg");
 }
 
 @font-face {
   font-family: "MarkOT-Heavy";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.eot") format("embedded-opentype"),
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.eot")
+      format("embedded-opentype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.woff2") format("woff2"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTHeavy.ttf") format("truetype"),
@@ -43,7 +50,8 @@
 @font-face {
   font-family: "MarkOT-Book";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.eot") format("embedded-opentype"),
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.eot")
+      format("embedded-opentype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.woff2") format("woff2"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBook.ttf") format("truetype"),
@@ -53,44 +61,63 @@
 @font-face {
   font-family: "MarkOT-Book-Italic";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.eot") format("embedded-opentype"),
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.eot")
+      format("embedded-opentype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.woff2") format("woff2"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.ttf") format("truetype"),
-    url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.svg#MarkOTBookItalic") format("svg");
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTBookItalic.svg#MarkOTBookItalic")
+      format("svg");
 }
 
 @font-face {
   font-family: "MarkOT-Medium";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.eot") format("embedded-opentype"),
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.eot")
+      format("embedded-opentype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.woff2") format("woff2"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.ttf") format("truetype"),
-    url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.svg#MarkOTMedium") format("svg");
+    url("./assets/Fonts/Mark-OT-TTF/MarkOTMedium.svg#MarkOTMedium")
+      format("svg");
 }
 
 @font-face {
   font-family: "MarkOT-Italic";
   src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.eot");
-  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.eot") format("embedded-opentype"),
+  src: url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.eot")
+      format("embedded-opentype"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.woff2") format("woff2"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.woff") format("woff"),
     url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.ttf") format("truetype"),
-    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.svg#MarkOT-Italic") format("svg");
+    url("./assets/Fonts/Mark-OT-TTF/MarkOT-Italic.svg#MarkOT-Italic")
+      format("svg");
 }
 
 @font-face {
-  font-family: 'Archer-Book';
-  src: url('./assets/Fonts/Archer/Archer-Book.eot');
-  src: url('./assets/Fonts/Archer/Archer-Book.eot?#iefix') format('embedded-opentype'),
-    url('./assets/Fonts/Archer/Archer-Book.otf') format('otf'),
-    url('./assets/Fonts/Archer/Archer-Book.svg#Archer-Book') format('svg'),
-    url('./assets/Fonts/Archer/Archer-Book.ttf') format('truetype'),
-    url('./assets/Fonts/Archer/Archer-Book.woff') format('woff'),
-    url('./assets/Fonts/Archer/Archer-Book.woff2') format('woff2');
+  font-family: "Archer-Book";
+  src: url("./assets/Fonts/Archer/Archer-Book.eot");
+  src: url("./assets/Fonts/Archer/Archer-Book.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Archer/Archer-Book.otf") format("otf"),
+    url("./assets/Fonts/Archer/Archer-Book.svg#Archer-Book") format("svg"),
+    url("./assets/Fonts/Archer/Archer-Book.ttf") format("truetype"),
+    url("./assets/Fonts/Archer/Archer-Book.woff") format("woff"),
+    url("./assets/Fonts/Archer/Archer-Book.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Archer";
+  src: url("./assets/Fonts/Archer/ArcherPro-Medium.eot");
+  src: url("./assets/Fonts/Archer/ArcherPro-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/Fonts/Archer/ArcherPro-Medium.otf") format("otf"),
+    url("./assets/Fonts/Archer/ArcherPro-Medium.svg#ArcherPro-Medium")
+      format("svg"),
+    url("./assets/Fonts/Archer/ArcherPro-Medium.ttf") format("truetype"),
+    url("./assets/Fonts/Archer/ArcherPro-Medium.woff") format("woff"),
+    url("./assets/Fonts/Archer/ArcherPro-Medium.woff2") format("woff2");
+}
 
 .transition {
   transition: all ease 0.5s;
@@ -100,7 +127,7 @@
 
 a,
 a.tooltip,
-a.tooltip:hover>span,
+a.tooltip:hover > span,
 button:focus,
 del.video-inner-tiltle,
 input:focus,
